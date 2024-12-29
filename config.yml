@@ -34,6 +34,7 @@ Params:
   disableThemeToggle: false
   DateFormat: "2006-01-02"
   ShowShareButtons: false
+  fancybox: true
   ShowReadingTime: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: false
@@ -50,7 +51,7 @@ Params:
 
   homeInfoParams:
     title: "你好 👋"
-    content: "欢迎来到我的博客, 我是 `Waite Wang`. 这里是我记录生活和技术的地方, 希望你能在这里找到些有用的内容."
+    content: "嘿，我是Waite Wang，欢迎来我的博客逛逛，希望你能在这里找到些有用的内容."
 
   socialIcons:
     - name: github

@@ -5,7 +5,8 @@
     {{- if site.Copyright }}
     <span>{{ site.Copyright | markdownify }}</span>
     {{- else }}
-    <span>Copyright &copy; 2018 - {{ now.Year }} By <a href="{{ "" | absLangURL }}">Waite</a>, All Rights Reserved.</span>
+    <span>Copyright &copy; 2018 - {{ now.Year }} By <a href="{{ "" | absLangURL }}">Waite</a>, All Rights
+        Reserved.</span>
     {{- end }}
 </footer>
 {{- end }}
@@ -130,3 +131,9 @@
     });
 </script>
 {{- end }}
+
+{{if .Page.Site.Params.fancybox }}
+<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+<script src="/js/jquery.fancybox.min.js"></script>
+{{ end }}
