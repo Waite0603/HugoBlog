@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Win on 隶笔难书</title><link>https://waite.wang/categories/win/</link><description>Recent content in Win on 隶笔难书</description><generator>Hugo -- 0.140.1</generator><language>zh</language><lastBuildDate>Sun, 24 Sep 2023 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/win/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows11家庭中文版系统安装Docker</title><link>https://waite.wang/posts/win/win11-install-docker/</link><pubDate>Sun, 24 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/win11-install-docker/</guid><description>&lt;hr>
+&lt;p>title: Windows11家庭中文版系统安装Docker
+id: a293d46a-9b4e-4e42-8bbc-0bcec5c21662
+date: 2023-09-24 22:29:15
+auther: admin
+cover:&lt;/p>
+&lt;h2 id="安装到-d-盘软链接">安装到 D 盘(软链接)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">docker 默认安装路劲为 C:&lt;span class="se">\P&lt;/span>rogram Files&lt;span class="se">\D&lt;/span>ocker
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker 虚拟磁盘默认安装路劲为 C:&lt;span class="se">\U&lt;/span>sers&lt;span class="se">\&amp;lt;&lt;/span>YourName&amp;gt;&lt;span class="se">\A&lt;/span>ppData&lt;span class="se">\L&lt;/span>ocal&lt;span class="se">\D&lt;/span>ocker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>用 &lt;strong>管理员身份打开cmd窗口&lt;/strong>&lt;/li>
+&lt;li>执行如下命令&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mklink /j &lt;span class="s2">&amp;#34;C:\Program Files\Docker&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;D:\Program Files\Docker&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>已经安装Docker，需要重新再安装一次。&lt;/li>
+&lt;li>安装后C盘下的Docker文件就只是一个软链接了，映射的真实路径在D盘Docker文件夹下(注意: 软链接后需要在相应目录创建文件夹, 不然后续安装会报错)&lt;/li>
+&lt;/ol>
+&lt;h2 id="hyper-vr">Hyper-Vr&lt;/h2>
+&lt;blockquote>
+&lt;p>查看自己的系统, 如果你的系统跟我一样是window11家庭&lt;a href="https://so.csdn.net/so/search?q=%E4%B8%AD%E6%96%87%E7%89%88&amp;amp;spm=1001.2101.3001.7020">中文版&lt;/a>，则会找不到Hyper-Vr，这时则需要自己创建，讲下述代码复制在txt文本里，并重命名为Hyper.cmd，右键以管理员方式运行，最后输入“Y”重启电脑后即可。&lt;/p></description></item><item><title>Win11 改虚拟内存到C盘之外的盘</title><link>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</link><pubDate>Sun, 03 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</guid><description>&lt;blockquote>
+&lt;p>参考 &lt;a href="https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c">https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>解决: WIN11无法把虚拟内存更改到其他盘，改完后重启显示由于启动页面文件配置的问题,然后虚拟内存又回c盘了&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="分页文件更改">分页文件更改&lt;/h2>
+&lt;ol>
+&lt;li>此电脑 -&amp;gt; 右键属性 -&amp;gt; 高级系统设置&lt;/li>
+&lt;li>选择高级 -&amp;gt; 性能(设置) -&amp;gt; 高级 -&amp;gt; 虚拟内存 -&amp;gt; 更改&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/20230903163805.png">&lt;/p></description></item><item><title>gcc 安装 + vscode 搭建</title><link>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</guid><description>&lt;h2 id="安装-mingw">安装 MinGW&lt;/h2>
+&lt;p>MinGW（Minimalist GNU for Windows）, 是一个适用于微软windows应用程序的极简洁的开发环境。MinGW提供了一个完整的开源编程工具集，适用于原生MS-Windows应用程序的开发，并且不依赖于任何第三方C运行时DLL。MinGW主要供在MS-Windows平台上工作的开发人员使用，但也可跨平台使用。&lt;/p></description></item><item><title>基于 Win10 管理员权限不足的升权操作</title><link>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>首先由于 Win10 家庭版没有 gpedit.msc (本地策略组编辑器), cmd 以下代码将电脑模拟为 专业版&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>@echo off
+pushd &amp;#34;%~dp0&amp;#34;
+dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt
+dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt
+for /f %%i in (&amp;#39;findstr /i . List.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;C:\Windows\servicing\Packages\%%i&amp;#34;
+pause
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>&lt;strong>Win + R 打开 gpedit.msc, 将 &amp;ldquo;以管理员批准模式运行所有管理员&lt;/strong>&lt;/p></description></item></channel></rss>

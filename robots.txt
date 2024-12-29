@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://waite.wang/sitemap.xml

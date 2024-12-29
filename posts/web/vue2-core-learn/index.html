@@ -1,0 +1,371 @@
+<!doctype html><html lang=zh dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Vue2 核心语法 | 隶笔难书</title>
+<meta name=keywords content="Vue3"><meta name=description content="
+https://v2.cn.vuejs.org/
+
+简单使用
+
+https://v2.cn.vuejs.org/v2/guide/installation.html
+
+直接用 script 引入
+
+
+直接下载并用  标签引入，Vue 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)"><meta name=author content><link rel=canonical href=https://waite.wang/posts/web/vue2-core-learn/><link crossorigin=anonymous href=/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css integrity="sha256-1vzSCk+4bvpN+sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as=style><link rel=icon href=https://waite.wang/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://waite.wang/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://waite.wang/favicon-32x32.png><link rel=apple-touch-icon href=https://waite.wang/apple-touch-icon.png><link rel=mask-icon href=https://waite.wang/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh href=https://waite.wang/posts/web/vue2-core-learn/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://waite.wang/posts/web/vue2-core-learn/"><meta property="og:site_name" content="隶笔难书"><meta property="og:title" content="Vue2 核心语法"><meta property="og:description" content=" https://v2.cn.vuejs.org/
+简单使用 https://v2.cn.vuejs.org/v2/guide/installation.html
+直接用 script 引入
+直接下载并用 标签引入，Vue 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-22T16:04:23+08:00"><meta property="article:modified_time" content="2022-01-22T16:04:23+08:00"><meta property="article:tag" content="Vue3"><meta name=twitter:card content="summary"><meta name=twitter:title content="Vue2 核心语法"><meta name=twitter:description content="
+https://v2.cn.vuejs.org/
+
+简单使用
+
+https://v2.cn.vuejs.org/v2/guide/installation.html
+
+直接用 script 引入
+
+
+直接下载并用  标签引入，Vue 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://waite.wang/posts/"},{"@type":"ListItem","position":2,"name":"Vue2 核心语法","item":"https://waite.wang/posts/web/vue2-core-learn/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue2 核心语法","name":"Vue2 核心语法","description":" https://v2.cn.vuejs.org/\n简单使用 https://v2.cn.vuejs.org/v2/guide/installation.html\n直接用 script 引入\n直接下载并用 标签引入，Vue 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)\n","keywords":["Vue3"],"articleBody":" https://v2.cn.vuejs.org/\n简单使用 https://v2.cn.vuejs.org/v2/guide/installation.html\n直接用 script 引入\n直接下载并用 标签引入，Vue 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)\nCDN 对于制作原型或学习，你可以这样使用最新版本：\n对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏：\n如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：\n你可以在 cdn.jsdelivr.net/npm/vue 浏览 NPM 包的源代码。 Vue 也可以在 unpkg 和 cdnjs 上获取 (cdnjs 的版本更新可能略滞后)。\n请确认了解不同构建版本并在你发布的站点中使用生产环境版本，把 vue.js 换成 vue.min.js。这是一个更小的构建，可以带来比开发环境下更快的速度体验。\n在用 Vue 构建大型应用时推荐使用 NPM 安装[1]。NPM 能很好地和诸如 webpack 或 Browserify 模块打包器配合使用。同时 Vue 也提供配套工具来开发单文件组件。 # 最新稳定版 $ npm install vue@^2 响应式与插值 响应式数据与插值表达式 let value = 'hello world'; document.getElementById('box').innerHTML = value; // 更改数据, 还要在进行一次 DOM 操作 value = 'hello vue'; document.getElementById('box').innerHTML = value; 在内部对数据做操作, 会自动更新到页面视图上, 省去了手动操作 DOM 的步骤\n\u003cdiv id=\"box\"\u003e \u003cp\u003e{{ title }}\u003c/p\u003e \u003cp\u003e{{ content }}\u003c/p\u003e \u003cp\u003e{{ title + content }}\u003c/p\u003e \u003cp\u003e{{ title ? content : 'hello' }}\u003c/p\u003e \u003c/div\u003e \u003c/div\u003e \u003cscript src=\"https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js\"\u003e\u003c/script\u003e \u003cscript\u003e const vm = new Vue({ // 1. 响应式数据与插值表达式 // 在内部对数据做操作, 会自动更新到页面视图上, 省去了手动操作 DOM 的步骤 el: '#box', // el 选项用于指定一个页面中已存在的 DOM 元素来挂载 Vue 实例 data() { return { title: 'hello world', content: 'hello vue' } } }) // 1.3 通过 vm 实例来访问数据 vm.title = 'hello vue' \u003c/script\u003e 方法以及计算属性 Methods 属性 \u003cdiv id=\"box\"\u003e \u003cp\u003e{{ output() }}\u003c/p\u003e \u003cp\u003e{{ output() }}\u003c/p\u003e \u003cp\u003e{{ output() }}\u003c/p\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003c/div\u003e \u003c/div\u003e \u003cscript src=\"https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js\"\u003e\u003c/script\u003e \u003cscript\u003e const vm = new Vue({ el: '#box', // methods 选项用于定义方法, 该方法可以在插值表达式中使用 methods: { output() { console.log('output'); } }, // 1.3 计算属性, 具有缓存性 computed: { outputContent() { console.log('outputContent'); } } }) \u003c/script\u003e 以上代码 console 结果\noutput output output outputContent 计算属性 计算属性, Methods 具有缓存性质, 当我们进行第一次计算的时候, 它会将计算结果在内部做一个缓存, 当我们再次调用的时候, 它会直接返回缓存的结果, 不会再次执行函数(插值不能加括号)\n\u003cdiv id=\"box\"\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003cp\u003e{{ output() }}\u003c/p\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003cp\u003e{{ outputContent }}\u003c/p\u003e \u003c/div\u003e \u003c/div\u003e \u003cscript src=\"https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js\"\u003e\u003c/script\u003e \u003cscript\u003e const vm = new Vue({ el: '#box', // methods 选项用于定义方法, 该方法可以在插值表达式中使用 data() { return { message: 'Hello World' } }, methods: { output() { this.message = 'Hello Vue'; } }, computed: { outputContent() { console.log(`computed: ${this.message}`); } } }) \u003c/script\u003e // console 结果 Hello World Hello Vue 侦听器 监听响应式数据的变化, 自动 Vue 内部实现, 可以参与内部函数变化\nwatch: { message: function (newVal, oldVal) { console.log(newVal, oldVal) } } 指令 内容指令 \u003cp v-text=\"message\"\u003e\u003c/p\u003e \u003cp v-html=\"htmlContent\"\u003e\u003c/p\u003e \u003cscript\u003e data() { return { message: 'Hello World', htmlContent: 'Hello World', } } \u003c/script\u003e // Hello World // Hello World(红色) 渲染指令 区别：v-if 会在判定条件为假时，将元素从 DOM 中移除，v-show 会将元素的 display 属性设置为 none, 一般使用 v-show\n\u003cp v-if=\"bool\"\u003emessage 存在\u003c/p\u003e \u003cp v-show=\"bool\"\u003emessage 存在\u003c/p\u003e \u003cp v-for=\"(item, key, index) in obj\"\u003e{{ item }} {{ key }} {{ index }}\u003c/p\u003e \u003cscript\u003e data() { return { message: 'Hello World', htmlContent: 'Hello World', obj: { name: '张三', age: 18 }, bool: true } } \u003c/script\u003e // message 存在 // message 存在 // 张三 name 0 // 18 age 1 属性指令 具体可以看 https://v2.cn.vuejs.org/v2/guide/class-and-style.html, 可以修改标签属性\n\u003cp v-bind:title=\"title\"\u003emessage\u003c/p\u003e \u003cp :title=\"title\"\u003emessage\u003c/p\u003e 事件指令 \u003cbutton v-on:click=\"alterMsg\"\u003e修改 message\u003c/button\u003e \u003cbutton @click=\"alterMsg\"\u003e修改 message\u003c/button\u003e 表单指令 v-model 可以实现双向数据绑定, 即数据的变化会影响视图，视图的变化也会影响数据\n\u003cinput type=\"text\" v-model=\"message\"\u003e \u003cp\u003e{{ message }}\u003c/p\u003e 修饰符 在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。\n具体可以看 https://v2.cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6\n以下为示例\n\u003cinput type=\"text\" v-model=\"message\"\u003e \u003cp v-text=\"message\" style=\"white-space: pre; \"\u003e\u003c/p\u003e \u003cinput type=\"text\" v-model.trim=\"message\"\u003e \u003cscript\u003e data() { return { message: 'Hello World' } } \u003c/script\u003e 一些基本修饰符\n.lazy 在默认情况下，v-model 在每次 input 事件触发后将输入框的值与数据进行同步 (除了上述输入法组合文字时)。你可以添加 lazy 修饰符，从而转为在 change 事件之后进行同步：\n.number 如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：\n这通常很有用，因为即使在 type=“number” 时，HTML 输入元素的值也总会返回字符串。如果这个值无法被 parseFloat() 解析，则会返回原始的值。\n.trim 如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：\n","wordCount":"1765","inLanguage":"zh","datePublished":"2022-01-22T16:04:23+08:00","dateModified":"2022-01-22T16:04:23+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://waite.wang/posts/web/vue2-core-learn/"},"publisher":{"@type":"Organization","name":"隶笔难书","logo":{"@type":"ImageObject","url":"https://waite.wang/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://waite.wang/ accesskey=h title="隶笔难书 (Alt + H)">隶笔难书</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://waite.wang/ title=首页><span>首页</span></a></li><li><a href=https://waite.wang/search title=搜索><span>搜索</span></a></li><li><a href=https://waite.wang/categories title=分类><span>分类</span></a></li><li><a href=https://waite.wang/tags title=标签><span>标签</span></a></li><li><a href=https://waite.wang/archives title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">Vue2 核心语法</h1><div class=post-meta><span title='2022-01-22 16:04:23 +0800 +0800'>2022-01-22</span>&nbsp;·&nbsp;4 分钟&nbsp;·&nbsp;1765 字&nbsp;|&nbsp;<a href=https://github.com/Waite0603/hugoBlog/edit/main/content/posts/web/vue2-core-learn.md rel="noopener noreferrer" target=_blank>在 GitHub 编辑</a></div></header><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>目录</span></summary><div class=inner><ul><li><a href=#%e7%ae%80%e5%8d%95%e4%bd%bf%e7%94%a8 aria-label=简单使用>简单使用</a><ul><li><a href=#cdnhttpsv2cnvuejsorgv2guideinstallationhtmlcdn aria-label=CDN>CDN</a></li></ul></li><li><a href=#%e5%93%8d%e5%ba%94%e5%bc%8f%e4%b8%8e%e6%8f%92%e5%80%bc aria-label=响应式与插值>响应式与插值</a><ul><li><a href=#%e5%93%8d%e5%ba%94%e5%bc%8f%e6%95%b0%e6%8d%ae%e4%b8%8e%e6%8f%92%e5%80%bc%e8%a1%a8%e8%be%be%e5%bc%8f aria-label=响应式数据与插值表达式>响应式数据与插值表达式</a></li></ul></li><li><a href=#%e6%96%b9%e6%b3%95%e4%bb%a5%e5%8f%8a%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 aria-label=方法以及计算属性>方法以及计算属性</a><ul><li><a href=#methods-%e5%b1%9e%e6%80%a7 aria-label="Methods 属性">Methods 属性</a></li><li><a href=#%e8%ae%a1%e7%ae%97%e5%b1%9e%e6%80%a7 aria-label=计算属性>计算属性</a></li></ul></li><li><a href=#%e4%be%a6%e5%90%ac%e5%99%a8 aria-label=侦听器>侦听器</a></li><li><a href=#%e6%8c%87%e4%bb%a4 aria-label=指令>指令</a><ul><li><a href=#%e5%86%85%e5%ae%b9%e6%8c%87%e4%bb%a4 aria-label=内容指令>内容指令</a></li><li><a href=#%e6%b8%b2%e6%9f%93%e6%8c%87%e4%bb%a4 aria-label=渲染指令>渲染指令</a></li><li><a href=#%e5%b1%9e%e6%80%a7%e6%8c%87%e4%bb%a4 aria-label=属性指令>属性指令</a></li><li><a href=#%e4%ba%8b%e4%bb%b6%e6%8c%87%e4%bb%a4 aria-label=事件指令>事件指令</a></li><li><a href=#%e8%a1%a8%e5%8d%95%e6%8c%87%e4%bb%a4 aria-label=表单指令>表单指令</a></li></ul></li><li><a href=#%e4%bf%ae%e9%a5%b0%e7%ac%a6 aria-label=修饰符>修饰符</a></li></ul></div></details></div><div class=post-content><blockquote><p><a href=https://v2.cn.vuejs.org/>https://v2.cn.vuejs.org/</a></p></blockquote><h2 id=简单使用>简单使用<a hidden class=anchor aria-hidden=true href=#简单使用>#</a></h2><blockquote><p><a href=https://v2.cn.vuejs.org/v2/guide/installation.html>https://v2.cn.vuejs.org/v2/guide/installation.html</a></p></blockquote><p><a href=https://v2.cn.vuejs.org/v2/guide/installation.html#%E7%9B%B4%E6%8E%A5%E7%94%A8-lt-script-gt-%E5%BC%95%E5%85%A5><strong>直接用 script 引入</strong></a></p><ol><li><p>直接下载并用 标签引入，<code>Vue</code> 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)</p></li><li><h3 id=cdnhttpsv2cnvuejsorgv2guideinstallationhtmlcdn><a href=https://v2.cn.vuejs.org/v2/guide/installation.html#CDN>CDN</a><a hidden class=anchor aria-hidden=true href=#cdnhttpsv2cnvuejsorgv2guideinstallationhtmlcdn>#</a></h3></li></ol><p>对于制作原型或学习，你可以这样使用最新版本：</p><pre tabindex=0><code>
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js&#34;&gt;&lt;/script&gt;
+</code></pre><p>对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏：</p><pre tabindex=0><code>
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/vue@2.7.14&#34;&gt;&lt;/script&gt;
+</code></pre><p>如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：</p><pre tabindex=0><code>
+&lt;script type=&#34;module&#34;&gt;
+
+import Vue from &#39;https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.esm.browser.js&#39;
+
+&lt;/script&gt;
+</code></pre><ol start=3><li>你可以在 <a href=https://cdn.jsdelivr.net/npm/vue/>cdn.jsdelivr.net/npm/vue</a> 浏览 NPM 包的源代码。</li></ol><p>Vue 也可以在 <a href=https://unpkg.com/vue@2.7.14/dist/vue.js>unpkg</a> 和 <a href=https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.js>cdnjs</a> 上获取 (cdnjs 的版本更新可能略滞后)。</p><p>请确认了解<a href=https://v2.cn.vuejs.org/v2/guide/installation.html#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%9E%84%E5%BB%BA%E7%89%88%E6%9C%AC%E7%9A%84%E8%A7%A3%E9%87%8A>不同构建版本</a>并在你发布的站点中使用<strong>生产环境版本</strong>，把 vue.js 换成 vue.min.js。这是一个更小的构建，可以带来比开发环境下更快的速度体验。</p><ol start=4><li>在用 Vue 构建大型应用时推荐使用 NPM 安装[<a href=https://v2.cn.vuejs.org/v2/guide/installation.html#footnote-1>1]</a>。NPM 能很好地和诸如 <a href=https://webpack.js.org/>webpack</a> 或 <a href=http://browserify.org/>Browserify</a> 模块打包器配合使用。同时 Vue 也提供配套工具来开发<a href=https://v2.cn.vuejs.org/v2/guide/single-file-components.html>单文件组件</a>。</li></ol><pre tabindex=0><code>
+# 最新稳定版
+
+$ npm install vue@^2
+</code></pre><h2 id=响应式与插值>响应式与插值<a hidden class=anchor aria-hidden=true href=#响应式与插值>#</a></h2><h3 id=响应式数据与插值表达式>响应式数据与插值表达式<a hidden class=anchor aria-hidden=true href=#响应式数据与插值表达式>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;hello world&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;box&#39;</span><span class=p>).</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=nx>value</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 更改数据, 还要在进行一次 DOM 操作
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;hello vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s1>&#39;box&#39;</span><span class=p>).</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=nx>value</span><span class=p>;</span>
+</span></span></code></pre></div><blockquote><p>在内部对数据做操作, 会自动更新到页面视图上, 省去了手动操作 DOM 的步骤</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;box&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!-- 1.2 插值表达式 --&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ title }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ content }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ title + content }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ title ? content : &#39;hello&#39; }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>vm</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Vue</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 1. 响应式数据与插值表达式
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 在内部对数据做操作, 会自动更新到页面视图上, 省去了手动操作 DOM 的步骤
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>el</span><span class=o>:</span> <span class=s1>&#39;#box&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// el 选项用于指定一个页面中已存在的 DOM 元素来挂载 Vue 实例
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>data</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>title</span><span class=o>:</span> <span class=s1>&#39;hello world&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>content</span><span class=o>:</span> <span class=s1>&#39;hello vue&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 1.3 通过 vm 实例来访问数据
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>vm</span><span class=p>.</span><span class=nx>title</span> <span class=o>=</span> <span class=s1>&#39;hello vue&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></div><h2 id=方法以及计算属性>方法以及计算属性<a hidden class=anchor aria-hidden=true href=#方法以及计算属性>#</a></h2><h3 id=methods-属性>Methods 属性<a hidden class=anchor aria-hidden=true href=#methods-属性>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;box&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ output() }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ output() }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ output() }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>vm</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Vue</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>el</span><span class=o>:</span> <span class=s1>&#39;#box&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// methods 选项用于定义方法, 该方法可以在插值表达式中使用
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>methods</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>output</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;output&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 1.3 计算属性, 具有缓存性
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>computed</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>outputContent</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;outputContent&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></div><blockquote><p>以上代码 console 结果</p></blockquote><pre tabindex=0><code>
+output
+
+output
+
+output
+
+outputContent
+</code></pre><h3 id=计算属性>计算属性<a hidden class=anchor aria-hidden=true href=#计算属性>#</a></h3><blockquote><p>计算属性, Methods 具有缓存性质, 当我们进行第一次计算的时候, 它会将计算结果在内部做一个缓存, 当我们再次调用的时候, 它会直接返回缓存的结果, 不会再次执行函数(<strong>插值不能加括号</strong>)</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;box&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ output() }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>{{ outputContent }}<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>vm</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Vue</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>el</span><span class=o>:</span> <span class=s1>&#39;#box&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// methods 选项用于定义方法, 该方法可以在插值表达式中使用
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>data</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>message</span><span class=o>:</span> <span class=s1>&#39;Hello World&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>methods</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>output</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>this</span><span class=p>.</span><span class=nx>message</span> <span class=o>=</span> <span class=s1>&#39;Hello Vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>computed</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>outputContent</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`computed: </span><span class=si>${</span><span class=k>this</span><span class=p>.</span><span class=nx>message</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></div><pre tabindex=0><code>
+// console 结果
+
+Hello World
+
+Hello Vue
+</code></pre><h2 id=侦听器>侦听器<a hidden class=anchor aria-hidden=true href=#侦听器>#</a></h2><blockquote><p>监听响应式数据的变化, 自动 Vue 内部实现, 可以参与内部函数变化</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>watch</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>message</span><span class=o>:</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>newVal</span><span class=p>,</span> <span class=nx>oldVal</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>newVal</span><span class=p>,</span> <span class=nx>oldVal</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><h2 id=指令>指令<a hidden class=anchor aria-hidden=true href=#指令>#</a></h2><h3 id=内容指令>内容指令<a hidden class=anchor aria-hidden=true href=#内容指令>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>内容指令</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-text</span><span class=o>=</span><span class=s>&#34;message&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-html</span><span class=o>=</span><span class=s>&#34;htmlContent&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>data</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>message</span><span class=o>:</span> <span class=s1>&#39;Hello World&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>htmlContent</span><span class=o>:</span> <span class=s1>&#39;&lt;span style=&#34;color: red&#34;&gt;Hello World&lt;/span&gt;&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Hello World
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Hello World(红色)
+</span></span></span></code></pre></div><h3 id=渲染指令>渲染指令<a hidden class=anchor aria-hidden=true href=#渲染指令>#</a></h3><blockquote><p>区别：v-if 会在判定条件为假时，将元素从 DOM 中移除，v-show 会将元素的 display 属性设置为 none, 一般使用 v-show</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>渲染指令</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>v</span><span class=o>-</span><span class=k>if</span> <span class=nx>判定条件为真时</span><span class=err>，</span><span class=nx>渲染元素</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-if</span><span class=o>=</span><span class=s>&#34;bool&#34;</span><span class=p>&gt;</span><span class=na>message</span> <span class=na>存在</span><span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-show</span><span class=o>=</span><span class=s>&#34;bool&#34;</span><span class=p>&gt;</span><span class=na>message</span> <span class=na>存在</span><span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;(item, key, index) in obj&#34;</span><span class=p>&gt;{{</span> <span class=na>item</span> <span class=p>}}</span> <span class=p>{{</span> <span class=na>key</span> <span class=p>}}</span> <span class=p>{{</span> <span class=na>index</span> <span class=p>}}&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>data</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>message</span><span class=o>:</span> <span class=s1>&#39;Hello World&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>htmlContent</span><span class=o>:</span> <span class=s1>&#39;&lt;span style=&#34;color: red&#34;&gt;Hello World&lt;/span&gt;&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>obj</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;张三&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>age</span><span class=o>:</span> <span class=mi>18</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>},</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>bool</span><span class=o>:</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// message 存在
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// message 存在
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 张三 name 0
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 18 age 1
+</span></span></span></code></pre></div><h3 id=属性指令>属性指令<a hidden class=anchor aria-hidden=true href=#属性指令>#</a></h3><blockquote><p>具体可以看 <a href=https://v2.cn.vuejs.org/v2/guide/class-and-style.html>https://v2.cn.vuejs.org/v2/guide/class-and-style.html</a>, 可以修改标签属性</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>属性指令</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=na>v</span><span class=nt>-bind:title</span><span class=o>=</span><span class=s>&#34;title&#34;</span><span class=p>&gt;</span><span class=nx>message</span><span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>简写</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>:title</span><span class=o>=</span><span class=s>&#34;title&#34;</span><span class=p>&gt;</span><span class=nx>message</span><span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>https</span><span class=o>:</span><span class=c1>//v2.cn.vuejs.org/v2/guide/class-and-style.html --&gt;
+</span></span></span></code></pre></div><h3 id=事件指令>事件指令<a hidden class=anchor aria-hidden=true href=#事件指令>#</a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>事件指令</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=na>v</span><span class=nt>-on:click</span><span class=o>=</span><span class=s>&#34;alterMsg&#34;</span><span class=p>&gt;</span><span class=nx>修改</span> <span class=nx>message</span><span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>简写</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>button</span> <span class=nt>@click</span><span class=s>=&#34;alterMsg&#34;</span><span class=p>&gt;</span><span class=na>修改</span> <span class=na>message</span><span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+</span></span></code></pre></div><h3 id=表单指令>表单指令<a hidden class=anchor aria-hidden=true href=#表单指令>#</a></h3><blockquote><p>v-model 可以实现双向数据绑定, 即数据的变化会影响视图，视图的变化也会影响数据</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>v</span><span class=o>-</span><span class=nx>model</span> <span class=nx>可以实现双向数据绑定</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=nt>v-model</span><span class=o>=</span><span class=s>&#34;message&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;{{</span> <span class=nx>message</span> <span class=p>}}&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span></code></pre></div><h2 id=修饰符>修饰符<a hidden class=anchor aria-hidden=true href=#修饰符>#</a></h2><blockquote><p>在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。尽管我们可以在方法中轻松实现这点，但更好的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p></blockquote><blockquote></blockquote><blockquote><p>具体可以看 <a href=https://v2.cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6>https://v2.cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6</a></p></blockquote><blockquote><p>以下为示例</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>修饰符</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>&lt;!--</span> <span class=nx>实现原始内容的替换</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=nt>v-model</span><span class=o>=</span><span class=s>&#34;message&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>p</span> <span class=nt>v-text</span><span class=o>=</span><span class=s>&#34;message&#34; style=&#34;white-space: pre; &#34;</span><span class=p>&gt;&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>&lt;!--</span> <span class=na>在视图中</span><span class=err>，</span><span class=na>HTML中的连续空格会被默认合并为一个空格</span><span class=err>，</span><span class=na>并不会完全保留</span><span class=err>。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=na>所以在代码中的</span> <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span> <span class=p>{{</span><span class=nx>message</span><span class=p>}}&lt;/</span><span class=nt>p</span><span class=p>&gt;</span> <span class=nx>中</span><span class=err>，</span><span class=nx>连续的空格会被合并为一个空格</span><span class=err>，</span><span class=nx>并且在渲染时不会显示多个空格</span><span class=err>。</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>可以使用CSS中的</span> <span class=nx>white</span><span class=o>-</span><span class=nx>space</span> <span class=nx>属性来控制文本的处理方式</span> <span class=o>--&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>v</span><span class=nt>-model</span><span class=na>.trim</span><span class=err>=&#34;</span><span class=na>message</span><span class=err>&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>data</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>message</span><span class=o>:</span> <span class=s1>&#39;Hello World&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></div><blockquote><p>一些基本<a href=https://v2.cn.vuejs.org/v2/guide/forms.html#%E4%BF%AE%E9%A5%B0%E7%AC%A6>修饰符</a></p></blockquote><ul><li><a href=https://v2.cn.vuejs.org/v2/guide/forms.html#lazy><code>.lazy</code></a></li></ul><p>在默认情况下，<code>v-model</code> 在每次 input 事件触发后将输入框的值与数据进行同步 (除了<a href=https://v2.cn.vuejs.org/v2/guide/forms.html#vmodel-ime-tip>上述</a>输入法组合文字时)。你可以添加 lazy 修饰符，从而转为在 change 事件<em>之后</em>进行同步：</p><pre tabindex=0><code>
+&lt;!-- 在“change”时而非“input”时更新 --&gt;
+
+&lt;input v-model.lazy=&#34;msg&#34;&gt;
+</code></pre><ul><li><a href=https://v2.cn.vuejs.org/v2/guide/forms.html#number><code>.number</code></a></li></ul><p>如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：</p><pre tabindex=0><code>
+&lt;input v-model.number=&#34;age&#34; type=&#34;number&#34;&gt;
+</code></pre><p>这通常很有用，因为即使在 type=&ldquo;number&rdquo; 时，HTML 输入元素的值也总会返回字符串。如果这个值无法被 parseFloat() 解析，则会返回原始的值。</p><ul><li><a href=https://v2.cn.vuejs.org/v2/guide/forms.html#trim><code>.trim</code></a></li></ul><p>如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：</p><pre tabindex=0><code>
+&lt;input v-model.trim=&#34;msg&#34;&gt;
+</code></pre></div><footer class=post-footer><ul class=post-tags><li><a href=https://waite.wang/tags/vue3/>Vue3</a></li></ul><nav class=paginav><a class=prev href=https://waite.wang/posts/bigdata/hadoop-group-install-and-config/><span class=title>« 上一页</span><br><span>hadoop集群的安装与配置</span></a></nav></footer></article></main><footer class=footer><span>&copy; 2024 <a href=https://waite.wang/>隶笔难书</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="复制";function s(){t.innerHTML="已复制！",setTimeout(()=>{t.innerHTML="复制"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>
