@@ -1,8 +1,8 @@
 baseURL: https://waite.wang
 title: 隶笔难书
 
-languageCode: zh
-DefaultContentLanguage: zh
+languageCode: zh-cn # en-us
+DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 theme: PaperMod
@@ -40,6 +40,13 @@ Params:
   ShowCodeCopyButtons: true
   ShowWordCount: true
   comments: false
+  ShowLastMod: true  # 显示文章更新时间
+  ShowToc: true # 显示目录
+  TocOpen: true # 自动展开目录
+
+  assets:
+    favicon: "/images/favicon.ico"
+    
 
   homeInfoParams:
     title: "你好 👋"
@@ -50,9 +57,11 @@ Params:
       url: "https://github.com/Waite0603"
     - name: telegram
       url: "https://t.me/waite0603"
+    - name: email
+      url: "mailto:waite@waite.wang"
 
   editPost:
-    URL: "https://github.com/Waite0603/hugoBlog/edit/main/content"
+    URL: "https://github.com/Waite0603/HugoBlog/edit/main/content"
     Text: "在 GitHub 编辑"
     appendFilePath: true
 
@@ -74,9 +83,10 @@ markup:
     noClasses: false
     # anchorLineNos: true
     # codeFences: true
-    # guessSyntax: true
+    guessSyntax: true
     # lineNos: true
-    style: monokai
+    style: darcula
+
 
 menu:
   main:
