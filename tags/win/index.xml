@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Win on 隶笔难书</title><link>https://waite.wang/tags/win/</link><description>Recent content in Win on 隶笔难书</description><generator>Hugo -- 0.140.1</generator><language>zh</language><lastBuildDate>Sun, 24 Sep 2023 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/win/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows11家庭中文版系统安装Docker</title><link>https://waite.wang/posts/win/win11-install-docker/</link><pubDate>Sun, 24 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/win11-install-docker/</guid><description>&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Win on 隶笔难书</title><link>https://waite.wang/tags/win/</link><description>Recent content in Win on 隶笔难书</description><generator>Hugo -- 0.140.1</generator><language>zh-cn</language><lastBuildDate>Sun, 24 Sep 2023 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/win/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows11家庭中文版系统安装Docker</title><link>https://waite.wang/posts/win/win11-install-docker/</link><pubDate>Sun, 24 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/win11-install-docker/</guid><description>&lt;hr>
 &lt;p>title: Windows11家庭中文版系统安装Docker
 id: a293d46a-9b4e-4e42-8bbc-0bcec5c21662
 date: 2023-09-24 22:29:15
@@ -32,11 +32,16 @@ cover:&lt;/p>
 &lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/20230903163805.png">&lt;/p></description></item><item><title>基于 Win10 管理员权限不足的升权操作</title><link>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</guid><description>&lt;blockquote>
 &lt;p>&lt;strong>首先由于 Win10 家庭版没有 gpedit.msc (本地策略组编辑器), cmd 以下代码将电脑模拟为 专业版&lt;/strong>&lt;/p>
 &lt;/blockquote>
-&lt;pre tabindex="0">&lt;code>@echo off
-pushd &amp;#34;%~dp0&amp;#34;
-dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt
-dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt
-for /f %%i in (&amp;#39;findstr /i . List.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;C:\Windows\servicing\Packages\%%i&amp;#34;
-pause
-&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">@echo off
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pushd &amp;#34;%~dp0&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &amp;gt;List.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &amp;gt;&amp;gt;List.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">for /f %%i in (&amp;#39;findstr /i . List.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;C:\Windows\servicing\Packages\%%i&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;strong>Win + R 打开 gpedit.msc, 将 &amp;ldquo;以管理员批准模式运行所有管理员&lt;/strong>&lt;/p></description></item></channel></rss>
