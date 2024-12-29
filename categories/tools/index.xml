@@ -16,15 +16,33 @@
 &lt;ol>
 &lt;li>注册实名 2. 对象存储, 新建空间&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="1" loading="lazy" src="http://qiniu.waite.wang/1.png">&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="http://qiniu.waite.wang/1.png">
+&lt;img src="http://qiniu.waite.wang/1.png" alt="1" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
 &lt;ol start="3">
 &lt;li>选择离你最近的存储区域(建议服务器哪的就选哪个区) 访问控制选择公有&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="image-20230529224621032" loading="lazy" src="http://qiniu.waite.wang/image-20230529224621032.png">&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="http://qiniu.waite.wang/image-20230529224621032.png">
+&lt;img src="http://qiniu.waite.wang/image-20230529224621032.png" alt="image-20230529224621032" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
 &lt;ol start="4">
 &lt;li>个人中心 &amp;gt; 密钥管理 &amp;gt; 复制待用&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img alt="image-20230529224726314" loading="lazy" src="http://qiniu.waite.wang/image-20230529224726314.png">&lt;/p></description></item><item><title>Alist 美化指南</title><link>https://waite.wang/posts/tools/alist-beautiful-guide/</link><pubDate>Thu, 22 Jun 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/tools/alist-beautiful-guide/</guid><description>&lt;h2 id="窗口透明">窗口透明&lt;/h2>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="http://qiniu.waite.wang/image-20230529224726314.png">
+&lt;img src="http://qiniu.waite.wang/image-20230529224726314.png" alt="image-20230529224726314" />
+&lt;/a>
+&lt;/div>
+&lt;/p></description></item><item><title>Alist 美化指南</title><link>https://waite.wang/posts/tools/alist-beautiful-guide/</link><pubDate>Thu, 22 Jun 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/tools/alist-beautiful-guide/</guid><description>&lt;h2 id="窗口透明">窗口透明&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="nx">style&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nx">hope&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">ui&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">light&lt;/span>&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">background&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="nx">image&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">url&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;https://www.dmoe.cc/random.php&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">important&lt;/span>&lt;span class="p">;&lt;/span>

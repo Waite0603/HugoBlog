@@ -29,7 +29,13 @@ cover:&lt;/p>
 &lt;li>此电脑 -&amp;gt; 右键属性 -&amp;gt; 高级系统设置&lt;/li>
 &lt;li>选择高级 -&amp;gt; 性能(设置) -&amp;gt; 高级 -&amp;gt; 虚拟内存 -&amp;gt; 更改&lt;/li>
 &lt;/ol>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/20230903163805.png">&lt;/p></description></item><item><title>基于 Win10 管理员权限不足的升权操作</title><link>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</guid><description>&lt;blockquote>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/20230903163805.png">
+&lt;img src="https://qiniu.waite.wang/20230903163805.png" alt="" />
+&lt;/a>
+&lt;/div>
+&lt;/p></description></item><item><title>基于 Win10 管理员权限不足的升权操作</title><link>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</guid><description>&lt;blockquote>
 &lt;p>&lt;strong>首先由于 Win10 家庭版没有 gpedit.msc (本地策略组编辑器), cmd 以下代码将电脑模拟为 专业版&lt;/strong>&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">@echo off
