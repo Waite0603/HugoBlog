@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 隶笔难书</title><link>https://waite.wang/posts/</link><description>Recent content in Posts on 隶笔难书</description><generator>Hugo -- 0.140.1</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Dec 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://waite.wang/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>博客迁移小记</title><link>https://waite.wang/posts/blog/first-post-in-hugo/</link><pubDate>Sat, 28 Dec 2024 11:30:03 +0000</pubDate><guid>https://waite.wang/posts/blog/first-post-in-hugo/</guid><description>这里是副标题.</description></item><item><title>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</title><link>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</link><pubDate>Fri, 27 Dec 2024 22:02:05 +0800</pubDate><guid>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</guid><description>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</description></item><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http">HTTP&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 隶笔难书</title><link>https://waite.wang/posts/</link><description>Recent content in Posts on 隶笔难书</description><generator>Hugo -- 0.140.2</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Dec 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://waite.wang/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>博客迁移小记</title><link>https://waite.wang/posts/blog/first-post-in-hugo/</link><pubDate>Sat, 28 Dec 2024 11:30:03 +0000</pubDate><guid>https://waite.wang/posts/blog/first-post-in-hugo/</guid><description>这里是副标题.</description></item><item><title>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</title><link>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</link><pubDate>Fri, 27 Dec 2024 22:02:05 +0800</pubDate><guid>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</guid><description>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</description></item><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http">HTTP&lt;/h1>
 &lt;!-- raw HTML omitted -->
 &lt;ul>
 &lt;li>[HTTP&lt;/li>
@@ -114,7 +114,77 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="常用方法">常用方法&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/web/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置">集成editorconfig配置&lt;/h2>
+&lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item><item><title>uniapp+vite+vue3+ts配置eslint代码检查及prettier规范检查</title><link>https://waite.wang/posts/mini-program/create-uniapp-standard/</link><pubDate>Thu, 02 May 2024 20:49:12 +0800</pubDate><guid>https://waite.wang/posts/mini-program/create-uniapp-standard/</guid><description>这里是副标题.</description></item><item><title>鸿蒙学习笔记3</title><link>https://waite.wang/posts/harmony/learn-harmony-3/</link><pubDate>Sat, 06 Apr 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-3/</guid><description>&lt;h2 id="stage-模型">Stage 模型&lt;/h2>
+&lt;p>&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2">https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2&lt;/a>&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404271535958.png">
+&lt;img src="https://qiniu.waite.wang/202404271535958.png" alt="" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
+&lt;blockquote>
+&lt;p>一个应用只能有一个 @EntryAbility，但可以有多个 @PageAbility。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="stage模型目录结构">（Stage模型）目录结构&lt;/h3>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404181340550.png">
+&lt;img src="https://qiniu.waite.wang/202404181340550.png" alt="" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
+&lt;ul>
+&lt;li>AppScope &amp;gt; app.json5：应用的全局配置信息。&lt;/li>
+&lt;li>entry：HarmonyOS工程模块，编译构建生成一个HAP包。
+&lt;ul>
+&lt;li>src &amp;gt; main &amp;gt; ets：用于存放ArkTS源码。
+src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。&lt;/li>
+&lt;li>src &amp;gt; main &amp;gt; ets &amp;gt; pages：应用/服务包含的页面&lt;/li>
+&lt;li>src &amp;gt; main &amp;gt; resources：用于存放应用/服务所用到的资源文件，如图形、多媒体、字符串、布局文件等。关于资源文件，详见资源分类与访问。&lt;/li>
+&lt;li>src &amp;gt; main &amp;gt; module.json5：Stage模型模块配置文件。主要包含HAP包的配置信息、应用/服务在具体设备上的配置信息以及应用/服务的全局配置信息。具体的配置文件说明，详见&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/module-configuration-file-0000001427744540-V2">module.json5配置文件&lt;/a>。&lt;/li>
+&lt;li>build-profile.json5：当前的模块信息、编译信息配置项，包括buildOption、targets配置等。其中targets中可配置当前运行环境，默认为HarmonyOS。&lt;/li>
+&lt;li>hvigorfile.ts：模块级编译构建任务脚本，开发者可以自定义相关任务和代码实现。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>oh_modules：用于存放三方库依赖信息。关于原npm工程适配ohpm操作，请参考历史工程迁移。&lt;/li>
+&lt;li>build-profile.json5：应用级配置信息，包括签名、产品配置等。&lt;/li>
+&lt;li>hvigorfile.ts：应用级编译构建任务脚本。&lt;/li>
+&lt;/ul>
+&lt;h3 id="应用配置文件">应用配置文件&lt;/h3>
+&lt;p>&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2">https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2&lt;/a>&lt;/p></description></item><item><title>鸿蒙学习笔记2</title><link>https://waite.wang/posts/harmony/learn-harmony-2/</link><pubDate>Fri, 29 Mar 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-2/</guid><description>&lt;h2 id="页面路由">页面路由&lt;/h2>
+&lt;p>页面路由指在应用程序中实现不同页面之间的跳转和数据传递。HarmonyOS提供了Router模块，通过不同的url地址，可以方便地进行页面路由，轻松地访问不同的页面。&lt;/p></description></item><item><title>鸿蒙学习笔记1</title><link>https://waite.wang/posts/harmony/learn-harmony-1/</link><pubDate>Sat, 23 Mar 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-1/</guid><description>&lt;h2 id="编辑器安装">编辑器安装&lt;/h2>
+&lt;h3 id="安装">安装&lt;/h3>
+&lt;ol>
+&lt;li>&lt;a href="https://developer.huawei.com/consumer/cn/deveco-studio/#download">下载安装包&lt;/a>&lt;/li>
+&lt;li>正常安装包, 下一步安装&lt;/li>
+&lt;/ol>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404171217774.png">
+&lt;img src="https://qiniu.waite.wang/202404171217774.png" alt="image-20240417121723826" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
+&lt;ol start="3">
+&lt;li>配置开发环境&lt;/li>
+&lt;/ol>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404171218425.png">
+&lt;img src="https://qiniu.waite.wang/202404171218425.png" alt="image-20240417121810196" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
+&lt;p>选择 Agree, 进入配置选择页面, 选择不导入配置&lt;/p>
+&lt;p>
+&lt;div class="post-img-view">
+&lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404171218109.png">
+&lt;img src="https://qiniu.waite.wang/202404171218109.png" alt="image-20240417121841096" />
+&lt;/a>
+&lt;/div>
+&lt;/p>
+&lt;p>选择要安装的Node.is和hpm位置，其中ohpm是Open Harmony Package Management的缩写，也就是类似npm的包管理工具。这里有几点注意事项:&lt;/p></description></item><item><title>UniApp 入门</title><link>https://waite.wang/posts/mini-program/learn-uniapp-1/</link><pubDate>Sat, 02 Mar 2024 20:46:38 +0800</pubDate><guid>https://waite.wang/posts/mini-program/learn-uniapp-1/</guid><description>UniApp 学习笔记</description></item><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/web/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置">集成editorconfig配置&lt;/h2>
 &lt;p>EditorConfig 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># http://editorconfig.org&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
@@ -363,7 +433,7 @@ cover:&lt;/p>
 &lt;img src="https://qiniu.waite.wang/20230903163805.png" alt="" />
 &lt;/a>
 &lt;/div>
-&lt;/p></description></item><item><title>gcc 安装 + vscode 搭建</title><link>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</guid><description>&lt;h2 id="安装-mingw">安装 MinGW&lt;/h2>
+&lt;/p></description></item><item><title>初识 Django</title><link>https://waite.wang/posts/python/learn-django-1/</link><pubDate>Sat, 02 Sep 2023 20:40:50 +0800</pubDate><guid>https://waite.wang/posts/python/learn-django-1/</guid><description>Django 是一个高级的 Python Web 框架，它鼓励快速开发和干净、实用的设计。</description></item><item><title>gcc 安装 + vscode 搭建</title><link>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/gcc-install-and-use-in-vscode/</guid><description>&lt;h2 id="安装-mingw">安装 MinGW&lt;/h2>
 &lt;p>MinGW（Minimalist GNU for Windows）, 是一个适用于微软windows应用程序的极简洁的开发环境。MinGW提供了一个完整的开源编程工具集，适用于原生MS-Windows应用程序的开发，并且不依赖于任何第三方C运行时DLL。MinGW主要供在MS-Windows平台上工作的开发人员使用，但也可跨平台使用。&lt;/p></description></item><item><title>TypeScript 入门</title><link>https://waite.wang/posts/web/ts-learn/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/ts-learn/</guid><description>&lt;h2 id="什么是-typescript">什么是 TypeScript&lt;/h2>
 &lt;ol>
 &lt;li>
@@ -453,7 +523,7 @@ cover:&lt;/p>
 &lt;p>服务端已开启 CORS 跨域支持&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>API V2 认证统一使用 Token 认证&lt;/p></description></item><item><title>Idea2023.2 创建 Servlet 项目</title><link>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</guid><description>&lt;h2 id="idea20232-创建-servlet-项目">Idea2023.2 创建 Servlet 项目&lt;/h2>
+&lt;p>API V2 认证统一使用 Token 认证&lt;/p></description></item><item><title>微信小程序入门</title><link>https://waite.wang/posts/mini-program/learn-wechat-minipro-1/</link><pubDate>Thu, 02 Mar 2023 20:52:46 +0800</pubDate><guid>https://waite.wang/posts/mini-program/learn-wechat-minipro-1/</guid><description>微信小程序学习笔记</description></item><item><title>Idea2023.2 创建 Servlet 项目</title><link>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</guid><description>&lt;h2 id="idea20232-创建-servlet-项目">Idea2023.2 创建 Servlet 项目&lt;/h2>
 &lt;h2 id="前期准备">前期准备&lt;/h2>
 &lt;ul>
 &lt;li>

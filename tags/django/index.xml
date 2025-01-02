@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Django on 隶笔难书</title><link>https://waite.wang/tags/django/</link><description>Recent content in Django on 隶笔难书</description><generator>Hugo -- 0.140.1</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Jun 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>Django自带 Auth 数据库扩展字段</title><link>https://waite.wang/posts/python/django-comes-with-auth-database/</link><pubDate>Sat, 22 Jun 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/django-comes-with-auth-database/</guid><description>&lt;h2 id="auth模块的介绍">auth模块的介绍&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Django on 隶笔难书</title><link>https://waite.wang/tags/django/</link><description>Recent content in Django on 隶笔难书</description><generator>Hugo -- 0.140.2</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Jun 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>Django自带 Auth 数据库扩展字段</title><link>https://waite.wang/posts/python/django-comes-with-auth-database/</link><pubDate>Sat, 22 Jun 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/django-comes-with-auth-database/</guid><description>&lt;h2 id="auth模块的介绍">auth模块的介绍&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>1、导包&lt;/p>
@@ -59,4 +59,4 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="常用方法">常用方法&lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item></channel></rss>
+&lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item><item><title>初识 Django</title><link>https://waite.wang/posts/python/learn-django-1/</link><pubDate>Sat, 02 Sep 2023 20:40:50 +0800</pubDate><guid>https://waite.wang/posts/python/learn-django-1/</guid><description>Django 是一个高级的 Python Web 框架，它鼓励快速开发和干净、实用的设计。</description></item></channel></rss>
