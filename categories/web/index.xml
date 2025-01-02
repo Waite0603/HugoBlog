@@ -45,7 +45,7 @@
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E4%BA%94%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8">五、具体应用&lt;/a>&lt;/p></description></item><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/web/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置">集成editorconfig配置&lt;/h2>
+&lt;p>&lt;a href="#%E4%BA%94%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8">五、具体应用&lt;/a>&lt;/p></description></item><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/vue/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置">集成editorconfig配置&lt;/h2>
 &lt;p>EditorConfig 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># http://editorconfig.org&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
@@ -62,7 +62,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="cp">*.md]&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 表示仅 md 文件适用以下规则&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">max_line_length = off&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">trim_trailing_whitespace = false&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>VSCode需要安装一个插件：EditorConfig for VS Code&lt;/p></description></item><item><title>Vue3 CompositionAPI</title><link>https://waite.wang/posts/web/vue3-compositionapi/</link><pubDate>Fri, 29 Dec 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue3-compositionapi/</guid><description>&lt;h2 id="options-api的弊端">Options API的弊端&lt;/h2>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>VSCode需要安装一个插件：EditorConfig for VS Code&lt;/p></description></item><item><title>Vue3 CompositionAPI</title><link>https://waite.wang/posts/vue/vue3-compositionapi/</link><pubDate>Fri, 29 Dec 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-compositionapi/</guid><description>&lt;h2 id="options-api的弊端">Options API的弊端&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>在Vue2中，我们编写组件的方式是Options API：&lt;/p>
@@ -87,9 +87,9 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">pinia&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createPinia&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">pinia&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">piniaPluginPersistedstate&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="关于全部缓存及部分缓存的说明">关于全部缓存及部分缓存的说明&lt;/h2>
-&lt;p>（1）将store的state中的全部数据进行缓存，直接在state同级下面添加persist对象&lt;/p></description></item><item><title>Vue3 基本指令(二)</title><link>https://waite.wang/posts/web/vue3-learn-2/</link><pubDate>Sun, 22 Oct 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue3-learn-2/</guid><description>&lt;blockquote>
+&lt;p>（1）将store的state中的全部数据进行缓存，直接在state同级下面添加persist对象&lt;/p></description></item><item><title>Vue3 基本指令(二)</title><link>https://waite.wang/posts/vue/vue3-learn-2/</link><pubDate>Sun, 22 Oct 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-2/</guid><description>&lt;blockquote>
 &lt;p>本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
-permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><title>邂逅 Vue3 开发(一)</title><link>https://waite.wang/posts/web/vue3-learn-1/</link><pubDate>Sat, 30 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue3-learn-1/</guid><description>&lt;blockquote>
+permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><title>邂逅 Vue3 开发(一)</title><link>https://waite.wang/posts/vue/vue3-learn-1/</link><pubDate>Sat, 30 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-1/</guid><description>&lt;blockquote>
 &lt;p>本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
 permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><title>cookie、session和localStorage的区别</title><link>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</guid><description>&lt;h2 id="概念的理解">概念的理解&lt;/h2>
 &lt;h3 id="webstorage本地存储">webstorage本地存储&lt;/h3>
@@ -234,7 +234,7 @@ permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><t
 &lt;p>nvm 可以快速的切换 nodejs 的版本&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="nvm-是什么">&lt;strong>nvm 是什么？&lt;/strong>&lt;/h2>
-&lt;p>nvm 是一个 node 的版本管理工具，可以简单操作 node 版本的切换、安装、查看。。。等等，与 npm 不同的是，npm 是依赖包的管理工具。&lt;/p></description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/web/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/vue2-core-learn/</guid><description>&lt;blockquote>
+&lt;p>nvm 是一个 node 的版本管理工具，可以简单操作 node 版本的切换、安装、查看。。。等等，与 npm 不同的是，npm 是依赖包的管理工具。&lt;/p></description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/vue/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue2-core-learn/</guid><description>&lt;blockquote>
 &lt;p>&lt;a href="https://v2.cn.vuejs.org/">https://v2.cn.vuejs.org/&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="简单使用">简单使用&lt;/h2>
