@@ -5,8 +5,8 @@ lastmod: 2023-11-22T21:05:54+08:00
 categories: ["Vue"]
 tags: ["Vue", "VueX"]
 author: "Waite Wang"
-showToc: false
-TocOpen: true
+showToc: true
+TocOpen: false
 draft: false
 hidemeta: false
 description: "Vue 学习笔记-VueX"
