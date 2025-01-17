@@ -5,47 +5,58 @@
 &lt;li>](#http)
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5">一 、基础概念&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%b8%80-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5" target="_blank" >一 、基础概念&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87">请求和响应报文&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#url">URL&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#%e8%af%b7%e6%b1%82%e5%92%8c%e5%93%8d%e5%ba%94%e6%8a%a5%e6%96%87" target="_blank" >请求和响应报文&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#url" target="_blank" >URL&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E4%BA%8Chttp-%E6%96%B9%E6%B3%95">二、HTTP 方法&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%ba%8chttp-%e6%96%b9%e6%b3%95" target="_blank" >二、HTTP 方法&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#get">GET&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#head">HEAD&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#post">POST&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#put">PUT&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#patch">PATCH&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#delete">DELETE&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#options">OPTIONS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#connect">CONNECT&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#trace">TRACE&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#get" target="_blank" >GET&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#head" target="_blank" >HEAD&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#post" target="_blank" >POST&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#put" target="_blank" >PUT&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#patch" target="_blank" >PATCH&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#delete" target="_blank" >DELETE&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#options" target="_blank" >OPTIONS&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#connect" target="_blank" >CONNECT&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#trace" target="_blank" >TRACE&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E4%B8%89http-%E7%8A%B6%E6%80%81%E7%A0%81">三、HTTP 状态码&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%b8%89http-%e7%8a%b6%e6%80%81%e7%a0%81" target="_blank" >三、HTTP 状态码&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#1xx-%E4%BF%A1%E6%81%AF">1XX 信息&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2xx-%E6%88%90%E5%8A%9F">2XX 成功&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3xx-%E9%87%8D%E5%AE%9A%E5%90%91">3XX 重定向&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#4xx-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF">4XX 客户端错误&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#5xx-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%94%99%E8%AF%AF">5XX 服务器错误&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#1xx-%e4%bf%a1%e6%81%af" target="_blank" >1XX 信息&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#2xx-%e6%88%90%e5%8a%9f" target="_blank" >2XX 成功&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#3xx-%e9%87%8d%e5%ae%9a%e5%90%91" target="_blank" >3XX 重定向&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#4xx-%e5%ae%a2%e6%88%b7%e7%ab%af%e9%94%99%e8%af%af" target="_blank" >4XX 客户端错误&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#5xx-%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af" target="_blank" >5XX 服务器错误&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E5%9B%9Bhttp-%E9%A6%96%E9%83%A8">四、HTTP 首部&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">通用首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E8%AF%B7%E6%B1%82%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">请求首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">响应首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%AE%9E%E4%BD%93%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">实体首部字段&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="#%E4%BA%94%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8">五、具体应用&lt;/a>&lt;/p></description></item><item><title>静态文档 Github 自动同步服务器</title><link>https://waite.wang/posts/tools/static-document-compilation-automatic-synchronization-server/</link><pubDate>Fri, 28 Jun 2024 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/static-document-compilation-automatic-synchronization-server/</guid><description>&lt;h1 id="vuepress-或部分静态文档自动同步服务器">Vuepress 或部分静态文档自动同步服务器&lt;/h1>
+&lt;p>
+&lt;a href="#%e5%9b%9bhttp-%e9%a6%96%e9%83%a8" target="_blank" >四、HTTP 首部&lt;/a>&lt;/p></description></item><item><title>静态文档 Github 自动同步服务器</title><link>https://waite.wang/posts/tools/static-document-compilation-automatic-synchronization-server/</link><pubDate>Fri, 28 Jun 2024 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/static-document-compilation-automatic-synchronization-server/</guid><description>&lt;h1 id="vuepress-或部分静态文档自动同步服务器">Vuepress 或部分静态文档自动同步服务器&lt;/h1>
 &lt;blockquote>
 &lt;p>使用 Github action 加服务器 git commit hash 匹配&lt;/p>
 &lt;p>本文以 Vuepress 为例子, 其他同理&lt;/p>
@@ -115,7 +126,8 @@
 &lt;ul>
 &lt;li>
 &lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item><item><title>uniapp+vite+vue3+ts配置eslint代码检查及prettier规范检查</title><link>https://waite.wang/posts/mini-program/create-uniapp-standard/</link><pubDate>Thu, 02 May 2024 20:49:12 +0800</pubDate><guid>https://waite.wang/posts/mini-program/create-uniapp-standard/</guid><description>这里是副标题.</description></item><item><title>鸿蒙学习笔记3</title><link>https://waite.wang/posts/harmony/learn-harmony-3/</link><pubDate>Sat, 06 Apr 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-3/</guid><description>&lt;h2 id="stage-模型">Stage 模型&lt;/h2>
-&lt;p>&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2">https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2" target="_blank" >https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2&lt;/a>&lt;/p>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202404271535958.png">
@@ -142,7 +154,8 @@
 src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。&lt;/li>
 &lt;li>src &amp;gt; main &amp;gt; ets &amp;gt; pages：应用/服务包含的页面&lt;/li>
 &lt;li>src &amp;gt; main &amp;gt; resources：用于存放应用/服务所用到的资源文件，如图形、多媒体、字符串、布局文件等。关于资源文件，详见资源分类与访问。&lt;/li>
-&lt;li>src &amp;gt; main &amp;gt; module.json5：Stage模型模块配置文件。主要包含HAP包的配置信息、应用/服务在具体设备上的配置信息以及应用/服务的全局配置信息。具体的配置文件说明，详见&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/module-configuration-file-0000001427744540-V2">module.json5配置文件&lt;/a>。&lt;/li>
+&lt;li>src &amp;gt; main &amp;gt; module.json5：Stage模型模块配置文件。主要包含HAP包的配置信息、应用/服务在具体设备上的配置信息以及应用/服务的全局配置信息。具体的配置文件说明，详见
+&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/module-configuration-file-0000001427744540-V2" target="_blank" >module.json5配置文件&lt;/a>。&lt;/li>
 &lt;li>build-profile.json5：当前的模块信息、编译信息配置项，包括buildOption、targets配置等。其中targets中可配置当前运行环境，默认为HarmonyOS。&lt;/li>
 &lt;li>hvigorfile.ts：模块级编译构建任务脚本，开发者可以自定义相关任务和代码实现。&lt;/li>
 &lt;/ul>
@@ -152,11 +165,13 @@ src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。
 &lt;li>hvigorfile.ts：应用级编译构建任务脚本。&lt;/li>
 &lt;/ul>
 &lt;h3 id="应用配置文件">应用配置文件&lt;/h3>
-&lt;p>&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2">https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2&lt;/a>&lt;/p></description></item><item><title>鸿蒙学习笔记2</title><link>https://waite.wang/posts/harmony/learn-harmony-2/</link><pubDate>Fri, 29 Mar 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-2/</guid><description>&lt;h2 id="页面路由">页面路由&lt;/h2>
+&lt;p>
+&lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2" target="_blank" >https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/14d_u7f6e_u6587_u4ef6_uff08stage_u6a21_u578b_uff09-0000001427902192-V2&lt;/a>&lt;/p></description></item><item><title>鸿蒙学习笔记2</title><link>https://waite.wang/posts/harmony/learn-harmony-2/</link><pubDate>Fri, 29 Mar 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-2/</guid><description>&lt;h2 id="页面路由">页面路由&lt;/h2>
 &lt;p>页面路由指在应用程序中实现不同页面之间的跳转和数据传递。HarmonyOS提供了Router模块，通过不同的url地址，可以方便地进行页面路由，轻松地访问不同的页面。&lt;/p></description></item><item><title>鸿蒙学习笔记1</title><link>https://waite.wang/posts/harmony/learn-harmony-1/</link><pubDate>Sat, 23 Mar 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-1/</guid><description>&lt;h2 id="编辑器安装">编辑器安装&lt;/h2>
 &lt;h3 id="安装">安装&lt;/h3>
 &lt;ol>
-&lt;li>&lt;a href="https://developer.huawei.com/consumer/cn/deveco-studio/#download">下载安装包&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="https://developer.huawei.com/consumer/cn/deveco-studio/#download" target="_blank" >下载安装包&lt;/a>&lt;/li>
 &lt;li>正常安装包, 下一步安装&lt;/li>
 &lt;/ol>
 &lt;p>
@@ -212,11 +227,13 @@ src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。
 &lt;/li>
 &lt;li>
 &lt;p>但是这种代码有一个很大的弊端：&lt;/p></description></item><item><title>七牛云 + Typora + PicGo</title><link>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</link><pubDate>Thu, 28 Dec 2023 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</guid><description>&lt;blockquote>
-&lt;p>Typora 免费版本: &lt;a href="https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe">https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe&lt;/a>&lt;/p>
+&lt;p>Typora 免费版本:
+&lt;a href="https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe">https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="七牛云">七牛云&lt;/h2>
 &lt;blockquote>
-&lt;p>七牛云: &lt;a href="https://www.qiniu.com/">https://www.qiniu.com/&lt;/a>&lt;/p>
+&lt;p>七牛云:
+&lt;a href="https://www.qiniu.com/" target="_blank" >https://www.qiniu.com/&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;ol>
 &lt;li>注册实名 2. 对象存储, 新建空间&lt;/li>
@@ -249,7 +266,7 @@ src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。
 &lt;/div>
 &lt;/p></description></item><item><title>Pinia 数据持久化储存（pinia-plugin-persistedstate）</title><link>https://waite.wang/posts/web/pinia-plugin-persistedstate/</link><pubDate>Wed, 22 Nov 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/pinia-plugin-persistedstate/</guid><description>&lt;p>pinia需要使用pinia-plugin-persistedstate插件来进行数据的存储
 插件官网地址：
-&lt;a href="https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html">https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html&lt;/a>&lt;/p>
+&lt;a href="https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html" target="_blank" >https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html&lt;/a>&lt;/p>
 &lt;h2 id="安装以及使用">安装以及使用&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm i pinia-plugin-persistedstate
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
@@ -286,7 +303,8 @@ cover:&lt;/p>
 &lt;/ol>
 &lt;h2 id="hyper-vr">Hyper-Vr&lt;/h2>
 &lt;blockquote>
-&lt;p>查看自己的系统, 如果你的系统跟我一样是window11家庭&lt;a href="https://so.csdn.net/so/search?q=%E4%B8%AD%E6%96%87%E7%89%88&amp;amp;spm=1001.2101.3001.7020">中文版&lt;/a>，则会找不到Hyper-Vr，这时则需要自己创建，讲下述代码复制在txt文本里，并重命名为Hyper.cmd，右键以管理员方式运行，最后输入“Y”重启电脑后即可。&lt;/p></description></item><item><title>cookie、session和localStorage的区别</title><link>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</guid><description>&lt;h2 id="概念的理解">概念的理解&lt;/h2>
+&lt;p>查看自己的系统, 如果你的系统跟我一样是window11家庭
+&lt;a href="https://so.csdn.net/so/search?q=%e4%b8%ad%e6%96%87%e7%89%88&amp;amp;spm=1001.2101.3001.7020" target="_blank" >中文版&lt;/a>，则会找不到Hyper-Vr，这时则需要自己创建，讲下述代码复制在txt文本里，并重命名为Hyper.cmd，右键以管理员方式运行，最后输入“Y”重启电脑后即可。&lt;/p></description></item><item><title>cookie、session和localStorage的区别</title><link>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</guid><description>&lt;h2 id="概念的理解">概念的理解&lt;/h2>
 &lt;h3 id="webstorage本地存储">webstorage本地存储&lt;/h3>
 &lt;ol>
 &lt;li>webstorage是本地存储，存储在客户端，包括localStorage和sessionStorage&lt;/li>
@@ -390,7 +408,7 @@ cover:&lt;/p>
 &lt;/p>
 &lt;blockquote>
 &lt;p>F12 得到接口&lt;br>
-&lt;a href="https://api.eol.cn/web/api/?local">https://api.eol.cn/web/api/?local&lt;/a>_batch_id=14&amp;amp;local_province_id=31&amp;amp;local_type_id=3&amp;amp;page=1&amp;amp;school_id=31&amp;amp;size=10&amp;amp;special_group=&amp;amp;uri=apidata/api/gk/score/special&amp;amp;year=2021&amp;amp;signsafe=6cdbc334a395abd2a99b9bd8cc29c42f&lt;br>
+&lt;a href="https://api.eol.cn/web/api/?local" target="_blank" >https://api.eol.cn/web/api/?local&lt;/a>_batch_id=14&amp;amp;local_province_id=31&amp;amp;local_type_id=3&amp;amp;page=1&amp;amp;school_id=31&amp;amp;size=10&amp;amp;special_group=&amp;amp;uri=apidata/api/gk/score/special&amp;amp;year=2021&amp;amp;signsafe=6cdbc334a395abd2a99b9bd8cc29c42f&lt;br>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202309151459515.png">
 &lt;img src="https://qiniu.waite.wang/202309151459515.png" alt="_20221027213021" />
@@ -417,7 +435,8 @@ cover:&lt;/p>
 &lt;/div>
 &lt;/p>
 &lt;p>以上看到，t就是请求中的signsafe参数。而且，函数中也出现了HmacSHA1、base64等方法。由此可知，定位的加密位置是正确的。接下来需要将加密函数抠下来改写，方便调用。下断点继续跟踪方法调用。跟踪v.a.enc.Utf8.parse方法，如下多次尝试, 最终试出&lt;/p></description></item><item><title>Win11 改虚拟内存到C盘之外的盘</title><link>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</link><pubDate>Sun, 03 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</guid><description>&lt;blockquote>
-&lt;p>参考 &lt;a href="https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c">https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c&lt;/a>&lt;/p>
+&lt;p>参考
+&lt;a href="https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c" target="_blank" >https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;blockquote>
 &lt;p>解决: WIN11无法把虚拟内存更改到其他盘，改完后重启显示由于启动页面文件配置的问题,然后虚拟内存又回c盘了&lt;/p>
@@ -541,7 +560,8 @@ cover:&lt;/p>
 &lt;/p></description></item><item><title>JSP 访问数据库</title><link>https://waite.wang/posts/jsp/jsp-connect-mysql/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/jsp-connect-mysql/</guid><description>&lt;h1 id="jsp-访问数据库">JSP 访问数据库&lt;/h1>
 &lt;h2 id="mysql-connector-java的jar包下载">mysql-connector-java的jar包下载&lt;/h2>
 &lt;ol>
-&lt;li>官方下载地址 &lt;a href="https://dev.mysql.com/downloads/connector/j/">https://dev.mysql.com/downloads/connector/j/&lt;/a>&lt;/li>
+&lt;li>官方下载地址
+&lt;a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" >https://dev.mysql.com/downloads/connector/j/&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>
 &lt;div class="post-img-view">
@@ -592,13 +612,16 @@ cover:&lt;/p>
 &lt;/p>
 &lt;p>官网地址：https://tomcat.apache.org/&lt;/p>
 &lt;p>我这里选择的是Tomcat9.0版本，大家可以选择自己需要的版本&lt;/p></description></item><item><title>hadoop的安装与配置</title><link>https://waite.wang/posts/bigdata/hadoop-install-and-config/</link><pubDate>Mon, 10 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/bigdata/hadoop-install-and-config/</guid><description>hadoop的安装与配置</description></item><item><title>hadoop集群的安装与配置</title><link>https://waite.wang/posts/bigdata/hadoop-group-install-and-config/</link><pubDate>Mon, 10 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/bigdata/hadoop-group-install-and-config/</guid><description>hadoop集群的安装与配置</description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/vue/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue2-core-learn/</guid><description>&lt;blockquote>
-&lt;p>&lt;a href="https://v2.cn.vuejs.org/">https://v2.cn.vuejs.org/&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://v2.cn.vuejs.org/" target="_blank" >https://v2.cn.vuejs.org/&lt;/a>&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="简单使用">简单使用&lt;/h2>
 &lt;blockquote>
-&lt;p>&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html">https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html" target="_blank" >https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a>&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%E7%9B%B4%E6%8E%A5%E7%94%A8-lt-script-gt-%E5%BC%95%E5%85%A5">&lt;strong>直接用 script 引入&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%e7%9b%b4%e6%8e%a5%e7%94%a8-lt-script-gt-%e5%bc%95%e5%85%a5" target="_blank" >&lt;strong>直接用 script 引入&lt;/strong>&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>直接下载并用 &lt;!-- raw HTML omitted --> 标签引入，&lt;code>Vue&lt;/code> 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)&lt;/p></description></item></channel></rss>

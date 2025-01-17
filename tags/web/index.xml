@@ -5,47 +5,58 @@
 &lt;li>](#http)
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5">一 、基础概念&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%b8%80-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5" target="_blank" >一 、基础概念&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87">请求和响应报文&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#url">URL&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#%e8%af%b7%e6%b1%82%e5%92%8c%e5%93%8d%e5%ba%94%e6%8a%a5%e6%96%87" target="_blank" >请求和响应报文&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#url" target="_blank" >URL&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E4%BA%8Chttp-%E6%96%B9%E6%B3%95">二、HTTP 方法&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%ba%8chttp-%e6%96%b9%e6%b3%95" target="_blank" >二、HTTP 方法&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#get">GET&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#head">HEAD&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#post">POST&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#put">PUT&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#patch">PATCH&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#delete">DELETE&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#options">OPTIONS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#connect">CONNECT&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#trace">TRACE&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#get" target="_blank" >GET&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#head" target="_blank" >HEAD&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#post" target="_blank" >POST&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#put" target="_blank" >PUT&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#patch" target="_blank" >PATCH&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#delete" target="_blank" >DELETE&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#options" target="_blank" >OPTIONS&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#connect" target="_blank" >CONNECT&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#trace" target="_blank" >TRACE&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E4%B8%89http-%E7%8A%B6%E6%80%81%E7%A0%81">三、HTTP 状态码&lt;/a>&lt;/p>
+&lt;p>
+&lt;a href="#%e4%b8%89http-%e7%8a%b6%e6%80%81%e7%a0%81" target="_blank" >三、HTTP 状态码&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="#1xx-%E4%BF%A1%E6%81%AF">1XX 信息&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2xx-%E6%88%90%E5%8A%9F">2XX 成功&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3xx-%E9%87%8D%E5%AE%9A%E5%90%91">3XX 重定向&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#4xx-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF">4XX 客户端错误&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#5xx-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%94%99%E8%AF%AF">5XX 服务器错误&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#1xx-%e4%bf%a1%e6%81%af" target="_blank" >1XX 信息&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#2xx-%e6%88%90%e5%8a%9f" target="_blank" >2XX 成功&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#3xx-%e9%87%8d%e5%ae%9a%e5%90%91" target="_blank" >3XX 重定向&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#4xx-%e5%ae%a2%e6%88%b7%e7%ab%af%e9%94%99%e8%af%af" target="_blank" >4XX 客户端错误&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="#5xx-%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af" target="_blank" >5XX 服务器错误&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="#%E5%9B%9Bhttp-%E9%A6%96%E9%83%A8">四、HTTP 首部&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">通用首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E8%AF%B7%E6%B1%82%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">请求首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">响应首部字段&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#%E5%AE%9E%E4%BD%93%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5">实体首部字段&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="#%E4%BA%94%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8">五、具体应用&lt;/a>&lt;/p></description></item><item><title>cookie、session和localStorage的区别</title><link>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</guid><description>&lt;h2 id="概念的理解">概念的理解&lt;/h2>
+&lt;p>
+&lt;a href="#%e5%9b%9bhttp-%e9%a6%96%e9%83%a8" target="_blank" >四、HTTP 首部&lt;/a>&lt;/p></description></item><item><title>cookie、session和localStorage的区别</title><link>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/difference-between-cookie-session-localstorage/</guid><description>&lt;h2 id="概念的理解">概念的理解&lt;/h2>
 &lt;h3 id="webstorage本地存储">webstorage本地存储&lt;/h3>
 &lt;ol>
 &lt;li>webstorage是本地存储，存储在客户端，包括localStorage和sessionStorage&lt;/li>
