@@ -46,7 +46,7 @@ body {
   &::-webkit-scrollbar {
     width: 12px;
     /* 滚动条的宽度 */
-    height: 12px;
+    height: 6px;
     /* 滚动条的高度 */
   }
 
