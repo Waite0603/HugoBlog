@@ -1,0 +1,5 @@
+<!-- 让站外链接统统是新窗口打开 -->
+<a href="{{ .Destination | safeURL }}" {{- with .Title }} title="{{ . }}" {{ end -}} {{- if not (in
+  .Destination "waite.wang" ) }} target="_blank" {{ end -}}>
+  {{- with .Text | safeHTML }}{{ . }}{{ end -}}
+</a>

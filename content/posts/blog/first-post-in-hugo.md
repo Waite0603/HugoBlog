@@ -1,6 +1,8 @@
 ---
 title: "博客迁移小记"
 date: 2024-12-28T11:30:03+00:00
+lastmod: 2024-12-29T11:30:03+00:00
+showLastMod: true
 categories: ["Blog"]
 tags: ["Blog"]
 author: "Waite Wang"
