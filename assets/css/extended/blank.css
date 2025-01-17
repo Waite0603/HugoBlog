@@ -41,6 +41,31 @@ body {
   /* 兼容日夜显示模式 */
 }
 
+.post-content pre code {
+  /* 自定义滚动条样式 */
+  &::-webkit-scrollbar {
+    width: 12px;
+    /* 滚动条的宽度 */
+    height: 12px;
+    /* 滚动条的高度 */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #D4CDC6;
+    /* 滚动条滑块的背景颜色 */
+    border-radius: 6px;
+    /* 滑块的圆角 */
+    border: none;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* 滚动条轨道的背景颜色 */
+    border-radius: 6px;
+  }
+}
+
 .paginav {
   margin-bottom: 45px;
 }

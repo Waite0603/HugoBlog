@@ -54,7 +54,8 @@ Params:
     title: "Waite's Blog"
     content: |
       隶笔难书, 但总要写点什么✍🏻.  
-      欢迎来我的博客逛逛, 希望你能在这里找到些有用的内容.
+      欢迎来我的博客逛逛, 希望你能在这里找到些有用的内容.  
+      你可以通过以下任意一种方式🤙🏻我:
 
   socialIcons:
     - name: github
