@@ -51,8 +51,10 @@ Params:
     
 
   homeInfoParams:
-    title: "你好 👋"
-    content: "嘿，我是Waite Wang，欢迎来我的博客逛逛，希望你能在这里找到些有用的内容."
+    title: "Waite's Blog"
+    content: |
+      隶笔难书, 但总要写点什么✍🏻.  
+      欢迎来我的博客逛逛, 希望你能在这里找到些有用的内容.
 
   socialIcons:
     - name: github
@@ -61,7 +63,8 @@ Params:
       url: "https://t.me/waite0603"
     - name: email
       url: "mailto:waite@waite.wang"
-
+    - name: "rss"
+      url: "/index.xml"
   editPost:
     URL: "https://github.com/Waite0603/HugoBlog/edit/main/content"
     Text: "在 GitHub 编辑"

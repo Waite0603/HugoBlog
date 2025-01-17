@@ -1,12 +1,17 @@
 @font-face {
   font-family: "LXGWWenKaiScreenR";
-  src: url("/fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2");
+  src: url("/fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2") format("woff2");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen,
-    Ubuntu, Cantarell, "LXGWWenKaiScreenR", open sans, helvetica neue,
-    sans-serif;
+  font-family: var(--main-font), -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen,
+    Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   font-size: 18px;
   line-height: 1.6;
   word-break: break-word;
@@ -14,13 +19,15 @@ body {
   font-display: swap;
 }
 
-code {
-  font-family: "Consolas", "LXGWWenKaiScreenR";
+.first-entry {
+  min-height: 300px;
+  margin: 0;
 }
 
-.first-entry {
-  min-height: 220px;
-  margin: 0;
+.social-icons a {
+  display: inline-flex;
+  padding: 0px;
+  margin-inline-end: 14px;
 }
 
 
@@ -42,6 +49,7 @@ code {
   --nav-width: 1380px;
   --article-width: 650px;
   --toc-width: 300px;
+  --main-font: "LXGWWenKaiScreenR";
 }
 
 .toc {
@@ -50,6 +58,24 @@ code {
   background: var(--entry);
   border-radius: var(--radius);
   padding: 0.4em;
+}
+
+/* 文章图片居中 */
+.post-content img {
+  margin: auto;
+}
+
+/* 文章&评论图片和代码块四角圆滑 */
+.post-single img,
+.post-content pre {
+  border-radius: 0.3em;
+}
+
+/* 文章超链接蓝底样式 */
+.post-content a:not(.anchor) {
+  box-shadow: none;
+  text-decoration: none;
+  background: linear-gradient(to bottom, transparent 70%, rgba(154, 136, 120, 0.425) 70%);
 }
 
 .toc-container.wide {
