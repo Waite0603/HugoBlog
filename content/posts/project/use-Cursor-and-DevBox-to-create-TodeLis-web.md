@@ -13,6 +13,8 @@ draft: false
 > Devbox 地址：https://cloud.sealos.run/?uid=Kt1gH3_BTa
 >
 > Cursor 地址: https://www.cursor.com/settings
+>
+> Cursor 规则文档: https://cursorrules.cursorauto.me/
 
 ## 创建数据库和初始项目
 

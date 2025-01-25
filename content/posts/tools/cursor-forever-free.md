@@ -1,7 +1,7 @@
 ---
 title: "Cursor 无限续杯方案"
 date: 2025-01-12T20:55:23+08:00
-lastmod: 2025-01-12T20:55:23+08:00
+lastmod: 2025-01-25T20:55:23+08:00
 categories: ["Blog"]
 tags: ["Blog"]
 author: "Waite Wang"
@@ -172,3 +172,38 @@ if __name__ == "__main__":
         browser_manager.set_browser_path("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
         browser = browser_manager.init_browser()
 ```
+
+## 关于禁用 Cursor 的自动更新
+
+> 注意以下实现的时间点是 2025-01-25 21:50:00
+>
+> 未来的更改版本的破解可能性关注[go-cursor-help](https://github.com/yuaotian/go-cursor-help)
+
+Cursor 的自动更新功能，会自动更新到最新版本，在 0.45 版本后，Cursor 的机器码检测机制已经更新，所以需要禁用自动更新。
+
+### 在Curosr编辑器中关闭Cursor自动更新
+
+通过点击右上角的Cursor的设置按钮，进入到Cursor的功能设置页面。
+
+![](https://qiniu.waite.wang/202501252148161.png)
+
+![](https://qiniu.waite.wang/202501252148299.png)
+
+![](https://qiniu.waite.wang/202501252149876.png)
+
+> 如果你只是进行了以上的步骤，那么你只是表面禁止了Curosr的自动更新，实际上当你关闭Cursor编辑器后，它还是会自动检测是否有新版本更新，并且会进行自动更新
+
+### 在Cursor相关目录下，禁止Cursor自动更新
+
+#### 删除Cursor的更新缓存文件夹
+
+以Windows为例，Cursor更新缓存文件夹路径为`C:\Users\{你的用户名}\AppData\Local\cursor-updater`
+找到这个cursor-updater文件夹，直接把整个文件夹删除掉，建议先将整个文件夹打包压缩，进行备份操作，我这里的压缩包取名为cursor-updater-bak, 在这个目录下，新建一个文件，去掉后缀名，取名为cursor-updater（这里主要是占位文件）
+
+#### 禁止Cursor自动更新
+
+- 进入Cursor安装目录，windows位置为`C:\Users\{你的用户名}\AppData\Local\Cursor`
+- 进入目录中的resources文件夹, 把 resources 目录里的 app-update.yml 改名为 app-update.yml.bak。之后新建文本文档, 将新文件名称改为 app-update.yml
+- 选中app-update.yml文件，鼠标右键 -> 属性，勾选"只读"，点击确定
+
+> 通过完成上面的设置，恭喜你，已经成功禁止了Cursor的自动更新！

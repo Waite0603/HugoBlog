@@ -100,7 +100,12 @@ body {
 .post-content a:not(.anchor) {
   box-shadow: none;
   text-decoration: none;
-  background: linear-gradient(to bottom, transparent 70%, rgba(154, 136, 120, 0.425) 70%);
+  background: linear-gradient(to bottom, transparent 85%, rgb(189, 190, 191) 85%);
+}
+
+/* 文章超链接蓝底样式 hover */
+.post-content a:not(.anchor):hover {
+  background: linear-gradient(to bottom, transparent 85%, rgb(125, 203, 215) 85%);
 }
 
 .toc-container.wide {
