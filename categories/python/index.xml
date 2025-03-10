@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Python on 隶笔难书</title><link>https://waite.wang/categories/python/</link><description>Recent content in Python on 隶笔难书</description><generator>Hugo -- 0.142.0</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Jun 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Django自带 Auth 数据库扩展字段</title><link>https://waite.wang/posts/python/django-comes-with-auth-database/</link><pubDate>Sat, 22 Jun 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/django-comes-with-auth-database/</guid><description>&lt;h2 id="auth模块的介绍">auth模块的介绍&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Python on 隶笔难书</title><link>https://waite.wang/categories/python/</link><description>Recent content in Python on 隶笔难书</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Jun 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Django自带 Auth 数据库扩展字段</title><link>https://waite.wang/posts/python/django-comes-with-auth-database/</link><pubDate>Sat, 22 Jun 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/django-comes-with-auth-database/</guid><description>&lt;h2 id="auth模块的介绍">auth模块的介绍&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>1、导包&lt;/p>
@@ -60,8 +60,7 @@
 &lt;ul>
 &lt;li>
 &lt;p>1、&lt;code>authenticate()&lt;/code>用来校验用户名及密码&lt;/p></description></item><item><title>某高考平台逆向</title><link>https://waite.wang/posts/python/cawler-from-zhangshang-college-page/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/cawler-from-zhangshang-college-page/</guid><description>&lt;blockquote>
-&lt;p>以下代码取的是院校专业分数线&lt;/p>
-&lt;/blockquote>
+&lt;p>以下代码取的是院校专业分数线&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202309151459082.png">
@@ -84,12 +83,10 @@
 &lt;img src="https://qiniu.waite.wang/202309151459905.png" alt="_20221027213205" />
 &lt;/a>
 &lt;/div>
-&lt;/p>
-&lt;/blockquote>
+&lt;/p>&lt;/blockquote>
 &lt;h3 id="signsafe-数据加密签名获取">signsafe 数据加密签名获取&lt;/h3>
 &lt;blockquote>
-&lt;p>搜索 锁定 signsafe 字段以及加密&lt;/p>
-&lt;/blockquote>
+&lt;p>搜索 锁定 signsafe 字段以及加密&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202309151459897.png">

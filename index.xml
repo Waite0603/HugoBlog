@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>隶笔难书</title><link>https://waite.wang/</link><description>Recent content on 隶笔难书</description><generator>Hugo -- 0.142.0</generator><language>zh-cn</language><lastBuildDate>Sat, 25 Jan 2025 20:55:23 +0800</lastBuildDate><atom:link href="https://waite.wang/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 无限续杯方案</title><link>https://waite.wang/posts/tools/cursor-forever-free/</link><pubDate>Sun, 12 Jan 2025 20:55:23 +0800</pubDate><guid>https://waite.wang/posts/tools/cursor-forever-free/</guid><description>Cursor 无限续杯.</description></item><item><title>博客迁移小记</title><link>https://waite.wang/posts/blog/first-post-in-hugo/</link><pubDate>Sat, 28 Dec 2024 11:30:03 +0000</pubDate><guid>https://waite.wang/posts/blog/first-post-in-hugo/</guid><description>这里是副标题.</description></item><item><title>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</title><link>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</link><pubDate>Fri, 27 Dec 2024 22:02:05 +0800</pubDate><guid>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</guid><description>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</description></item><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http">HTTP&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>隶笔难书</title><link>https://waite.wang/</link><description>Recent content on 隶笔难书</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Sat, 25 Jan 2025 20:55:23 +0800</lastBuildDate><atom:link href="https://waite.wang/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 无限续杯方案</title><link>https://waite.wang/posts/tools/cursor-forever-free/</link><pubDate>Sun, 12 Jan 2025 20:55:23 +0800</pubDate><guid>https://waite.wang/posts/tools/cursor-forever-free/</guid><description>Cursor 无限续杯.</description></item><item><title>博客迁移小记</title><link>https://waite.wang/posts/blog/first-post-in-hugo/</link><pubDate>Sat, 28 Dec 2024 11:30:03 +0000</pubDate><guid>https://waite.wang/posts/blog/first-post-in-hugo/</guid><description>这里是副标题.</description></item><item><title>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</title><link>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</link><pubDate>Fri, 27 Dec 2024 22:02:05 +0800</pubDate><guid>https://waite.wang/posts/project/use-cursor-and-devbox-to-create-todelis-web/</guid><description>使用Cursor+DevBox 从零创建一个 TodeList 网页应用</description></item><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http">HTTP&lt;/h1>
 &lt;ul>
 &lt;li>[HTTP&lt;/li>
 &lt;li>](#http)
@@ -59,8 +59,7 @@
 &lt;blockquote>
 &lt;p>使用 Github action 加服务器 git commit hash 匹配&lt;/p>
 &lt;p>本文以 Vuepress 为例子, 其他同理&lt;/p>
-&lt;p>请确保 服务器 安装 git 环境, 本文不再赘述&lt;/p>
-&lt;/blockquote>
+&lt;p>请确保 服务器 安装 git 环境, 本文不再赘述&lt;/p>&lt;/blockquote>
 &lt;h2 id="github-action">Github Action&lt;/h2>
 &lt;blockquote>
 &lt;p>原理: 通过 Github Action 工作流把代码编译并且部署到 gh_pages 分支&lt;/p></description></item><item><title>Django自带 Auth 数据库扩展字段</title><link>https://waite.wang/posts/python/django-comes-with-auth-database/</link><pubDate>Sat, 22 Jun 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/django-comes-with-auth-database/</guid><description>&lt;h2 id="auth模块的介绍">auth模块的介绍&lt;/h2>
@@ -135,8 +134,7 @@
 &lt;/div>
 &lt;/p>
 &lt;blockquote>
-&lt;p>一个应用只能有一个 @EntryAbility，但可以有多个 @PageAbility。&lt;/p>
-&lt;/blockquote>
+&lt;p>一个应用只能有一个 @EntryAbility，但可以有多个 @PageAbility。&lt;/p>&lt;/blockquote>
 &lt;h3 id="stage模型目录结构">（Stage模型）目录结构&lt;/h3>
 &lt;p>
 &lt;div class="post-img-view">
@@ -227,13 +225,11 @@ src &amp;gt; main &amp;gt; ets &amp;gt; entryability：应用/服务的入口。
 &lt;li>
 &lt;p>但是这种代码有一个很大的弊端：&lt;/p></description></item><item><title>七牛云 + Typora + PicGo</title><link>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</link><pubDate>Thu, 28 Dec 2023 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</guid><description>&lt;blockquote>
 &lt;p>Typora 免费版本:
-&lt;a href="https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe">https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe">https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="七牛云">七牛云&lt;/h2>
 &lt;blockquote>
 &lt;p>七牛云:
-&lt;a href="https://www.qiniu.com/" target="_blank" >https://www.qiniu.com/&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://www.qiniu.com/" target="_blank" >https://www.qiniu.com/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;ol>
 &lt;li>注册实名 2. 对象存储, 新建空间&lt;/li>
 &lt;/ol>
@@ -396,8 +392,7 @@ cover:&lt;/p>
 &lt;li>页面中一般的js对象的生存期仅在当前页面有效，因此刷新页面或转到另一页面这样的重新加载页面的情况，数据就不存在了&lt;/li>
 &lt;li>sessionStorage只要同源的同窗口中，刷新页面或进入同源的不同页面，数据始终存在，也就是说只要浏览器不关闭，数据仍然存在&lt;/li>
 &lt;/ol></description></item><item><title>某高考平台逆向</title><link>https://waite.wang/posts/python/cawler-from-zhangshang-college-page/</link><pubDate>Fri, 22 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/python/cawler-from-zhangshang-college-page/</guid><description>&lt;blockquote>
-&lt;p>以下代码取的是院校专业分数线&lt;/p>
-&lt;/blockquote>
+&lt;p>以下代码取的是院校专业分数线&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202309151459082.png">
@@ -420,12 +415,10 @@ cover:&lt;/p>
 &lt;img src="https://qiniu.waite.wang/202309151459905.png" alt="_20221027213205" />
 &lt;/a>
 &lt;/div>
-&lt;/p>
-&lt;/blockquote>
+&lt;/p>&lt;/blockquote>
 &lt;h3 id="signsafe-数据加密签名获取">signsafe 数据加密签名获取&lt;/h3>
 &lt;blockquote>
-&lt;p>搜索 锁定 signsafe 字段以及加密&lt;/p>
-&lt;/blockquote>
+&lt;p>搜索 锁定 signsafe 字段以及加密&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/202309151459897.png">
@@ -435,11 +428,9 @@ cover:&lt;/p>
 &lt;/p>
 &lt;p>以上看到，t就是请求中的signsafe参数。而且，函数中也出现了HmacSHA1、base64等方法。由此可知，定位的加密位置是正确的。接下来需要将加密函数抠下来改写，方便调用。下断点继续跟踪方法调用。跟踪v.a.enc.Utf8.parse方法，如下多次尝试, 最终试出&lt;/p></description></item><item><title>Win11 改虚拟内存到C盘之外的盘</title><link>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</link><pubDate>Sun, 03 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/modify-virtual-memory-to-other-disk/</guid><description>&lt;blockquote>
 &lt;p>参考
-&lt;a href="https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c" target="_blank" >https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c" target="_blank" >https://answers.microsoft.com/zh-hans/windows/forum/all/win11%E6%97%A0%E6%B3%95%E6%8A%8A%E8%99%9A%E6%8B%9F/50381a46-ce77-40f5-8bde-a9d01b361e6c&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>解决: WIN11无法把虚拟内存更改到其他盘，改完后重启显示由于启动页面文件配置的问题,然后虚拟内存又回c盘了&lt;/p>
-&lt;/blockquote>
+&lt;p>解决: WIN11无法把虚拟内存更改到其他盘，改完后重启显示由于启动页面文件配置的问题,然后虚拟内存又回c盘了&lt;/p>&lt;/blockquote>
 &lt;h2 id="分页文件更改">分页文件更改&lt;/h2>
 &lt;ol>
 &lt;li>此电脑 -&amp;gt; 右键属性 -&amp;gt; 高级系统设置&lt;/li>
@@ -456,8 +447,7 @@ cover:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>TypeScript既是一种语言又是一组工具。TypeScript是JavaScript的一个超集。换句话说，TypeScript是JavaScript加上一些额外的功能。&lt;/p></description></item><item><title>基于 Win10 管理员权限不足的升权操作</title><link>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/power-up-operation-based-on-insufficient-aministrator-uthority-in-win10/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>首先由于 Win10 家庭版没有 gpedit.msc (本地策略组编辑器), cmd 以下代码将电脑模拟为 专业版&lt;/strong>&lt;/p>
-&lt;/blockquote>
+&lt;p>&lt;strong>首先由于 Win10 家庭版没有 gpedit.msc (本地策略组编辑器), cmd 以下代码将电脑模拟为 专业版&lt;/strong>&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">@echo off
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pushd &amp;#34;%~dp0&amp;#34;
@@ -580,15 +570,13 @@ cover:&lt;/p>
 &lt;/div>
 &lt;/p>
 &lt;blockquote>
-&lt;p>记得导入, 不然会报错&lt;/p>
-&lt;/blockquote>
+&lt;p>记得导入, 不然会报错&lt;/p>&lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;%&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">page&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">import&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;java.sql.*&amp;#34;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">%&amp;gt;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="基本用法">基本用法&lt;/h2>
 &lt;h3 id="连接mysql数据库">连接MySQL数据库&lt;/h3>
 &lt;p>在JSP中连接MySQL数据库的步骤如下：&lt;/p></description></item><item><title>nvm 的使用</title><link>https://waite.wang/posts/web/how-to-use-nvm/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/how-to-use-nvm/</guid><description>&lt;h1 id="nvm-的使用">&lt;strong>nvm 的使用&lt;/strong>&lt;/h1>
 &lt;blockquote>
-&lt;p>nvm 可以快速的切换 nodejs 的版本&lt;/p>
-&lt;/blockquote>
+&lt;p>nvm 可以快速的切换 nodejs 的版本&lt;/p>&lt;/blockquote>
 &lt;h2 id="nvm-是什么">&lt;strong>nvm 是什么？&lt;/strong>&lt;/h2>
 &lt;p>nvm 是一个 node 的版本管理工具，可以简单操作 node 版本的切换、安装、查看。。。等等，与 npm 不同的是，npm 是依赖包的管理工具。&lt;/p></description></item><item><title>Tomcat + Idea 配置及使用</title><link>https://waite.wang/posts/win/tomcat-idea-install/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/tomcat-idea-install/</guid><description>&lt;h2 id="jdk-安装">Jdk 安装&lt;/h2>
 &lt;p>
@@ -600,8 +588,7 @@ cover:&lt;/p>
 &lt;/p>
 &lt;h2 id="tomcat">Tomcat&lt;/h2>
 &lt;blockquote>
-&lt;p>注意 Tomcat 版本与 Jdk 匹配&lt;/p>
-&lt;/blockquote>
+&lt;p>注意 Tomcat 版本与 Jdk 匹配&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/20230906133609.png">
@@ -612,13 +599,11 @@ cover:&lt;/p>
 &lt;p>官网地址：https://tomcat.apache.org/&lt;/p>
 &lt;p>我这里选择的是Tomcat9.0版本，大家可以选择自己需要的版本&lt;/p></description></item><item><title>hadoop的安装与配置</title><link>https://waite.wang/posts/bigdata/hadoop-install-and-config/</link><pubDate>Mon, 10 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/bigdata/hadoop-install-and-config/</guid><description>hadoop的安装与配置</description></item><item><title>hadoop集群的安装与配置</title><link>https://waite.wang/posts/bigdata/hadoop-group-install-and-config/</link><pubDate>Mon, 10 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/bigdata/hadoop-group-install-and-config/</guid><description>hadoop集群的安装与配置</description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/vue/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue2-core-learn/</guid><description>&lt;blockquote>
 &lt;p>
-&lt;a href="https://v2.cn.vuejs.org/" target="_blank" >https://v2.cn.vuejs.org/&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://v2.cn.vuejs.org/" target="_blank" >https://v2.cn.vuejs.org/&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;h2 id="简单使用">简单使用&lt;/h2>
 &lt;blockquote>
 &lt;p>
-&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html" target="_blank" >https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html" target="_blank" >https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%e7%9b%b4%e6%8e%a5%e7%94%a8-lt-script-gt-%e5%bc%95%e5%85%a5" target="_blank" >&lt;strong>直接用 script 引入&lt;/strong>&lt;/a>&lt;/p>
 &lt;ol>

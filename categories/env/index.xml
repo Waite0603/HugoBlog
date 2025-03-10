@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Env on 隶笔难书</title><link>https://waite.wang/categories/env/</link><description>Recent content in Env on 隶笔难书</description><generator>Hugo -- 0.142.0</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Oct 2022 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/env/index.xml" rel="self" type="application/rss+xml"/><item><title>Tomcat + Idea 配置及使用</title><link>https://waite.wang/posts/win/tomcat-idea-install/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/tomcat-idea-install/</guid><description>&lt;h2 id="jdk-安装">Jdk 安装&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Env on 隶笔难书</title><link>https://waite.wang/categories/env/</link><description>Recent content in Env on 隶笔难书</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Sat, 22 Oct 2022 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/env/index.xml" rel="self" type="application/rss+xml"/><item><title>Tomcat + Idea 配置及使用</title><link>https://waite.wang/posts/win/tomcat-idea-install/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/tomcat-idea-install/</guid><description>&lt;h2 id="jdk-安装">Jdk 安装&lt;/h2>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/0_0_13.png">
@@ -8,8 +8,7 @@
 &lt;/p>
 &lt;h2 id="tomcat">Tomcat&lt;/h2>
 &lt;blockquote>
-&lt;p>注意 Tomcat 版本与 Jdk 匹配&lt;/p>
-&lt;/blockquote>
+&lt;p>注意 Tomcat 版本与 Jdk 匹配&lt;/p>&lt;/blockquote>
 &lt;p>
 &lt;div class="post-img-view">
 &lt;a data-fancybox="gallery" href="https://qiniu.waite.wang/20230906133609.png">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Harmony on 隶笔难书</title><link>https://waite.wang/categories/harmony/</link><description>Recent content in Harmony on 隶笔难书</description><generator>Hugo -- 0.142.0</generator><language>zh-cn</language><lastBuildDate>Sat, 06 Apr 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/harmony/index.xml" rel="self" type="application/rss+xml"/><item><title>鸿蒙学习笔记3</title><link>https://waite.wang/posts/harmony/learn-harmony-3/</link><pubDate>Sat, 06 Apr 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-3/</guid><description>&lt;h2 id="stage-模型">Stage 模型&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Harmony on 隶笔难书</title><link>https://waite.wang/categories/harmony/</link><description>Recent content in Harmony on 隶笔难书</description><generator>Hugo -- 0.145.0</generator><language>zh-cn</language><lastBuildDate>Sat, 06 Apr 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/categories/harmony/index.xml" rel="self" type="application/rss+xml"/><item><title>鸿蒙学习笔记3</title><link>https://waite.wang/posts/harmony/learn-harmony-3/</link><pubDate>Sat, 06 Apr 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/harmony/learn-harmony-3/</guid><description>&lt;h2 id="stage-模型">Stage 模型&lt;/h2>
 &lt;p>
 &lt;a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2" target="_blank" >https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/start-with-ets-stage-0000001477980905-V2&lt;/a>&lt;/p>
 &lt;p>
@@ -9,8 +9,7 @@
 &lt;/div>
 &lt;/p>
 &lt;blockquote>
-&lt;p>一个应用只能有一个 @EntryAbility，但可以有多个 @PageAbility。&lt;/p>
-&lt;/blockquote>
+&lt;p>一个应用只能有一个 @EntryAbility，但可以有多个 @PageAbility。&lt;/p>&lt;/blockquote>
 &lt;h3 id="stage模型目录结构">（Stage模型）目录结构&lt;/h3>
 &lt;p>
 &lt;div class="post-img-view">
