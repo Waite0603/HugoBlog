@@ -84,96 +84,17 @@ UseHugoToc: true
 
 这是因为 Google 浏览器不正常安装导致的，如果确定已经安装了 Google 浏览器，更改如下代码即可。
 
-```python
-# browser_utils.py
-from DrissionPage import ChromiumOptions, Chromium
-import sys
-import os
-import logging
+> 更新：工具更新了相关的配置路径（只限于 Win）
+> 在 `.env` 文件下添加
 
-
-class BrowserManager:
-  def __init__(self):
-    self.browser = None
-    self.browser_executable_path = None
-
-  def set_browser_path(self, path):
-    """Set the path to the browser executable."""
-    self.browser_executable_path = path
-
-  def init_browser(self):
-    """Initialize the browser."""
-    co = self._get_browser_options()
-    self.browser = Chromium(co)
-    return self.browser
-
-  def _get_browser_options(self):
-    """获取浏览器配置"""
-    co = ChromiumOptions()
-    try:
-      extension_path = self._get_extension_path()
-      co.add_extension(extension_path)
-    except FileNotFoundError as e:
-      logging.warning(f"Warning: {e}")
-
-    co.set_user_agent(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.92 "
-      "Safari/537.36"
-    )
-    co.set_pref("credentials_enable_service", False)
-    co.set_argument("--hide-crash-restore-bubble")
-    co.auto_port()
-    co.headless(True)  # Use headless mode in production
-
-    # Special handling for Mac systems
-    if sys.platform == "darwin":
-      co.set_argument("--no-sandbox")
-      co.set_argument("--disable-gpu")
-
-    # Set the browser executable path if provided
-    if self.browser_executable_path:
-      co.set_browser_path(self.browser_executable_path)
-
-    return co
-
-  def _get_extension_path(self):
-    """Get the extension path."""
-    root_dir = os.getcwd()
-    extension_path = os.path.join(root_dir, "turnstilePatch")
-
-    if hasattr(sys, "_MEIPASS"):
-      extension_path = os.path.join(sys._MEIPASS, "turnstilePatch")
-
-    if not os.path.exists(extension_path):
-      raise FileNotFoundError(f"Extension not found: {extension_path}")
-
-    return extension_path
-
-  def quit(self):
-    """Close the browser."""
-    if self.browser:
-      try:
-        self.browser.quit()
-      except:
-        pass
 ```
-
-```python
-# cursor_pro_keep_alive.py
-if __name__ == "__main__":
-    print_logo()
-    browser_manager = None
-    try:
-        logging.info("\n=== 初始化程序 ===")
-        ExitCursor()
-        logging.info("正在初始化浏览器...")
-        browser_manager = BrowserManager()
-        # 添加以下这行，手动设置浏览器路径
-        browser_manager.set_browser_path("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe")
-        browser = browser_manager.init_browser()
+# 使用其他浏览器(如Edge), 下面替换成你的实际浏览器安装路径
+# BROWSER_PATH='C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 ```
-
 ## 关于禁用 Cursor 的自动更新
+
+> 最新版工具已经集成，不需要往下看了
+
 
 > 注意以下实现的时间点是 2025-01-25 21:50:00
 >
