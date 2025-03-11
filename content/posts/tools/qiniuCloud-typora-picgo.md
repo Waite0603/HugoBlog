@@ -6,7 +6,7 @@ categories: ["Tools"]
 tags: ["七牛云", "Typora", "PicGo"]
 ---
 
-> Typora 免费版本: https://cloud.waite.wang/Cloud/%E5%B7%A5%E5%85%B7/typora-setup-x64.exe
+> Typora 免费版本: [https://github.com/L1ne-cd/Typora_Unlocker](https://github.com/L1ne-cd/Typora_Unlocker)
 
 ## 七牛云
 
