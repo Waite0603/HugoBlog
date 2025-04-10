@@ -149,7 +149,7 @@ draft: false
         <span class="nav-item">
             <a class="nav-link" href="https://beian.miit.gov.cn/" target="_blank">
                 <i class="fa fa-balance-scale" style="color:#9932CC;" aria-hidden="true"></i>
-                粤 ICP 备 2022028437 号 
+                粤ICP备2022028437号-1
             </a>
         </span>
 
@@ -873,7 +873,7 @@ var granimInstance = new Granim({
                     <a class="nav-link" href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">
                         <i class="fa-solid fa-shield-check" style="color:#9932CC;" aria-hidden="true">
                         </i>
-                        粤 ICP 备 2022028437 号
+                        粤ICP备2022028437号-1
                     </a>
                 </span>
             </div>
