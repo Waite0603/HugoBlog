@@ -1,5 +1,5 @@
 ---
-title: "单例模式以及事件管理器在 Cocos 中的应用"
+title: "Vue+Flask实现一个最基础的LLM请求响应以及渲染"
 date: 2025-03-28T07:30:38Z
 lastmod: 2025-03-28T07:30:38Z
 categories: ["Ai"]
