@@ -1,0 +1,503 @@
+<!doctype html><html lang=zh-cn dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>单例模式以及事件管理器在 Cocos 中的应用 | 隶笔难书</title>
+<meta name=keywords content="Ai,Python,Vue"><meta name=description content='后端请求
+
+后端封装
+from abc import ABC, abstractmethod
+from openai import OpenAI
+import config
+
+
+class BaseAIService(ABC):
+  """AI服务的抽象基类"""
+
+  @abstractmethod
+  def get_stream_completion(self, messages):
+    """获取流式响应"""
+    pass
+
+  @abstractmethod
+  async def process_stream_response(self, response):
+    """处理流式响应"""
+    pass
+
+
+  class HuoShanAIService(BaseAIService):
+    """火山引擎 AI 服务实现"""
+
+    def __init__(self):
+      self.config = config.HUO_SHAN_COMPLETION_CONFIG
+      self.client = OpenAI(
+        api_key=self.config["api_key"],
+        base_url=self.config["base_url"]
+      )
+
+      def get_stream_completion(self, messages):
+        """获取流式响应"""
+        return self.client.chat.completions.create(
+          model=self.config["fast_llm"],
+          messages=messages,
+          temperature=0.3,
+          top_p=1,
+          max_tokens=8192,
+          stream=True
+        )
+
+        async def process_stream_response(self, response):
+          """处理流式响应"""
+          reasoning_content = ""
+          answer_content = ""
+          is_answering = False
+
+          try:
+            for chunk in response:
+              try:
+                if not chunk.choices or not chunk.choices[0].delta:
+                  continue
+
+                  delta = chunk.choices[0].delta
+
+                  # 处理思考过程
+                  if hasattr(delta, &#39;reasoning_content&#39;) and delta.reasoning_content:
+                    reasoning_text = delta.reasoning_content
+                    print(reasoning_text, end=&#39;&#39;, flush=True)
+                    reasoning_content += reasoning_text
+                    yield f"__r__{reasoning_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    # 处理回复内容
+                  elif hasattr(delta, &#39;content&#39;) and delta.content:
+                    if not is_answering:
+                      print("\n" + "=" * 20 + "完整回复" + "=" * 20 + "\n")
+                      is_answering = True
+
+                      content_text = delta.content
+                      print(content_text, end=&#39;&#39;, flush=True)
+                      answer_content += content_text
+                      yield f"__a__{content_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    except UnicodeEncodeError as e:
+                      print(f"Encoding error: {e}")
+                      continue
+                    except Exception as e:
+                      print(f"Error processing chunk: {e}")
+                      yield f"__a__处理响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    except Exception as e:
+                      print(f"Stream processing error: {e}")
+                      yield f"__a__处理流式响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+
+                      def get_ai_service(provider="huoshan"):
+                        """工厂函数，根据提供商返回对应的 AI 服务实例"""
+                        providers = {
+                          "huoshan": HuoShanAIService,
+                          # 未来可以添加其他提供商
+                          # "openai": OpenAIService,
+                          # "azure": AzureAIService,
+                        }
+
+                        service_class = providers.get(provider)
+                        if not service_class:
+                          raise ValueError(f"不支持的 AI 提供商: {provider}")
+
+                          return service_class()
+
+调用并且返回值'><meta name=author content="Waite Wang"><link rel=canonical href=https://waite.wang/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render/><link crossorigin=anonymous href=/assets/css/stylesheet.3d97af64455e262976bc8963ce1a2382d14e8c2788745b1deedf23a8e2ebd65c.css integrity="sha256-PZevZEVeJil2vIljzhojgtFOjCeIdFsd7t8jqOLr1lw=" rel="preload stylesheet" as=style><link rel=icon href=https://waite.wang/images/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://waite.wang/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://waite.wang/favicon-32x32.png><link rel=apple-touch-icon href=https://waite.wang/apple-touch-icon.png><link rel=mask-icon href=https://waite.wang/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=zh-cn href=https://waite.wang/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://waite.wang/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render/"><meta property="og:site_name" content="隶笔难书"><meta property="og:title" content="单例模式以及事件管理器在 Cocos 中的应用"><meta property="og:description" content='后端请求 后端封装
+from abc import ABC, abstractmethod from openai import OpenAI import config class BaseAIService(ABC): """AI服务的抽象基类""" @abstractmethod def get_stream_completion(self, messages): """获取流式响应""" pass @abstractmethod async def process_stream_response(self, response): """处理流式响应""" pass class HuoShanAIService(BaseAIService): """火山引擎 AI 服务实现""" def __init__(self): self.config = config.HUO_SHAN_COMPLETION_CONFIG self.client = OpenAI( api_key=self.config["api_key"], base_url=self.config["base_url"] ) def get_stream_completion(self, messages): """获取流式响应""" return self.client.chat.completions.create( model=self.config["fast_llm"], messages=messages, temperature=0.3, top_p=1, max_tokens=8192, stream=True ) async def process_stream_response(self, response): """处理流式响应""" reasoning_content = "" answer_content = "" is_answering = False try: for chunk in response: try: if not chunk.choices or not chunk.choices[0].delta: continue delta = chunk.choices[0].delta # 处理思考过程 if hasattr(delta, &#39;reasoning_content&#39;) and delta.reasoning_content: reasoning_text = delta.reasoning_content print(reasoning_text, end=&#39;&#39;, flush=True) reasoning_content += reasoning_text yield f"__r__{reasoning_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;) # 处理回复内容 elif hasattr(delta, &#39;content&#39;) and delta.content: if not is_answering: print("\n" + "=" * 20 + "完整回复" + "=" * 20 + "\n") is_answering = True content_text = delta.content print(content_text, end=&#39;&#39;, flush=True) answer_content += content_text yield f"__a__{content_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;) except UnicodeEncodeError as e: print(f"Encoding error: {e}") continue except Exception as e: print(f"Error processing chunk: {e}") yield f"__a__处理响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;) except Exception as e: print(f"Stream processing error: {e}") yield f"__a__处理流式响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;) def get_ai_service(provider="huoshan"): """工厂函数，根据提供商返回对应的 AI 服务实例""" providers = { "huoshan": HuoShanAIService, # 未来可以添加其他提供商 # "openai": OpenAIService, # "azure": AzureAIService, } service_class = providers.get(provider) if not service_class: raise ValueError(f"不支持的 AI 提供商: {provider}") return service_class() 调用并且返回值'><meta property="og:locale" content="zh-cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-03-28T07:30:38+00:00"><meta property="article:modified_time" content="2025-03-28T07:30:38+00:00"><meta property="article:tag" content="Ai"><meta property="article:tag" content="Python"><meta property="article:tag" content="Vue"><meta name=twitter:card content="summary"><meta name=twitter:title content="单例模式以及事件管理器在 Cocos 中的应用"><meta name=twitter:description content='后端请求
+
+后端封装
+from abc import ABC, abstractmethod
+from openai import OpenAI
+import config
+
+
+class BaseAIService(ABC):
+  """AI服务的抽象基类"""
+
+  @abstractmethod
+  def get_stream_completion(self, messages):
+    """获取流式响应"""
+    pass
+
+  @abstractmethod
+  async def process_stream_response(self, response):
+    """处理流式响应"""
+    pass
+
+
+  class HuoShanAIService(BaseAIService):
+    """火山引擎 AI 服务实现"""
+
+    def __init__(self):
+      self.config = config.HUO_SHAN_COMPLETION_CONFIG
+      self.client = OpenAI(
+        api_key=self.config["api_key"],
+        base_url=self.config["base_url"]
+      )
+
+      def get_stream_completion(self, messages):
+        """获取流式响应"""
+        return self.client.chat.completions.create(
+          model=self.config["fast_llm"],
+          messages=messages,
+          temperature=0.3,
+          top_p=1,
+          max_tokens=8192,
+          stream=True
+        )
+
+        async def process_stream_response(self, response):
+          """处理流式响应"""
+          reasoning_content = ""
+          answer_content = ""
+          is_answering = False
+
+          try:
+            for chunk in response:
+              try:
+                if not chunk.choices or not chunk.choices[0].delta:
+                  continue
+
+                  delta = chunk.choices[0].delta
+
+                  # 处理思考过程
+                  if hasattr(delta, &#39;reasoning_content&#39;) and delta.reasoning_content:
+                    reasoning_text = delta.reasoning_content
+                    print(reasoning_text, end=&#39;&#39;, flush=True)
+                    reasoning_content += reasoning_text
+                    yield f"__r__{reasoning_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    # 处理回复内容
+                  elif hasattr(delta, &#39;content&#39;) and delta.content:
+                    if not is_answering:
+                      print("\n" + "=" * 20 + "完整回复" + "=" * 20 + "\n")
+                      is_answering = True
+
+                      content_text = delta.content
+                      print(content_text, end=&#39;&#39;, flush=True)
+                      answer_content += content_text
+                      yield f"__a__{content_text}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    except UnicodeEncodeError as e:
+                      print(f"Encoding error: {e}")
+                      continue
+                    except Exception as e:
+                      print(f"Error processing chunk: {e}")
+                      yield f"__a__处理响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+                    except Exception as e:
+                      print(f"Stream processing error: {e}")
+                      yield f"__a__处理流式响应时发生错误: {str(e)}".encode(&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+
+
+                      def get_ai_service(provider="huoshan"):
+                        """工厂函数，根据提供商返回对应的 AI 服务实例"""
+                        providers = {
+                          "huoshan": HuoShanAIService,
+                          # 未来可以添加其他提供商
+                          # "openai": OpenAIService,
+                          # "azure": AzureAIService,
+                        }
+
+                        service_class = providers.get(provider)
+                        if not service_class:
+                          raise ValueError(f"不支持的 AI 提供商: {provider}")
+
+                          return service_class()
+
+调用并且返回值'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://waite.wang/posts/"},{"@type":"ListItem","position":2,"name":"单例模式以及事件管理器在 Cocos 中的应用","item":"https://waite.wang/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"单例模式以及事件管理器在 Cocos 中的应用","name":"单例模式以及事件管理器在 Cocos 中的应用","description":"后端请求 后端封装\nfrom abc import ABC, abstractmethod from openai import OpenAI import config class BaseAIService(ABC): \u0026#34;\u0026#34;\u0026#34;AI服务的抽象基类\u0026#34;\u0026#34;\u0026#34; @abstractmethod def get_stream_completion(self, messages): \u0026#34;\u0026#34;\u0026#34;获取流式响应\u0026#34;\u0026#34;\u0026#34; pass @abstractmethod async def process_stream_response(self, response): \u0026#34;\u0026#34;\u0026#34;处理流式响应\u0026#34;\u0026#34;\u0026#34; pass class HuoShanAIService(BaseAIService): \u0026#34;\u0026#34;\u0026#34;火山引擎 AI 服务实现\u0026#34;\u0026#34;\u0026#34; def __init__(self): self.config = config.HUO_SHAN_COMPLETION_CONFIG self.client = OpenAI( api_key=self.config[\u0026#34;api_key\u0026#34;], base_url=self.config[\u0026#34;base_url\u0026#34;] ) def get_stream_completion(self, messages): \u0026#34;\u0026#34;\u0026#34;获取流式响应\u0026#34;\u0026#34;\u0026#34; return self.client.chat.completions.create( model=self.config[\u0026#34;fast_llm\u0026#34;], messages=messages, temperature=0.3, top_p=1, max_tokens=8192, stream=True ) async def process_stream_response(self, response): \u0026#34;\u0026#34;\u0026#34;处理流式响应\u0026#34;\u0026#34;\u0026#34; reasoning_content = \u0026#34;\u0026#34; answer_content = \u0026#34;\u0026#34; is_answering = False try: for chunk in response: try: if not chunk.choices or not chunk.choices[0].delta: continue delta = chunk.choices[0].delta # 处理思考过程 if hasattr(delta, \u0026#39;reasoning_content\u0026#39;) and delta.reasoning_content: reasoning_text = delta.reasoning_content print(reasoning_text, end=\u0026#39;\u0026#39;, flush=True) reasoning_content += reasoning_text yield f\u0026#34;__r__{reasoning_text}\u0026#34;.encode(\u0026#39;utf-8\u0026#39;, errors=\u0026#39;ignore\u0026#39;) # 处理回复内容 elif hasattr(delta, \u0026#39;content\u0026#39;) and delta.content: if not is_answering: print(\u0026#34;\\n\u0026#34; + \u0026#34;=\u0026#34; * 20 + \u0026#34;完整回复\u0026#34; + \u0026#34;=\u0026#34; * 20 + \u0026#34;\\n\u0026#34;) is_answering = True content_text = delta.content print(content_text, end=\u0026#39;\u0026#39;, flush=True) answer_content += content_text yield f\u0026#34;__a__{content_text}\u0026#34;.encode(\u0026#39;utf-8\u0026#39;, errors=\u0026#39;ignore\u0026#39;) except UnicodeEncodeError as e: print(f\u0026#34;Encoding error: {e}\u0026#34;) continue except Exception as e: print(f\u0026#34;Error processing chunk: {e}\u0026#34;) yield f\u0026#34;__a__处理响应时发生错误: {str(e)}\u0026#34;.encode(\u0026#39;utf-8\u0026#39;, errors=\u0026#39;ignore\u0026#39;) except Exception as e: print(f\u0026#34;Stream processing error: {e}\u0026#34;) yield f\u0026#34;__a__处理流式响应时发生错误: {str(e)}\u0026#34;.encode(\u0026#39;utf-8\u0026#39;, errors=\u0026#39;ignore\u0026#39;) def get_ai_service(provider=\u0026#34;huoshan\u0026#34;): \u0026#34;\u0026#34;\u0026#34;工厂函数，根据提供商返回对应的 AI 服务实例\u0026#34;\u0026#34;\u0026#34; providers = { \u0026#34;huoshan\u0026#34;: HuoShanAIService, # 未来可以添加其他提供商 # \u0026#34;openai\u0026#34;: OpenAIService, # \u0026#34;azure\u0026#34;: AzureAIService, } service_class = providers.get(provider) if not service_class: raise ValueError(f\u0026#34;不支持的 AI 提供商: {provider}\u0026#34;) return service_class() 调用并且返回值\n","keywords":["Ai","Python","Vue"],"articleBody":"后端请求 后端封装\nfrom abc import ABC, abstractmethod from openai import OpenAI import config class BaseAIService(ABC): \"\"\"AI服务的抽象基类\"\"\" @abstractmethod def get_stream_completion(self, messages): \"\"\"获取流式响应\"\"\" pass @abstractmethod async def process_stream_response(self, response): \"\"\"处理流式响应\"\"\" pass class HuoShanAIService(BaseAIService): \"\"\"火山引擎 AI 服务实现\"\"\" def __init__(self): self.config = config.HUO_SHAN_COMPLETION_CONFIG self.client = OpenAI( api_key=self.config[\"api_key\"], base_url=self.config[\"base_url\"] ) def get_stream_completion(self, messages): \"\"\"获取流式响应\"\"\" return self.client.chat.completions.create( model=self.config[\"fast_llm\"], messages=messages, temperature=0.3, top_p=1, max_tokens=8192, stream=True ) async def process_stream_response(self, response): \"\"\"处理流式响应\"\"\" reasoning_content = \"\" answer_content = \"\" is_answering = False try: for chunk in response: try: if not chunk.choices or not chunk.choices[0].delta: continue delta = chunk.choices[0].delta # 处理思考过程 if hasattr(delta, 'reasoning_content') and delta.reasoning_content: reasoning_text = delta.reasoning_content print(reasoning_text, end='', flush=True) reasoning_content += reasoning_text yield f\"__r__{reasoning_text}\".encode('utf-8', errors='ignore') # 处理回复内容 elif hasattr(delta, 'content') and delta.content: if not is_answering: print(\"\\n\" + \"=\" * 20 + \"完整回复\" + \"=\" * 20 + \"\\n\") is_answering = True content_text = delta.content print(content_text, end='', flush=True) answer_content += content_text yield f\"__a__{content_text}\".encode('utf-8', errors='ignore') except UnicodeEncodeError as e: print(f\"Encoding error: {e}\") continue except Exception as e: print(f\"Error processing chunk: {e}\") yield f\"__a__处理响应时发生错误: {str(e)}\".encode('utf-8', errors='ignore') except Exception as e: print(f\"Stream processing error: {e}\") yield f\"__a__处理流式响应时发生错误: {str(e)}\".encode('utf-8', errors='ignore') def get_ai_service(provider=\"huoshan\"): \"\"\"工厂函数，根据提供商返回对应的 AI 服务实例\"\"\" providers = { \"huoshan\": HuoShanAIService, # 未来可以添加其他提供商 # \"openai\": OpenAIService, # \"azure\": AzureAIService, } service_class = providers.get(provider) if not service_class: raise ValueError(f\"不支持的 AI 提供商: {provider}\") return service_class() 调用并且返回值\n@retrieval_bp.route('/llm_result', methods=['POST', 'FETCH']) def retrieval(): messages = [{ {\"role\": \"system\", \"content\":\"\"}, {\"role\": \"user\", \"content\":\"\"} }] # 创建流式响应 def stream_generator(): try: print(\"\\n\" + \"=\" * 20 + \"思考过程\" + \"=\" * 20 + \"\\n\") ai_service = get_ai_service(\"huoshan\") llm_response = ai_service.get_stream_completion(messages) answer_content = \"\" # 使用同步方式处理响应 loop = asyncio.new_event_loop() asyncio.set_event_loop(loop) async_gen = ai_service.process_stream_response(llm_response) while True: try: chunk = loop.run_until_complete(async_gen.__anext__()) if chunk.startswith(b'__a__'): answer_content += chunk.decode('utf-8')[5:] yield chunk # elif chunk.startswith(b'__r__'): # reasoning_content = chunk.decode('utf-8')[5:] # yield chunk except StopAsyncIteration: break return Response( stream_with_context(stream_generator()), mimetype='text/event-stream', headers={ 'Cache-Control': 'no-cache', 'Connection': 'keep-alive', 'X-Accel-Buffering': 'no', 'Content-Type': 'text/event-stream', 'Transfer-Encoding': 'chunked', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*' } ) 前端接收 // 流式响应API export const getStreamLLMResultApi = (data, requestId) =\u003e { return apiClient.makeRequest('POST', '/retrieval/llm_result', { data, responseType: 'stream', headers: { Accept: 'text/event-stream' }, requestId: requestId }) } // 中断所有请求 export const abortAllRequests = () =\u003e { apiClient.abortAllRequests() } // 中断特定请求 export const abortRequest = (requestId) =\u003e { apiClient.abortRequest(requestId) } const handleStreamResponse = async (data) =\u003e { try { // 生成新的请求ID currentRequestId.value = `fortune-${Date.now()}` cleanup() isTyping.value = true displayText.value = '' fullText.value = '' isThinking.value = true // 重置生成的内容 generatedContent.value = '' // 添加延迟以确保过渡效果正常显示 await new Promise((resolve) =\u003e setTimeout(resolve, 100)) const stream = await getStreamLLMResultApi(data, currentRequestId.value) // 如果请求被中断，stream 可能为 null if (!stream) return const reader = stream.getReader() let requestCompleted = false // 标记请求是否完成 while (true) { const { done, value } = await reader.read() if (done) { requestCompleted = true // 标记请求已完成 break } if (value.includes('__r__')) { isThinking.value = true continue } isThinking.value = false fullText.value += value.replaceAll('__a__', '') generatedContent.value += value.replaceAll('__a__', '') await typeWriter(value) } // 只有当请求完成时才保存到缓存 if ( requestCompleted \u0026\u0026 generatedContent.value \u0026\u0026 generatedContent.value.trim() !== '' ) { sessionStorage.setItem( resolveTitle.value.storageName, generatedContent.value ) } } catch (error) { // 忽略中断错误 if (error.name !== 'AbortError') { console.error('流式请求错误:', error) } isThinking.value = false } finally { isTyping.value = false renderMarkdown() } } 前端的渲染\nimport { ref, computed } from 'vue' import { marked } from 'marked' import DOMPurify from 'dompurify' import { debounce } from 'lodash' export function useMarkdownTyping() { const displayText = ref('') const renderedContent = ref('') const isRendering = ref(false) const isTyping = ref(false) const fullText = ref('') const typingSpeed = 50 // 创建自定义渲染器 const renderer = new marked.Renderer() renderer.hr = () =\u003e '' // 配置 marked 选项 marked.setOptions({ breaks: true, gfm: true, headerIds: false, mangle: false, renderer }) const debouncedTypeWriter = debounce(async (text) =\u003e { const cleanText = text.replaceAll('__a__', '') displayText.value += cleanText if (!isRendering.value) { renderMarkdown() } }, 50) const debouncedRender = debounce((text) =\u003e { renderedContent.value = DOMPurify.sanitize(marked(text)) isRendering.value = false }, 100) const renderMarkdown = () =\u003e { isRendering.value = true debouncedRender(displayText.value) } const typeWriter = async (text) =\u003e { await debouncedTypeWriter(text) await new Promise((resolve) =\u003e setTimeout(resolve, typingSpeed)) } const cleanup = () =\u003e { debouncedTypeWriter.cancel() debouncedRender.cancel() } const renderedText = computed(() =\u003e renderedContent.value) return { displayText, isTyping, fullText, renderedText, typeWriter, cleanup, renderMarkdown } } ","wordCount":"1209","inLanguage":"zh-cn","datePublished":"2025-03-28T07:30:38Z","dateModified":"2025-03-28T07:30:38Z","author":{"@type":"Person","name":"Waite Wang"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://waite.wang/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render/"},"publisher":{"@type":"Organization","name":"隶笔难书","logo":{"@type":"ImageObject","url":"https://waite.wang/images/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://waite.wang/ accesskey=h title="隶笔难书 (Alt + H)">隶笔难书</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://waite.wang/ title=首页><span>首页</span></a></li><li><a href=https://waite.wang/search title=搜索><span>搜索</span></a></li><li><a href=https://waite.wang/categories title=分类><span>分类</span></a></li><li><a href=https://waite.wang/tags title=标签><span>标签</span></a></li><li><a href=https://waite.wang/archives title=归档><span>归档</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://waite.wang/>Home</a>&nbsp;»&nbsp;<a href=https://waite.wang/posts/>Posts</a></div><h1 class="post-title entry-hint-parent">单例模式以及事件管理器在 Cocos 中的应用</h1><div class=post-meta>Created: &nbsp;<span title='2025-03-28 07:30:38 +0000 UTC'>2025-03-28</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;1209 words&nbsp;·&nbsp;Waite Wang&nbsp;|&nbsp;<a href=https://github.com/Waite0603/HugoBlog/edit/main/content/posts/ai/vue-and-flask-to-do-a-basic-llm-result-and-render.md rel="noopener noreferrer" target=_blank>在 GitHub 编辑</a></div></header><aside id=toc-container class="toc-container wide"><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>Table of Contents</span></summary><div class=inner><ul><li><a href=#%e5%90%8e%e7%ab%af%e8%af%b7%e6%b1%82 aria-label=后端请求>后端请求</a></li><li><a href=#%e5%89%8d%e7%ab%af%e6%8e%a5%e6%94%b6 aria-label=前端接收>前端接收</a></li></ul></div></details></div></aside><script>let activeElement,elements;window.addEventListener("DOMContentLoaded",function(){checkTocPosition(),elements=document.querySelectorAll("h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]"),activeElement=elements[0];const t=encodeURI(activeElement.getAttribute("id")).toLowerCase();document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active")},!1),window.addEventListener("resize",function(){checkTocPosition()},!1),window.addEventListener("scroll",()=>{activeElement=Array.from(elements).find(e=>{if(getOffsetTop(e)-window.pageYOffset>0&&getOffsetTop(e)-window.pageYOffset<window.innerHeight/2)return e})||activeElement,elements.forEach(e=>{const t=encodeURI(e.getAttribute("id")).toLowerCase();e===activeElement?document.querySelector(`.inner ul li a[href="#${t}"]`).classList.add("active"):document.querySelector(`.inner ul li a[href="#${t}"]`).classList.remove("active")})},!1);const main=parseInt(getComputedStyle(document.body).getPropertyValue("--article-width"),10),toc=parseInt(getComputedStyle(document.body).getPropertyValue("--toc-width"),10),gap=parseInt(getComputedStyle(document.body).getPropertyValue("--gap"),10);function checkTocPosition(){const e=document.body.scrollWidth;e-main-toc*2-gap*4>0?document.getElementById("toc-container").classList.add("wide"):document.getElementById("toc-container").classList.remove("wide")}function getOffsetTop(e){if(!e.getClientRects().length)return 0;let t=e.getBoundingClientRect(),n=e.ownerDocument.defaultView;return t.top+n.pageYOffset}</script><div class=post-content><h2 id=后端请求>后端请求<a hidden class=anchor aria-hidden=true href=#后端请求>#</a></h2><blockquote><p>后端封装</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>from</span> <span class=nn>abc</span> <span class=kn>import</span> <span class=n>ABC</span><span class=p>,</span> <span class=n>abstractmethod</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>openai</span> <span class=kn>import</span> <span class=n>OpenAI</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>BaseAIService</span><span class=p>(</span><span class=n>ABC</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>  <span class=s2>&#34;&#34;&#34;AI服务的抽象基类&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>get_stream_completion</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>messages</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;获取流式响应&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=nd>@abstractmethod</span>
+</span></span><span class=line><span class=cl>  <span class=k>async</span> <span class=k>def</span> <span class=nf>process_stream_response</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>response</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;处理流式响应&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>pass</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>class</span> <span class=nc>HuoShanAIService</span><span class=p>(</span><span class=n>BaseAIService</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;火山引擎 AI 服务实现&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>      <span class=bp>self</span><span class=o>.</span><span class=n>config</span> <span class=o>=</span> <span class=n>config</span><span class=o>.</span><span class=n>HUO_SHAN_COMPLETION_CONFIG</span>
+</span></span><span class=line><span class=cl>      <span class=bp>self</span><span class=o>.</span><span class=n>client</span> <span class=o>=</span> <span class=n>OpenAI</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=n>api_key</span><span class=o>=</span><span class=bp>self</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;api_key&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>        <span class=n>base_url</span><span class=o>=</span><span class=bp>self</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;base_url&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>      <span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=k>def</span> <span class=nf>get_stream_completion</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>messages</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;&#34;&#34;获取流式响应&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=bp>self</span><span class=o>.</span><span class=n>client</span><span class=o>.</span><span class=n>chat</span><span class=o>.</span><span class=n>completions</span><span class=o>.</span><span class=n>create</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>          <span class=n>model</span><span class=o>=</span><span class=bp>self</span><span class=o>.</span><span class=n>config</span><span class=p>[</span><span class=s2>&#34;fast_llm&#34;</span><span class=p>],</span>
+</span></span><span class=line><span class=cl>          <span class=n>messages</span><span class=o>=</span><span class=n>messages</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=n>temperature</span><span class=o>=</span><span class=mf>0.3</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=n>top_p</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=n>max_tokens</span><span class=o>=</span><span class=mi>8192</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>          <span class=n>stream</span><span class=o>=</span><span class=kc>True</span>
+</span></span><span class=line><span class=cl>        <span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=k>async</span> <span class=k>def</span> <span class=nf>process_stream_response</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>response</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>          <span class=s2>&#34;&#34;&#34;处理流式响应&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=n>reasoning_content</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=n>answer_content</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>          <span class=n>is_answering</span> <span class=o>=</span> <span class=kc>False</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>          <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>for</span> <span class=n>chunk</span> <span class=ow>in</span> <span class=n>response</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>              <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=ow>not</span> <span class=n>chunk</span><span class=o>.</span><span class=n>choices</span> <span class=ow>or</span> <span class=ow>not</span> <span class=n>chunk</span><span class=o>.</span><span class=n>choices</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>.</span><span class=n>delta</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                  <span class=k>continue</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                  <span class=n>delta</span> <span class=o>=</span> <span class=n>chunk</span><span class=o>.</span><span class=n>choices</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>.</span><span class=n>delta</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                  <span class=c1># 处理思考过程</span>
+</span></span><span class=line><span class=cl>                  <span class=k>if</span> <span class=nb>hasattr</span><span class=p>(</span><span class=n>delta</span><span class=p>,</span> <span class=s1>&#39;reasoning_content&#39;</span><span class=p>)</span> <span class=ow>and</span> <span class=n>delta</span><span class=o>.</span><span class=n>reasoning_content</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                    <span class=n>reasoning_text</span> <span class=o>=</span> <span class=n>delta</span><span class=o>.</span><span class=n>reasoning_content</span>
+</span></span><span class=line><span class=cl>                    <span class=nb>print</span><span class=p>(</span><span class=n>reasoning_text</span><span class=p>,</span> <span class=n>end</span><span class=o>=</span><span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=n>flush</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                    <span class=n>reasoning_content</span> <span class=o>+=</span> <span class=n>reasoning_text</span>
+</span></span><span class=line><span class=cl>                    <span class=k>yield</span> <span class=sa>f</span><span class=s2>&#34;__r__</span><span class=si>{</span><span class=n>reasoning_text</span><span class=si>}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>encode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>errors</span><span class=o>=</span><span class=s1>&#39;ignore&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                    <span class=c1># 处理回复内容</span>
+</span></span><span class=line><span class=cl>                  <span class=k>elif</span> <span class=nb>hasattr</span><span class=p>(</span><span class=n>delta</span><span class=p>,</span> <span class=s1>&#39;content&#39;</span><span class=p>)</span> <span class=ow>and</span> <span class=n>delta</span><span class=o>.</span><span class=n>content</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                    <span class=k>if</span> <span class=ow>not</span> <span class=n>is_answering</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                      <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span> <span class=o>+</span> <span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span> <span class=o>+</span> <span class=s2>&#34;完整回复&#34;</span> <span class=o>+</span> <span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span> <span class=o>+</span> <span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                      <span class=n>is_answering</span> <span class=o>=</span> <span class=kc>True</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                      <span class=n>content_text</span> <span class=o>=</span> <span class=n>delta</span><span class=o>.</span><span class=n>content</span>
+</span></span><span class=line><span class=cl>                      <span class=nb>print</span><span class=p>(</span><span class=n>content_text</span><span class=p>,</span> <span class=n>end</span><span class=o>=</span><span class=s1>&#39;&#39;</span><span class=p>,</span> <span class=n>flush</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                      <span class=n>answer_content</span> <span class=o>+=</span> <span class=n>content_text</span>
+</span></span><span class=line><span class=cl>                      <span class=k>yield</span> <span class=sa>f</span><span class=s2>&#34;__a__</span><span class=si>{</span><span class=n>content_text</span><span class=si>}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>encode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>errors</span><span class=o>=</span><span class=s1>&#39;ignore&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                    <span class=k>except</span> <span class=ne>UnicodeEncodeError</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                      <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;Encoding error: </span><span class=si>{</span><span class=n>e</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                      <span class=k>continue</span>
+</span></span><span class=line><span class=cl>                    <span class=k>except</span> <span class=ne>Exception</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                      <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;Error processing chunk: </span><span class=si>{</span><span class=n>e</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                      <span class=k>yield</span> <span class=sa>f</span><span class=s2>&#34;__a__处理响应时发生错误: </span><span class=si>{</span><span class=nb>str</span><span class=p>(</span><span class=n>e</span><span class=p>)</span><span class=si>}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>encode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>errors</span><span class=o>=</span><span class=s1>&#39;ignore&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                    <span class=k>except</span> <span class=ne>Exception</span> <span class=k>as</span> <span class=n>e</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                      <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;Stream processing error: </span><span class=si>{</span><span class=n>e</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                      <span class=k>yield</span> <span class=sa>f</span><span class=s2>&#34;__a__处理流式响应时发生错误: </span><span class=si>{</span><span class=nb>str</span><span class=p>(</span><span class=n>e</span><span class=p>)</span><span class=si>}</span><span class=s2>&#34;</span><span class=o>.</span><span class=n>encode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>,</span> <span class=n>errors</span><span class=o>=</span><span class=s1>&#39;ignore&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                      <span class=k>def</span> <span class=nf>get_ai_service</span><span class=p>(</span><span class=n>provider</span><span class=o>=</span><span class=s2>&#34;huoshan&#34;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>                        <span class=s2>&#34;&#34;&#34;工厂函数，根据提供商返回对应的 AI 服务实例&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>providers</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                          <span class=s2>&#34;huoshan&#34;</span><span class=p>:</span> <span class=n>HuoShanAIService</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                          <span class=c1># 未来可以添加其他提供商</span>
+</span></span><span class=line><span class=cl>                          <span class=c1># &#34;openai&#34;: OpenAIService,</span>
+</span></span><span class=line><span class=cl>                          <span class=c1># &#34;azure&#34;: AzureAIService,</span>
+</span></span><span class=line><span class=cl>                        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                        <span class=n>service_class</span> <span class=o>=</span> <span class=n>providers</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>provider</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                        <span class=k>if</span> <span class=ow>not</span> <span class=n>service_class</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>                          <span class=k>raise</span> <span class=ne>ValueError</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;不支持的 AI 提供商: </span><span class=si>{</span><span class=n>provider</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                          <span class=k>return</span> <span class=n>service_class</span><span class=p>()</span>
+</span></span></code></pre></div><blockquote><p>调用并且返回值</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=nd>@retrieval_bp.route</span><span class=p>(</span><span class=s1>&#39;/llm_result&#39;</span><span class=p>,</span> <span class=n>methods</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;POST&#39;</span><span class=p>,</span> <span class=s1>&#39;FETCH&#39;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>retrieval</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>  <span class=n>messages</span> <span class=o>=</span> <span class=p>[{</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span><span class=s2>&#34;role&#34;</span><span class=p>:</span> <span class=s2>&#34;system&#34;</span><span class=p>,</span> <span class=s2>&#34;content&#34;</span><span class=p>:</span><span class=s2>&#34;&#34;</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span><span class=s2>&#34;role&#34;</span><span class=p>:</span> <span class=s2>&#34;user&#34;</span><span class=p>,</span> <span class=s2>&#34;content&#34;</span><span class=p>:</span><span class=s2>&#34;&#34;</span><span class=p>}</span>  
+</span></span><span class=line><span class=cl>  <span class=p>}]</span>
+</span></span><span class=line><span class=cl>  <span class=c1># 创建流式响应</span>
+</span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=nf>stream_generator</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>      <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span> <span class=o>+</span> <span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span> <span class=o>+</span> <span class=s2>&#34;思考过程&#34;</span> <span class=o>+</span> <span class=s2>&#34;=&#34;</span> <span class=o>*</span> <span class=mi>20</span> <span class=o>+</span> <span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>ai_service</span> <span class=o>=</span> <span class=n>get_ai_service</span><span class=p>(</span><span class=s2>&#34;huoshan&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=n>llm_response</span> <span class=o>=</span> <span class=n>ai_service</span><span class=o>.</span><span class=n>get_stream_completion</span><span class=p>(</span><span class=n>messages</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=n>answer_content</span> <span class=o>=</span> <span class=s2>&#34;&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=c1># 使用同步方式处理响应</span>
+</span></span><span class=line><span class=cl>      <span class=n>loop</span> <span class=o>=</span> <span class=n>asyncio</span><span class=o>.</span><span class=n>new_event_loop</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>      <span class=n>asyncio</span><span class=o>.</span><span class=n>set_event_loop</span><span class=p>(</span><span class=n>loop</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=n>async_gen</span> <span class=o>=</span> <span class=n>ai_service</span><span class=o>.</span><span class=n>process_stream_response</span><span class=p>(</span><span class=n>llm_response</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>try</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>          <span class=n>chunk</span> <span class=o>=</span> <span class=n>loop</span><span class=o>.</span><span class=n>run_until_complete</span><span class=p>(</span><span class=n>async_gen</span><span class=o>.</span><span class=fm>__anext__</span><span class=p>())</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=n>chunk</span><span class=o>.</span><span class=n>startswith</span><span class=p>(</span><span class=sa>b</span><span class=s1>&#39;__a__&#39;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>            <span class=n>answer_content</span> <span class=o>+=</span> <span class=n>chunk</span><span class=o>.</span><span class=n>decode</span><span class=p>(</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)[</span><span class=mi>5</span><span class=p>:]</span>
+</span></span><span class=line><span class=cl>            <span class=k>yield</span> <span class=n>chunk</span>
+</span></span><span class=line><span class=cl>            <span class=c1># elif chunk.startswith(b&#39;__r__&#39;):</span>
+</span></span><span class=line><span class=cl>            <span class=c1># reasoning_content = chunk.decode(&#39;utf-8&#39;)[5:]</span>
+</span></span><span class=line><span class=cl>            <span class=c1># yield chunk</span>
+</span></span><span class=line><span class=cl>          <span class=k>except</span> <span class=ne>StopAsyncIteration</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>            <span class=k>break</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>Response</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>              <span class=n>stream_with_context</span><span class=p>(</span><span class=n>stream_generator</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>              <span class=n>mimetype</span><span class=o>=</span><span class=s1>&#39;text/event-stream&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>              <span class=n>headers</span><span class=o>=</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Cache-Control&#39;</span><span class=p>:</span> <span class=s1>&#39;no-cache&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Connection&#39;</span><span class=p>:</span> <span class=s1>&#39;keep-alive&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;X-Accel-Buffering&#39;</span><span class=p>:</span> <span class=s1>&#39;no&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Content-Type&#39;</span><span class=p>:</span> <span class=s1>&#39;text/event-stream&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Transfer-Encoding&#39;</span><span class=p>:</span> <span class=s1>&#39;chunked&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Access-Control-Allow-Origin&#39;</span><span class=p>:</span> <span class=s1>&#39;*&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                <span class=s1>&#39;Access-Control-Allow-Headers&#39;</span><span class=p>:</span> <span class=s1>&#39;*&#39;</span>
+</span></span><span class=line><span class=cl>              <span class=p>}</span>  
+</span></span><span class=line><span class=cl>            <span class=p>)</span>
+</span></span></code></pre></div><h2 id=前端接收>前端接收<a hidden class=anchor aria-hidden=true href=#前端接收>#</a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// 流式响应API
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kr>const</span> <span class=nx>getStreamLLMResultApi</span> <span class=o>=</span> <span class=p>(</span><span class=nx>data</span><span class=p>,</span> <span class=nx>requestId</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>apiClient</span><span class=p>.</span><span class=nx>makeRequest</span><span class=p>(</span><span class=s1>&#39;POST&#39;</span><span class=p>,</span> <span class=s1>&#39;/retrieval/llm_result&#39;</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>data</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>responseType</span><span class=o>:</span> <span class=s1>&#39;stream&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>headers</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>Accept</span><span class=o>:</span> <span class=s1>&#39;text/event-stream&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span>
+</span></span><span class=line><span class=cl>    <span class=nx>requestId</span><span class=o>:</span> <span class=nx>requestId</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 中断所有请求
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kr>const</span> <span class=nx>abortAllRequests</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>apiClient</span><span class=p>.</span><span class=nx>abortAllRequests</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 中断特定请求
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>export</span> <span class=kr>const</span> <span class=nx>abortRequest</span> <span class=o>=</span> <span class=p>(</span><span class=nx>requestId</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>apiClient</span><span class=p>.</span><span class=nx>abortRequest</span><span class=p>(</span><span class=nx>requestId</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>const</span> <span class=nx>handleStreamResponse</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 生成新的请求ID
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>currentRequestId</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=sb>`fortune-</span><span class=si>${</span><span class=nb>Date</span><span class=p>.</span><span class=nx>now</span><span class=p>()</span><span class=si>}</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>cleanup</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isTyping</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=nx>displayText</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fullText</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isThinking</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 重置生成的内容
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nx>generatedContent</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 添加延迟以确保过渡效果正常显示
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kr>await</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>setTimeout</span><span class=p>(</span><span class=nx>resolve</span><span class=p>,</span> <span class=mi>100</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>stream</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>getStreamLLMResultApi</span><span class=p>(</span><span class=nx>data</span><span class=p>,</span> <span class=nx>currentRequestId</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 如果请求被中断，stream 可能为 null
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>stream</span><span class=p>)</span> <span class=k>return</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>reader</span> <span class=o>=</span> <span class=nx>stream</span><span class=p>.</span><span class=nx>getReader</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>requestCompleted</span> <span class=o>=</span> <span class=kc>false</span> <span class=c1>// 标记请求是否完成
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=k>while</span> <span class=p>(</span><span class=kc>true</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=kr>const</span> <span class=p>{</span> <span class=nx>done</span><span class=p>,</span> <span class=nx>value</span> <span class=p>}</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>reader</span><span class=p>.</span><span class=nx>read</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=nx>done</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>requestCompleted</span> <span class=o>=</span> <span class=kc>true</span> <span class=c1>// 标记请求已完成
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>break</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=k>if</span> <span class=p>(</span><span class=nx>value</span><span class=p>.</span><span class=nx>includes</span><span class=p>(</span><span class=s1>&#39;__r__&#39;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>isThinking</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>        <span class=k>continue</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=nx>isThinking</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>      <span class=nx>fullText</span><span class=p>.</span><span class=nx>value</span> <span class=o>+=</span> <span class=nx>value</span><span class=p>.</span><span class=nx>replaceAll</span><span class=p>(</span><span class=s1>&#39;__a__&#39;</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=nx>generatedContent</span><span class=p>.</span><span class=nx>value</span> <span class=o>+=</span> <span class=nx>value</span><span class=p>.</span><span class=nx>replaceAll</span><span class=p>(</span><span class=s1>&#39;__a__&#39;</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=kr>await</span> <span class=nx>typeWriter</span><span class=p>(</span><span class=nx>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// 只有当请求完成时才保存到缓存
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nx>requestCompleted</span> <span class=o>&amp;&amp;</span>
+</span></span><span class=line><span class=cl>      <span class=nx>generatedContent</span><span class=p>.</span><span class=nx>value</span> <span class=o>&amp;&amp;</span>
+</span></span><span class=line><span class=cl>      <span class=nx>generatedContent</span><span class=p>.</span><span class=nx>value</span><span class=p>.</span><span class=nx>trim</span><span class=p>()</span> <span class=o>!==</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>sessionStorage</span><span class=p>.</span><span class=nx>setItem</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nx>resolveTitle</span><span class=p>.</span><span class=nx>value</span><span class=p>.</span><span class=nx>storageName</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nx>generatedContent</span><span class=p>.</span><span class=nx>value</span>
+</span></span><span class=line><span class=cl>      <span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// 忽略中断错误
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=nx>error</span><span class=p>.</span><span class=nx>name</span> <span class=o>!==</span> <span class=s1>&#39;AbortError&#39;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>console</span><span class=p>.</span><span class=nx>error</span><span class=p>(</span><span class=s1>&#39;流式请求错误:&#39;</span><span class=p>,</span> <span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isThinking</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>finally</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isTyping</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>    <span class=nx>renderMarkdown</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div><blockquote><p>前端的渲染</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>ref</span><span class=p>,</span> <span class=nx>computed</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>marked</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;marked&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>DOMPurify</span> <span class=nx>from</span> <span class=s1>&#39;dompurify&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>debounce</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;lodash&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kd>function</span> <span class=nx>useMarkdownTyping</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>displayText</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>renderedContent</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>isRendering</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=kc>false</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>isTyping</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=kc>false</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>fullText</span> <span class=o>=</span> <span class=nx>ref</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>typingSpeed</span> <span class=o>=</span> <span class=mi>50</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 创建自定义渲染器
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kr>const</span> <span class=nx>renderer</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>marked</span><span class=p>.</span><span class=nx>Renderer</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>  <span class=nx>renderer</span><span class=p>.</span><span class=nx>hr</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=s1>&#39;&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 配置 marked 选项
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>marked</span><span class=p>.</span><span class=nx>setOptions</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>    <span class=nx>breaks</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>gfm</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>headerIds</span><span class=o>:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>mangle</span><span class=o>:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>renderer</span>
+</span></span><span class=line><span class=cl>  <span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>debouncedTypeWriter</span> <span class=o>=</span> <span class=nx>debounce</span><span class=p>(</span><span class=kr>async</span> <span class=p>(</span><span class=nx>text</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>cleanText</span> <span class=o>=</span> <span class=nx>text</span><span class=p>.</span><span class=nx>replaceAll</span><span class=p>(</span><span class=s1>&#39;__a__&#39;</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>displayText</span><span class=p>.</span><span class=nx>value</span> <span class=o>+=</span> <span class=nx>cleanText</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>isRendering</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>renderMarkdown</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span> <span class=mi>50</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>debouncedRender</span> <span class=o>=</span> <span class=nx>debounce</span><span class=p>((</span><span class=nx>text</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>renderedContent</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=nx>DOMPurify</span><span class=p>.</span><span class=nx>sanitize</span><span class=p>(</span><span class=nx>marked</span><span class=p>(</span><span class=nx>text</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isRendering</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span> <span class=mi>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>renderMarkdown</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isRendering</span><span class=p>.</span><span class=nx>value</span> <span class=o>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=nx>debouncedRender</span><span class=p>(</span><span class=nx>displayText</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>typeWriter</span> <span class=o>=</span> <span class=kr>async</span> <span class=p>(</span><span class=nx>text</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>await</span> <span class=nx>debouncedTypeWriter</span><span class=p>(</span><span class=nx>text</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kr>await</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>setTimeout</span><span class=p>(</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>typingSpeed</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>cleanup</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>debouncedTypeWriter</span><span class=p>.</span><span class=nx>cancel</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=nx>debouncedRender</span><span class=p>.</span><span class=nx>cancel</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kr>const</span> <span class=nx>renderedText</span> <span class=o>=</span> <span class=nx>computed</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=nx>renderedContent</span><span class=p>.</span><span class=nx>value</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>displayText</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>isTyping</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>fullText</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>renderedText</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>typeWriter</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>cleanup</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>renderMarkdown</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></div></div><footer class=post-footer><ul class=post-tags><li><a href=https://waite.wang/tags/ai/>Ai</a></li><li><a href=https://waite.wang/tags/python/>Python</a></li><li><a href=https://waite.wang/tags/vue/>Vue</a></li></ul><nav class=paginav><a class=next href=https://waite.wang/posts/vue/vue-for-gregorian-lunar-calendar-date-selection/><span class=title>下一页 »</span><br><span>Vue 实现公历,农历日期选择效果</span></a></nav></footer><script src=https://utteranc.es/client.js repo=Waite0603/HugoBlog issue-term=pathname theme=github-light crossorigin=anonymous async></script></article></main><footer class=footer><span><a href=https://beian.miit.gov.cn/ target=_blank rel="noopener noreferrer">粤ICP备2022028437号-1</a></span><br><span>Copyright &copy; 2018 - 2025 By <a href=https://waite.wang/>Waite</a>, All Rights
+Reserved.</span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script><script src=/js/jquery-3.5.1.min.js></script><link rel=stylesheet href=/css/jquery.fancybox.min.css><script src=/js/jquery.fancybox.min.js></script></body></html>
