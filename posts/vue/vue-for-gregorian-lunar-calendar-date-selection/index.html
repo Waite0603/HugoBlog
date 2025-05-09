@@ -10,8 +10,8 @@
 </span></span><span class=line><span class=cl>             <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;tab in [&#39;公历&#39;, &#39;农历&#39;]&#34;</span><span class=p>
 </span></span></span><span class=line><span class=cl><span class=p></span>             <span class=nt>:key</span><span class=o>=</span><span class=s>&#34;tab&#34;</span>
 </span></span><span class=line><span class=cl>             <span class=o>:</span><span class=na>class</span><span class=o>=</span><span class=s>&#34;[&#39;picker-tab&#39;, { active: calendarType === tab }]&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=err>@</span><span class=na>click</span><span class=o>=</span><span class=s>&#34;calendarType = tab&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>@click</span><span class=s>=&#34;calendarType = tab&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>             <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>          <span class=p>{{</span> <span class=nx>tab</span> <span class=p>}}</span>
 </span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
@@ -25,8 +25,8 @@
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column&#34;</span> <span class=na>ref</span><span class=o>=</span><span class=s>&#34;yearColumn&#34;</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>             <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column-items&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=err>@</span><span class=na>scroll</span><span class=o>=</span><span class=s>&#34;onColumnScroll($event, &#39;year&#39;)&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>@scroll</span><span class=s>=&#34;onColumnScroll($event, &#39;year&#39;)&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>             <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>               <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;year in yearOptions&#34;</span><span class=p>
 </span></span></span><span class=line><span class=cl><span class=p></span>               <span class=nt>:key</span><span class=o>=</span><span class=s>&#34;year.value&#34;</span>
@@ -34,8 +34,8 @@
 </span></span></span><span class=line><span class=cl><span class=s>                       &#39;date-item&#39;,
 </span></span></span><span class=line><span class=cl><span class=s>                       { active: selectedDate.year === year.value }
 </span></span></span><span class=line><span class=cl><span class=s>                       ]&#34;</span>
-</span></span><span class=line><span class=cl>               <span class=nt>@click</span><span class=s>=&#34;selectYear(year.value)&#34;</span>
-</span></span><span class=line><span class=cl>               <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>               <span class=nt>@click</span><span class=s>=&#34;selectYear(year.value)&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>               <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>            <span class=p>{{</span> <span class=nx>year</span><span class=p>.</span><span class=nx>text</span> <span class=p>}}</span>
 </span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
@@ -43,8 +43,8 @@
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column&#34;</span> <span class=na>ref</span><span class=o>=</span><span class=s>&#34;monthColumn&#34;</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>             <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column-items&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=err>@</span><span class=na>scroll</span><span class=o>=</span><span class=s>&#34;onColumnScroll($event, &#39;month&#39;)&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>@scroll</span><span class=s>=&#34;onColumnScroll($event, &#39;month&#39;)&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>             <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>               <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;month in monthOptions&#34;</span><span class=p>
 </span></span></span><span class=line><span class=cl><span class=p></span>               <span class=nt>:key</span><span class=o>=</span><span class=s>&#34;month.value&#34;</span>
@@ -60,8 +60,8 @@
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column&#34;</span> <span class=na>ref</span><span class=o>=</span><span class=s>&#34;dayColumn&#34;</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>             <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column-items&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=err>@</span><span class=na>scroll</span><span class=o>=</span><span class=s>&#34;onColumnScroll($event, &#39;day&#39;)&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>@scroll</span><span class=s>=&#34;onColumnScroll($event, &#39;day&#39;)&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>             <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>               <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;day in dayOptions&#34;</span><span class=p>
 </span></span></span><span class=line><span class=cl><span class=p></span>               <span class=nt>:key</span><span class=o>=</span><span class=s>&#34;day.value&#34;</span>
@@ -74,8 +74,8 @@
 </span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column&#34;</span> <span class=na>ref</span><span class=o>=</span><span class=s>&#34;hourColumn&#34;</span> <span class=nt>v-if</span><span class=o>=</span><span class=s>&#34;showHour&#34;</span><span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>             <span class=na>class</span><span class=o>=</span><span class=s>&#34;date-column-items&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=err>@</span><span class=na>scroll</span><span class=o>=</span><span class=s>&#34;onColumnScroll($event, &#39;hour&#39;)&#34;</span>
-</span></span><span class=line><span class=cl>             <span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>             <span class=nt>@scroll</span><span class=s>=&#34;onColumnScroll($event, &#39;hour&#39;)&#34;</span><span class=p>
+</span></span></span><span class=line><span class=cl><span class=p></span>             <span class=p>&gt;</span>
 </span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>div</span>
 </span></span><span class=line><span class=cl>               <span class=nt>v-for</span><span class=o>=</span><span class=s>&#34;hour in hourOptionsComputed&#34;</span><span class=p>
 </span></span></span><span class=line><span class=cl><span class=p></span>               <span class=nt>:key</span><span class=o>=</span><span class=s>&#34;hour.value&#34;</span>
