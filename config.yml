@@ -110,6 +110,10 @@ menu:
       name: "归档"
       url: /archives
       weight: 40
+    - identifier: "友链"
+      name: "友链"
+      url: /links
+      weight: 50
 
 outputs:
   home:
