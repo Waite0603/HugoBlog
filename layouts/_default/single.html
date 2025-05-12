@@ -22,7 +22,7 @@
     {{- end }}
     {{- if not (.Param "hideMeta") }}
     <div class="post-meta">
-      Created: &nbsp;{{- partial "post_meta.html" . -}}
+      {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- if (.Param "ShowLastMod") -}}

@@ -3,21 +3,22 @@ title: "友链"
 layout: "links"
 url: "/links"
 summary: links
-date: 2025-05-12T11:30:03+00:00
-disableHLJS: true
-disableShare: false
-hideSummary: false
-searchHidden: false
+
+showToc: false
 ShowReadingTime: false
-ShowBreadCrumbs: false
-ShowPostNavLinks: false
 ShowWordCount: false
-ShowRssButtonInSectionTermList: false
-UseHugoToc: false
 ---
 
 ### 快点关注他们吧
 
-> 隶笔难书 [https://waite.wang](https://waite.wang) `隶笔难书, 但总要写点什么✍🏻.`
+- **AirboZH** - [https://www.airbozh.cn/](https://www.airbozh.cn/)  
+  Stay Hungry, Stay Foolish.
 
-> AirboZH [https://www.airbozh.cn/](https://xiaobai.wang) `Stay Hungry, Stay Foolish.`
+> 以下是我的博客链接, 您可以把它们添加到您的博客中以交换友链。
+
+**隶笔难书**
+: 
+: 链接: [https://waite.wang](https://waite.wang)
+: 简介: 隶笔难书, 但总要写点什么✍🏻.
+: 图标: [https://waite.wang/favicon.ico](https://waite.wang/favicon.ico)
+  
