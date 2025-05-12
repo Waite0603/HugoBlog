@@ -606,4 +606,4 @@ cover:&lt;/p>
 &lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%e7%9b%b4%e6%8e%a5%e7%94%a8-lt-script-gt-%e5%bc%95%e5%85%a5" target="_blank" >&lt;strong>直接用 script 引入&lt;/strong>&lt;/a>&lt;/p>
 &lt;ol>
 &lt;li>
-&lt;p>直接下载并用 &lt;!-- raw HTML omitted --> 标签引入，&lt;code>Vue&lt;/code> 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)&lt;/p></description></item></channel></rss>
+&lt;p>直接下载并用 &lt;!-- raw HTML omitted --> 标签引入，&lt;code>Vue&lt;/code> 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)&lt;/p></description></item><item><title>友链</title><link>https://waite.wang/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://waite.wang/links/</guid><description>links</description></item></channel></rss>
