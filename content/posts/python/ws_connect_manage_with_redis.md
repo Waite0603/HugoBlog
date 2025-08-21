@@ -11,17 +11,17 @@ weight:
 draft: false
 ---
 
-# WebSocket连接管理与Redis集成实现
 
-在构建分布式聊天系统时，我们面临着一个核心挑战：如何在多个服务器实例之间有效管理WebSocket连接，并确保消息能够准确传递到正确的机器人客户端。本文详细介绍了我们的解决方案，包括Redis集成、跨实例消息转发、心跳机制等关键技术实现。
+
+在构建分布式聊天系统时，如何在多个服务器实例之间有效管理WebSocket连接，并确保消息能够准确传递到正确的机器人客户端。本文详细介绍了解决方案，包括Redis集成、跨实例消息转发、心跳机制等关键技术实现。
 
 ## 系统架构概述
 
-我们的系统采用了混合存储架构：本地内存存储活跃的WebSocket连接，Redis存储全局连接状态信息。这种设计既保证了本地访问的高性能，又实现了跨实例的状态共享。
+的系统采用了混合存储架构：本地内存存储活跃的WebSocket连接，Redis存储全局连接状态信息。这种设计既保证了本地访问的高性能，又实现了跨实例的状态共享。
 
 ## Redis配置与连接管理
 
-首先，我们在配置文件中定义了Redis相关配置：
+首先，在配置文件中定义了Redis相关配置：
 
 ```python
 # config.py
@@ -37,7 +37,7 @@ class RedisConfig:
     CONNECTION_TIMEOUT = 90  # 连接超时时间（秒）
 ```
 
-为了确保每个服务器实例都有唯一标识，我们实现了基于主机名、端口和进程ID的实例ID生成机制：
+为了确保每个服务器实例都有唯一标识，实现了基于主机名、端口和进程ID的实例ID生成机制：
 
 ```python
 class InstanceConfig:
@@ -62,7 +62,7 @@ class InstanceConfig:
 
 ## Redis管理器实现
 
-我们创建了一个专门的Redis管理器来处理连接状态的存储和查询：
+创建了一个专门的Redis管理器来处理连接状态的存储和查询：
 
 ```python
 # app/core/redis_manager.py
@@ -174,7 +174,7 @@ class ConnectionManager:
 
 ## 跨实例消息转发机制
 
-最复杂的部分是实现跨实例的消息转发。当目标机器人不在当前实例时，我们需要找到正确的实例并转发消息：
+最复杂的部分是实现跨实例的消息转发。当目标机器人不在当前实例时，需要找到正确的实例并转发消息：
 
 ```python
 async def send_personal_message(self, message: str, robot_id: str):
@@ -225,7 +225,7 @@ async def send_personal_message(self, message: str, robot_id: str):
 
 ## WebSocket连接状态检测
 
-由于Starlette的WebSocket类没有ping方法，我们实现了适配的连接状态检测：
+由于Starlette的WebSocket类没有ping方法，实现了适配的连接状态检测：
 
 ```python
 async def is_websocket_alive(self, robot_id: str) -> bool:
@@ -254,7 +254,7 @@ async def is_websocket_alive(self, robot_id: str) -> bool:
 
 ## 心跳机制实现
 
-我们实现了基于时间戳的心跳机制来维护连接状态：
+实现了基于时间戳的心跳机制来维护连接状态：
 
 ```python
 async def validate_and_cleanup_connections(self):
@@ -281,7 +281,7 @@ async def validate_and_cleanup_connections(self):
 
 ## 消息发送接口
 
-最终，我们提供了统一的消息发送接口：
+最终，提供了统一的消息发送接口：
 
 ```python
 async def send_message_to_robot(robot_id: str, message_data: dict, db: Session):
@@ -318,5 +318,3 @@ async def send_message_to_robot(robot_id: str, message_data: dict, db: Session):
 **故障恢复**：当检测到连接异常时，自动清理无效状态并尝试重新路由。
 
 **扩展性**：支持水平扩展，新增实例可以无缝接入现有集群。
-
-这个方案在生产环境中运行稳定，有效解决了分布式WebSocket连接管理的各种挑战。通过合理的架构设计和细致的异常处理，我们构建了一个可靠的实时通信基础设施。
