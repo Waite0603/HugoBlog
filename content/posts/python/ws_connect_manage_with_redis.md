@@ -12,24 +12,42 @@ draft: false
 ---
 
 
-
-在构建分布式聊天系统时，如何在多个服务器实例之间有效管理WebSocket连接，并确保消息能够准确传递到正确的机器人客户端。本文详细介绍了解决方案，包括Redis集成、跨实例消息转发、心跳机制等关键技术实现。
+在构建分布式聊天系统时，我们面临着一个核心挑战：如何在多个服务器实例之间有效管理WebSocket连接，并确保消息能够准确传递到正确的机器人客户端。本文详细介绍了解决方案，包括Redis集成、跨实例消息转发、心跳机制等关键技术实现。
 
 ## 系统架构概述
 
-的系统采用了混合存储架构：本地内存存储活跃的WebSocket连接，Redis存储全局连接状态信息。这种设计既保证了本地访问的高性能，又实现了跨实例的状态共享。
+系统采用了混合存储架构：本地内存存储活跃的WebSocket连接，Redis存储全局连接状态信息。这种设计既保证了本地访问的高性能，又实现了跨实例的状态共享。
 
 ## Redis配置与连接管理
 
-首先，在配置文件中定义了Redis相关配置：
+系统支持Redis单节点和集群两种部署模式。在配置文件中定义了完整的Redis配置：
 
 ```python
 # config.py
 class RedisConfig:
-    REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
-    REDIS_PORT = int(os.getenv('REDIS_PORT', 6379))
-    REDIS_DB = int(os.getenv('REDIS_DB', 0))
-    REDIS_PASSWORD = os.getenv('REDIS_PASSWORD', None)
+    # Redis集群配置
+    REDIS_NODES = [
+        {"host": "10.7.104.44", "port": 4031},  # master
+        {"host": "10.7.104.47", "port": 4032},
+        {"host": "10.7.104.48", "port": 4031},  # master
+        {"host": "10.7.104.44", "port": 4032},
+        {"host": "10.7.104.47", "port": 4031},  # master
+        {"host": "10.7.104.48", "port": 4032},
+    ]
+    
+    # 单节点配置（兼容性保留）
+    HOST = os.getenv("REDIS_HOST", "10.7.104.44")
+    PORT = int(os.getenv("REDIS_PORT", "4031"))
+    DB = int(os.getenv("REDIS_DB", "0"))
+    
+    # 认证信息
+    USERNAME = os.getenv("REDIS_USERNAME", "aigc")
+    PASSWORD = os.getenv("REDIS_PASSWORD", "qvQfwMfYT2A&")
+    
+    # 集群配置
+    USE_CLUSTER = os.getenv("REDIS_USE_CLUSTER", "True").lower() == "true"
+    CLUSTER_REQUIRE_FULL_COVERAGE = False
+    CLUSTER_SKIP_FULL_COVERAGE_CHECK = True
     
     # WebSocket连接相关配置
     WEBSOCKET_CONNECTION_PREFIX = "ws_conn:"
@@ -37,7 +55,9 @@ class RedisConfig:
     CONNECTION_TIMEOUT = 90  # 连接超时时间（秒）
 ```
 
-为了确保每个服务器实例都有唯一标识，实现了基于主机名、端口和进程ID的实例ID生成机制：
+这个配置支持生产环境的Redis 6.2.17集群，包含3个主节点和对应的从节点，提供高可用性和数据分片能力。
+
+为了确保每个服务器实例都有唯一标识，我们实现了基于主机名、端口和进程ID的实例ID生成机制：
 
 ```python
 class InstanceConfig:
@@ -62,27 +82,66 @@ class InstanceConfig:
 
 ## Redis管理器实现
 
-创建了一个专门的Redis管理器来处理连接状态的存储和查询：
+我们创建了一个专门的Redis管理器来处理连接状态的存储和查询，支持集群和单节点两种模式：
 
 ```python
 # app/core/redis_manager.py
-import redis
+import aioredis
+from aioredis.cluster import RedisCluster
 import json
 import logging
 from datetime import datetime
 from typing import Optional, Dict, List
 from config import RedisConfig, InstanceConfig
 
-class RedisManager:
+class RedisConnectionManager:
     def __init__(self):
-        self.redis_client = redis.Redis(
-            host=RedisConfig.REDIS_HOST,
-            port=RedisConfig.REDIS_PORT,
-            db=RedisConfig.REDIS_DB,
-            password=RedisConfig.REDIS_PASSWORD,
-            decode_responses=True
-        )
+        self.redis: Optional[aioredis.Redis] = None
+        self.config = RedisConfig()
         self.instance_id = InstanceConfig.get_instance_id()
+        
+    async def connect(self):
+        """连接到Redis服务器"""
+        try:
+            if self.config.USE_CLUSTER:
+                # 集群模式连接
+                startup_nodes = [
+                    {"host": node["host"], "port": node["port"]} 
+                    for node in self.config.REDIS_NODES
+                ]
+                
+                self.redis = RedisCluster(
+                    startup_nodes=startup_nodes,
+                    username=self.config.USERNAME,
+                    password=self.config.PASSWORD,
+                    decode_responses=True,
+                    skip_full_coverage_check=self.config.CLUSTER_SKIP_FULL_COVERAGE_CHECK,
+                    require_full_coverage=self.config.CLUSTER_REQUIRE_FULL_COVERAGE
+                )
+                logging.info(f"Redis集群连接成功，节点数: {len(startup_nodes)}")
+            else:
+                # 单节点模式连接
+                auth_string = ""
+                if self.config.USERNAME and self.config.PASSWORD:
+                    auth_string = f"{self.config.USERNAME}:{self.config.PASSWORD}@"
+                elif self.config.PASSWORD:
+                    auth_string = f":{self.config.PASSWORD}@"
+                    
+                redis_url = f"redis://{auth_string}{self.config.HOST}:{self.config.PORT}"
+                
+                self.redis = aioredis.from_url(
+                    redis_url,
+                    db=self.config.DB,
+                    decode_responses=True
+                )
+                logging.info(f"Redis单节点连接成功: {self.config.HOST}:{self.config.PORT}")
+                
+            # 测试连接
+            await self.redis.ping()
+            
+        except Exception as e:
+            logging.error(f"Redis连接失败: {e}")
+            raise
         
     def store_connection(self, robot_id: str, additional_data: Dict = None):
         """存储机器人连接信息到Redis"""
@@ -174,7 +233,7 @@ class ConnectionManager:
 
 ## 跨实例消息转发机制
 
-最复杂的部分是实现跨实例的消息转发。当目标机器人不在当前实例时，需要找到正确的实例并转发消息：
+最复杂的部分是实现跨实例的消息转发。当目标机器人不在当前实例时，我们需要找到正确的实例并转发消息：
 
 ```python
 async def send_personal_message(self, message: str, robot_id: str):
@@ -225,7 +284,7 @@ async def send_personal_message(self, message: str, robot_id: str):
 
 ## WebSocket连接状态检测
 
-由于Starlette的WebSocket类没有ping方法，实现了适配的连接状态检测：
+由于Starlette的WebSocket类没有ping方法，我们实现了适配的连接状态检测：
 
 ```python
 async def is_websocket_alive(self, robot_id: str) -> bool:
@@ -254,7 +313,7 @@ async def is_websocket_alive(self, robot_id: str) -> bool:
 
 ## 心跳机制实现
 
-实现了基于时间戳的心跳机制来维护连接状态：
+我们实现了基于时间戳的心跳机制来维护连接状态：
 
 ```python
 async def validate_and_cleanup_connections(self):
@@ -281,7 +340,7 @@ async def validate_and_cleanup_connections(self):
 
 ## 消息发送接口
 
-最终，提供了统一的消息发送接口：
+最终，我们提供了统一的消息发送接口：
 
 ```python
 async def send_message_to_robot(robot_id: str, message_data: dict, db: Session):
@@ -305,16 +364,3 @@ async def send_message_to_robot(robot_id: str, message_data: dict, db: Session):
         return False
 ```
 
-## 技术特点总结
-
-这套实现方案具有以下特点：
-
-**高可用性**：通过Redis实现跨实例状态共享，单个实例故障不影响整体服务。
-
-**性能优化**：本地内存存储活跃连接，避免频繁的Redis查询。
-
-**状态一致性**：通过心跳机制和连接验证，确保连接状态的准确性。
-
-**故障恢复**：当检测到连接异常时，自动清理无效状态并尝试重新路由。
-
-**扩展性**：支持水平扩展，新增实例可以无缝接入现有集群。
