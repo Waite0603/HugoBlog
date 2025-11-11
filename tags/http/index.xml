@@ -1,58 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Http on 隶笔难书</title><link>https://waite.wang/tags/http/</link><description>Recent content in Http on 隶笔难书</description><generator>Hugo -- 0.148.2</generator><language>zh-cn</language><lastBuildDate>Wed, 23 Oct 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http">HTTP&lt;/h1>
-&lt;ul>
-&lt;li>[HTTP&lt;/li>
-&lt;li>](#http)
-&lt;ul>
-&lt;li>
-&lt;p>
-&lt;a href="#%e4%b8%80-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5" target="_blank" >一 、基础概念&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;a href="#%e8%af%b7%e6%b1%82%e5%92%8c%e5%93%8d%e5%ba%94%e6%8a%a5%e6%96%87" target="_blank" >请求和响应报文&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#url" target="_blank" >URL&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;a href="#%e4%ba%8chttp-%e6%96%b9%e6%b3%95" target="_blank" >二、HTTP 方法&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;a href="#get" target="_blank" >GET&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#head" target="_blank" >HEAD&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#post" target="_blank" >POST&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#put" target="_blank" >PUT&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#patch" target="_blank" >PATCH&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#delete" target="_blank" >DELETE&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#options" target="_blank" >OPTIONS&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#connect" target="_blank" >CONNECT&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#trace" target="_blank" >TRACE&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;a href="#%e4%b8%89http-%e7%8a%b6%e6%80%81%e7%a0%81" target="_blank" >三、HTTP 状态码&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;a href="#1xx-%e4%bf%a1%e6%81%af" target="_blank" >1XX 信息&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#2xx-%e6%88%90%e5%8a%9f" target="_blank" >2XX 成功&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#3xx-%e9%87%8d%e5%ae%9a%e5%90%91" target="_blank" >3XX 重定向&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#4xx-%e5%ae%a2%e6%88%b7%e7%ab%af%e9%94%99%e8%af%af" target="_blank" >4XX 客户端错误&lt;/a>&lt;/li>
-&lt;li>
-&lt;a href="#5xx-%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af" target="_blank" >5XX 服务器错误&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>
-&lt;a href="#%e5%9b%9bhttp-%e9%a6%96%e9%83%a8" target="_blank" >四、HTTP 首部&lt;/a>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Http on 隶笔难书</title><link>https://waite.wang/tags/http/</link><description>Recent content in Http on 隶笔难书</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Wed, 23 Oct 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/http/index.xml" rel="self" type="application/rss+xml"/><item><title>Http 基础</title><link>https://waite.wang/posts/web/http-basic/</link><pubDate>Wed, 23 Oct 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/http-basic/</guid><description>&lt;h1 id="http"&gt;HTTP&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;[HTTP&lt;/li&gt;
+&lt;li&gt;](#http)
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href="#%e4%b8%80-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5" target="_blank" &gt;一 、基础概念&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="#%e8%af%b7%e6%b1%82%e5%92%8c%e5%93%8d%e5%ba%94%e6%8a%a5%e6%96%87" target="_blank" &gt;请求和响应报文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#url" target="_blank" &gt;URL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href="#%e4%ba%8chttp-%e6%96%b9%e6%b3%95" target="_blank" &gt;二、HTTP 方法&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="#get" target="_blank" &gt;GET&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#head" target="_blank" &gt;HEAD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#post" target="_blank" &gt;POST&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#put" target="_blank" &gt;PUT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#patch" target="_blank" &gt;PATCH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#delete" target="_blank" &gt;DELETE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#options" target="_blank" &gt;OPTIONS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#connect" target="_blank" &gt;CONNECT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#trace" target="_blank" &gt;TRACE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href="#%e4%b8%89http-%e7%8a%b6%e6%80%81%e7%a0%81" target="_blank" &gt;三、HTTP 状态码&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="#1xx-%e4%bf%a1%e6%81%af" target="_blank" &gt;1XX 信息&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#2xx-%e6%88%90%e5%8a%9f" target="_blank" &gt;2XX 成功&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#3xx-%e9%87%8d%e5%ae%9a%e5%90%91" target="_blank" &gt;3XX 重定向&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#4xx-%e5%ae%a2%e6%88%b7%e7%ab%af%e9%94%99%e8%af%af" target="_blank" &gt;4XX 客户端错误&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="#5xx-%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af" target="_blank" &gt;5XX 服务器错误&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href="#%e5%9b%9bhttp-%e9%a6%96%e9%83%a8" target="_blank" &gt;四、HTTP 首部&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

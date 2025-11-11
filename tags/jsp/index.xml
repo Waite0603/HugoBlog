@@ -1,33 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Jsp on 隶笔难书</title><link>https://waite.wang/tags/jsp/</link><description>Recent content in Jsp on 隶笔难书</description><generator>Hugo -- 0.148.2</generator><language>zh-cn</language><lastBuildDate>Sun, 23 Oct 2022 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/jsp/index.xml" rel="self" type="application/rss+xml"/><item><title>Idea2023.2 创建 Servlet 项目</title><link>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</guid><description>&lt;h2 id="idea20232-创建-servlet-项目">Idea2023.2 创建 Servlet 项目&lt;/h2>
-&lt;h2 id="前期准备">前期准备&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>正常创建 Java 项目, 添加框架支持 Web 模块&lt;/p>
-&lt;ul>
-&lt;li>2023.2 之后 Idea 新 UI 把添加框架支持移到了 Ctrl + Alt + Shift + S(项目结构) -&amp;gt; 模块 -&amp;gt; +&lt;/li>
-&lt;li>如果想要之前一样右键添加框架支持, 可以设置 -&amp;gt; 添加按键映射 -&amp;gt; 添加快捷键 -&amp;gt; 之后用快捷键使用即可&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/202311021151150.png">&lt;/p></description></item><item><title>JSP 访问数据库</title><link>https://waite.wang/posts/jsp/jsp-connect-mysql/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/jsp-connect-mysql/</guid><description>&lt;h1 id="jsp-访问数据库">JSP 访问数据库&lt;/h1>
-&lt;h2 id="mysql-connector-java的jar包下载">mysql-connector-java的jar包下载&lt;/h2>
-&lt;ol>
-&lt;li>官方下载地址
-&lt;a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" >https://dev.mysql.com/downloads/connector/j/&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/202310121220594.png">&lt;/p>
-&lt;ol start="2">
-&lt;li>解压, 把JDBC驱动放在lib文件夹下（直接复制过来就可以了）&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/202310121223954.png">&lt;/p>
-&lt;blockquote>
-&lt;p>记得导入, 不然会报错&lt;/p>&lt;/blockquote>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;lt;%&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">page&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">import&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;java.sql.*&amp;#34;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">%&amp;gt;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="基本用法">基本用法&lt;/h2>
-&lt;h3 id="连接mysql数据库">连接MySQL数据库&lt;/h3>
-&lt;p>在JSP中连接MySQL数据库的步骤如下：&lt;/p></description></item><item><title>Tomcat + Idea 配置及使用</title><link>https://waite.wang/posts/win/tomcat-idea-install/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/tomcat-idea-install/</guid><description>&lt;h2 id="jdk-安装">Jdk 安装&lt;/h2>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/0_0_13.png">&lt;/p>
-&lt;h2 id="tomcat">Tomcat&lt;/h2>
-&lt;blockquote>
-&lt;p>注意 Tomcat 版本与 Jdk 匹配&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img loading="lazy" src="https://qiniu.waite.wang/20230906133609.png">&lt;/p>
-&lt;p>官网地址：https://tomcat.apache.org/&lt;/p>
-&lt;p>我这里选择的是Tomcat9.0版本，大家可以选择自己需要的版本&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Jsp on 隶笔难书</title><link>https://waite.wang/tags/jsp/</link><description>Recent content in Jsp on 隶笔难书</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Sun, 23 Oct 2022 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/jsp/index.xml" rel="self" type="application/rss+xml"/><item><title>Idea2023.2 创建 Servlet 项目</title><link>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/idea-create-project-of-servlet/</guid><description>&lt;h2 id="idea20232-创建-servlet-项目"&gt;Idea2023.2 创建 Servlet 项目&lt;/h2&gt;
+&lt;h2 id="前期准备"&gt;前期准备&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;正常创建 Java 项目, 添加框架支持 Web 模块&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2023.2 之后 Idea 新 UI 把添加框架支持移到了 Ctrl + Alt + Shift + S(项目结构) -&amp;gt; 模块 -&amp;gt; +&lt;/li&gt;
+&lt;li&gt;如果想要之前一样右键添加框架支持, 可以设置 -&amp;gt; 添加按键映射 -&amp;gt; 添加快捷键 -&amp;gt; 之后用快捷键使用即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://qiniu.waite.wang/202311021151150.png"&gt;&lt;/p&gt;</description></item><item><title>JSP 访问数据库</title><link>https://waite.wang/posts/jsp/jsp-connect-mysql/</link><pubDate>Sun, 23 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/jsp/jsp-connect-mysql/</guid><description>&lt;h1 id="jsp-访问数据库"&gt;JSP 访问数据库&lt;/h1&gt;
+&lt;h2 id="mysql-connector-java的jar包下载"&gt;mysql-connector-java的jar包下载&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;官方下载地址
+&lt;a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" &gt;https://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://qiniu.waite.wang/202310121220594.png"&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;解压, 把JDBC驱动放在lib文件夹下（直接复制过来就可以了）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://qiniu.waite.wang/202310121223954.png"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;记得导入, 不然会报错&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;%&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;java.sql.*&amp;#34;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;%&amp;gt;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="基本用法"&gt;基本用法&lt;/h2&gt;
+&lt;h3 id="连接mysql数据库"&gt;连接MySQL数据库&lt;/h3&gt;
+&lt;p&gt;在JSP中连接MySQL数据库的步骤如下：&lt;/p&gt;</description></item><item><title>Tomcat + Idea 配置及使用</title><link>https://waite.wang/posts/win/tomcat-idea-install/</link><pubDate>Sat, 22 Oct 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/win/tomcat-idea-install/</guid><description>&lt;h2 id="jdk-安装"&gt;Jdk 安装&lt;/h2&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://qiniu.waite.wang/0_0_13.png"&gt;&lt;/p&gt;
+&lt;h2 id="tomcat"&gt;Tomcat&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意 Tomcat 版本与 Jdk 匹配&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://qiniu.waite.wang/20230906133609.png"&gt;&lt;/p&gt;
+&lt;p&gt;官网地址：https://tomcat.apache.org/&lt;/p&gt;
+&lt;p&gt;我这里选择的是Tomcat9.0版本，大家可以选择自己需要的版本&lt;/p&gt;</description></item></channel></rss>

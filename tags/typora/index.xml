@@ -1,19 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Typora on 隶笔难书</title><link>https://waite.wang/tags/typora/</link><description>Recent content in Typora on 隶笔难书</description><generator>Hugo -- 0.148.2</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Dec 2023 22:05:32 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/typora/index.xml" rel="self" type="application/rss+xml"/><item><title>七牛云 + Typora + PicGo</title><link>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</link><pubDate>Thu, 28 Dec 2023 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</guid><description>&lt;blockquote>
-&lt;p>Typora 免费版本:
-&lt;a href="https://github.com/L1ne-cd/Typora_Unlocker" target="_blank" >https://github.com/L1ne-cd/Typora_Unlocker&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h2 id="七牛云">七牛云&lt;/h2>
-&lt;blockquote>
-&lt;p>七牛云:
-&lt;a href="https://www.qiniu.com/" target="_blank" >https://www.qiniu.com/&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;ol>
-&lt;li>注册实名 2. 对象存储, 新建空间&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img alt="1" loading="lazy" src="http://qiniu.waite.wang/1.png">&lt;/p>
-&lt;ol start="3">
-&lt;li>选择离你最近的存储区域(建议服务器哪的就选哪个区) 访问控制选择公有&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img alt="image-20230529224621032" loading="lazy" src="http://qiniu.waite.wang/image-20230529224621032.png">&lt;/p>
-&lt;ol start="4">
-&lt;li>个人中心 &amp;gt; 密钥管理 &amp;gt; 复制待用&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img alt="image-20230529224726314" loading="lazy" src="http://qiniu.waite.wang/image-20230529224726314.png">&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Typora on 隶笔难书</title><link>https://waite.wang/tags/typora/</link><description>Recent content in Typora on 隶笔难书</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Dec 2023 22:05:32 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/typora/index.xml" rel="self" type="application/rss+xml"/><item><title>七牛云 + Typora + PicGo</title><link>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</link><pubDate>Thu, 28 Dec 2023 22:05:32 +0800</pubDate><guid>https://waite.wang/posts/tools/qiniucloud-typora-picgo/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Typora 免费版本:
+&lt;a href="https://github.com/L1ne-cd/Typora_Unlocker" target="_blank" &gt;https://github.com/L1ne-cd/Typora_Unlocker&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="七牛云"&gt;七牛云&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;七牛云:
+&lt;a href="https://www.qiniu.com/" target="_blank" &gt;https://www.qiniu.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;注册实名 2. 对象存储, 新建空间&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="1" loading="lazy" src="http://qiniu.waite.wang/1.png"&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;选择离你最近的存储区域(建议服务器哪的就选哪个区) 访问控制选择公有&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="image-20230529224621032" loading="lazy" src="http://qiniu.waite.wang/image-20230529224621032.png"&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;个人中心 &amp;gt; 密钥管理 &amp;gt; 复制待用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="image-20230529224726314" loading="lazy" src="http://qiniu.waite.wang/image-20230529224726314.png"&gt;&lt;/p&gt;</description></item></channel></rss>

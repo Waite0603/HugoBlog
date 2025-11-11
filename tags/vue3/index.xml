@@ -1,61 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Vue3 on 隶笔难书</title><link>https://waite.wang/tags/vue3/</link><description>Recent content in Vue3 on 隶笔难书</description><generator>Hugo -- 0.148.2</generator><language>zh-cn</language><lastBuildDate>Mon, 22 Jan 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/vue3/index.xml" rel="self" type="application/rss+xml"/><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/vue/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置">集成editorconfig配置&lt;/h2>
-&lt;p>EditorConfig 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># http://editorconfig.org&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">root = true&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="cp">*]&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 表示所有文件适用&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">charset = utf-8&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 设置文件字符集为 utf-8&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">indent_style = space&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 缩进风格（tab | space）&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">indent_size = 2&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 缩进大小&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">end_of_line = lf&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 控制换行类型(lf | cr | crlf)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">trim_trailing_whitespace = true&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 去除行首的任意空白字符&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">insert_final_newline = true&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 始终在文件末尾插入一个新行&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="cp">*.md]&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># 表示仅 md 文件适用以下规则&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">max_line_length = off&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">trim_trailing_whitespace = false&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>VSCode需要安装一个插件：EditorConfig for VS Code&lt;/p></description></item><item><title>Vue3 CompositionAPI</title><link>https://waite.wang/posts/vue/vue3-compositionapi/</link><pubDate>Fri, 29 Dec 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-compositionapi/</guid><description>&lt;h2 id="options-api的弊端">Options API的弊端&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>在Vue2中，我们编写组件的方式是Options API：&lt;/p>
-&lt;ul>
-&lt;li>Options API的一大特点就是在对应的属性中编写对应的功能模块；&lt;/li>
-&lt;li>比如data定义数据、methods中定义方法、computed中定义计算属性、watch中监听属性改变，也包括生命 周期钩子；&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>但是这种代码有一个很大的弊端：&lt;/p></description></item><item><title>Pinia 数据持久化储存（pinia-plugin-persistedstate）</title><link>https://waite.wang/posts/web/pinia-plugin-persistedstate/</link><pubDate>Wed, 22 Nov 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/pinia-plugin-persistedstate/</guid><description>&lt;p>pinia需要使用pinia-plugin-persistedstate插件来进行数据的存储
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Vue3 on 隶笔难书</title><link>https://waite.wang/tags/vue3/</link><description>Recent content in Vue3 on 隶笔难书</description><generator>Hugo -- 0.152.2</generator><language>zh-cn</language><lastBuildDate>Mon, 22 Jan 2024 16:04:23 +0800</lastBuildDate><atom:link href="https://waite.wang/tags/vue3/index.xml" rel="self" type="application/rss+xml"/><item><title>vue 项目规范设置</title><link>https://waite.wang/posts/vue/vue-project-construction-specification/</link><pubDate>Mon, 22 Jan 2024 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue-project-construction-specification/</guid><description>&lt;h2 id="集成editorconfig配置"&gt;集成editorconfig配置&lt;/h2&gt;
+&lt;p&gt;EditorConfig 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# http://editorconfig.org&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;root = true&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="cp"&gt;*]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 表示所有文件适用&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;charset = utf-8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 设置文件字符集为 utf-8&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;indent_style = space&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 缩进风格（tab | space）&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;indent_size = 2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 缩进大小&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;end_of_line = lf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 控制换行类型(lf | cr | crlf)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;trim_trailing_whitespace = true&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 去除行首的任意空白字符&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;insert_final_newline = true&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 始终在文件末尾插入一个新行&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="cp"&gt;*.md]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 表示仅 md 文件适用以下规则&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;max_line_length = off&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="l"&gt;trim_trailing_whitespace = false&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;VSCode需要安装一个插件：EditorConfig for VS Code&lt;/p&gt;</description></item><item><title>Vue3 CompositionAPI</title><link>https://waite.wang/posts/vue/vue3-compositionapi/</link><pubDate>Fri, 29 Dec 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-compositionapi/</guid><description>&lt;h2 id="options-api的弊端"&gt;Options API的弊端&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在Vue2中，我们编写组件的方式是Options API：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Options API的一大特点就是在对应的属性中编写对应的功能模块；&lt;/li&gt;
+&lt;li&gt;比如data定义数据、methods中定义方法、computed中定义计算属性、watch中监听属性改变，也包括生命 周期钩子；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;但是这种代码有一个很大的弊端：&lt;/p&gt;</description></item><item><title>Pinia 数据持久化储存（pinia-plugin-persistedstate）</title><link>https://waite.wang/posts/web/pinia-plugin-persistedstate/</link><pubDate>Wed, 22 Nov 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/pinia-plugin-persistedstate/</guid><description>&lt;p&gt;pinia需要使用pinia-plugin-persistedstate插件来进行数据的存储
 插件官网地址：
-&lt;a href="https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html" target="_blank" >https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html&lt;/a>&lt;/p>
-&lt;h2 id="安装以及使用">安装以及使用&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pnpm i pinia-plugin-persistedstate
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">npm i pinia-plugin-persistedstate
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">yarn add pinia-plugin-persistedstate
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-typescript" data-lang="typescript">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">import&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">createPinia&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s1">&amp;#39;pinia&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">import&lt;/span> &lt;span class="nx">piniaPluginPersistedstate&lt;/span> &lt;span class="kr">from&lt;/span> &lt;span class="s1">&amp;#39;pinia-plugin-persistedstate&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">pinia&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">createPinia&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">pinia&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">piniaPluginPersistedstate&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="关于全部缓存及部分缓存的说明">关于全部缓存及部分缓存的说明&lt;/h2>
-&lt;p>（1）将store的state中的全部数据进行缓存，直接在state同级下面添加persist对象&lt;/p></description></item><item><title>Vue3 基本指令(二)</title><link>https://waite.wang/posts/vue/vue3-learn-2/</link><pubDate>Sun, 22 Oct 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-2/</guid><description>&lt;blockquote>
-&lt;p>本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
-permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><title>邂逅 Vue3 开发(一)</title><link>https://waite.wang/posts/vue/vue3-learn-1/</link><pubDate>Sat, 30 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-1/</guid><description>&lt;blockquote>
-&lt;p>本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
-permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p></description></item><item><title>TypeScript 入门</title><link>https://waite.wang/posts/web/ts-learn/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/ts-learn/</guid><description>&lt;h2 id="什么是-typescript">什么是 TypeScript&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>TypeScript既是一种语言又是一组工具。TypeScript是JavaScript的一个超集。换句话说，TypeScript是JavaScript加上一些额外的功能。&lt;/p></description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/vue/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue2-core-learn/</guid><description>&lt;blockquote>
-&lt;p>
-&lt;a href="https://v2.cn.vuejs.org/" target="_blank" >https://v2.cn.vuejs.org/&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h2 id="简单使用">简单使用&lt;/h2>
-&lt;blockquote>
-&lt;p>
-&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html" target="_blank" >https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>
-&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%e7%9b%b4%e6%8e%a5%e7%94%a8-lt-script-gt-%e5%bc%95%e5%85%a5" target="_blank" >&lt;strong>直接用 script 引入&lt;/strong>&lt;/a>&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>直接下载并用 &lt;!-- raw HTML omitted --> 标签引入，&lt;code>Vue&lt;/code> 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)&lt;/p></description></item></channel></rss>
+&lt;a href="https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html" target="_blank" &gt;https://prazdevs.github.io/pinia-plugin-persistedstate/guide/config.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="安装以及使用"&gt;安装以及使用&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pnpm i pinia-plugin-persistedstate
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm i pinia-plugin-persistedstate
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;yarn add pinia-plugin-persistedstate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-typescript" data-lang="typescript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;createPinia&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="kr"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pinia&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="nx"&gt;piniaPluginPersistedstate&lt;/span&gt; &lt;span class="kr"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;pinia-plugin-persistedstate&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;pinia&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;createPinia&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;pinia&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;use&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;piniaPluginPersistedstate&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="关于全部缓存及部分缓存的说明"&gt;关于全部缓存及部分缓存的说明&lt;/h2&gt;
+&lt;p&gt;（1）将store的state中的全部数据进行缓存，直接在state同级下面添加persist对象&lt;/p&gt;</description></item><item><title>Vue3 基本指令(二)</title><link>https://waite.wang/posts/vue/vue3-learn-2/</link><pubDate>Sun, 22 Oct 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-2/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
+permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p&gt;</description></item><item><title>邂逅 Vue3 开发(一)</title><link>https://waite.wang/posts/vue/vue3-learn-1/</link><pubDate>Sat, 30 Sep 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue3-learn-1/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文章来源于王红元老师（coderwhy）的 Vue3 + Ts 课程第二章节 - Vue3 基本指令附上链接：https//ke.qq.com/course/3453141
+permalink: /archives/vue3-ji-ben-zhi-ling-er&lt;/p&gt;</description></item><item><title>TypeScript 入门</title><link>https://waite.wang/posts/web/ts-learn/</link><pubDate>Tue, 22 Aug 2023 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/web/ts-learn/</guid><description>&lt;h2 id="什么是-typescript"&gt;什么是 TypeScript&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;TypeScript既是一种语言又是一组工具。TypeScript是JavaScript的一个超集。换句话说，TypeScript是JavaScript加上一些额外的功能。&lt;/p&gt;</description></item><item><title>Vue2 核心语法</title><link>https://waite.wang/posts/vue/vue2-core-learn/</link><pubDate>Sat, 22 Jan 2022 16:04:23 +0800</pubDate><guid>https://waite.wang/posts/vue/vue2-core-learn/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;
+&lt;a href="https://v2.cn.vuejs.org/" target="_blank" &gt;https://v2.cn.vuejs.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="简单使用"&gt;简单使用&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html" target="_blank" &gt;https://v2.cn.vuejs.org/v2/guide/installation.html&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+&lt;a href="https://v2.cn.vuejs.org/v2/guide/installation.html#%e7%9b%b4%e6%8e%a5%e7%94%a8-lt-script-gt-%e5%bc%95%e5%85%a5" target="_blank" &gt;&lt;strong&gt;直接用 script 引入&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接下载并用 &lt;!-- raw HTML omitted --&gt; 标签引入，&lt;code&gt;Vue&lt;/code&gt; 会被注册为一个全局变量。(在开发环境下不要使用压缩版本，不然你就失去了所有常见错误相关的警告!)&lt;/p&gt;</description></item></channel></rss>
