@@ -1,8 +1,8 @@
 ---
 title: "Vue PDF 预览与标注实现解析"
-date: 2025-11-11T16:04:23+08:00
+date: 2025-11-11T12:04:23+08:00
 categories: ["Vue"]
-tags: ["Web", "Vue"]
+tags: ["Vue", "Web"]
 
 showToc: true
 TocOpen: true # 是否展开目录
@@ -10,7 +10,6 @@ disableHLJS: true # to disable highlightjs
 weight:
 draft: false
 ---
-
 # PDF 预览与标注实现解析
 
 最近在做一个文件预览功能，需要在浏览器里展示 PDF 并支持位置标记和缩放。折腾了一段时间，把实现思路整理一下。
