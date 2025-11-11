@@ -75,6 +75,30 @@ body {
   --article-width: 650px;
   --toc-width: 300px;
   --main-font: "LXGWWenKaiScreenR";
+  
+  /* GitHub 明亮主题代码高亮颜色 */
+  --code-keyword: #d73a49;        /* 关键字 - 红色 */
+  --code-string: #032f62;         /* 字符串 - 深蓝 */
+  --code-comment: #6a737d;        /* 注释 - 灰色 */
+  --code-function: #6f42c1;       /* 函数 - 紫色 */
+  --code-number: #005cc5;         /* 数字 - 蓝色 */
+  --code-operator: #d73a49;       /* 操作符 - 红色 */
+  --code-variable: #e36209;       /* 变量 - 橙色 */
+  --code-tag: #22863a;            /* HTML标签 - 绿色 */
+  --code-attribute: #6f42c1;      /* 属性 - 紫色 */
+}
+
+.dark {
+  /* GitHub 暗黑主题代码高亮颜色 */
+  --code-keyword: #ff7b72;        /* 关键字 - 浅红 */
+  --code-string: #a5d6ff;         /* 字符串 - 浅蓝 */
+  --code-comment: #8b949e;        /* 注释 - 浅灰 */
+  --code-function: #d2a8ff;       /* 函数 - 浅紫 */
+  --code-number: #79c0ff;         /* 数字 - 亮蓝 */
+  --code-operator: #ff7b72;       /* 操作符 - 浅红 */
+  --code-variable: #ffa657;       /* 变量 - 浅橙 */
+  --code-tag: #7ee787;            /* HTML标签 - 浅绿 */
+  --code-attribute: #d2a8ff;      /* 属性 - 浅紫 */
 }
 
 .toc {
@@ -238,4 +262,176 @@ table {
     vertical-align: bottom;
     border-bottom: 2px solid var(--code-bg);
   }
+}
+
+
+/* ========= 1. 代码块 GitHub 化 ========= */
+/* 字体栈：GitHub 同款 + 你已有的霞鹜文楷兜底 */
+.post-content pre,
+.post-content code {
+  font-family:
+    "SFMono-Regular","SF Mono",Consolas,"Liberation Mono",Menlo,
+    var(--main-font),     /* 霞鹜文楷 */
+    -apple-system,BlinkMacSystemFont,monospace;
+  font-size: 0.875em;     /* 14 px */
+  line-height: 1.45;
+}
+
+/* 高亮容器 */
+.post-content .highlight:not(table),
+.post-content .highlight table {
+  position: relative;
+  background: var(--code-bg) !important;
+  color: var(--secondary) !important;
+  border: 1px solid #d1d9e0;
+  border-radius: 8px;
+  padding: 1.2em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 左侧 4 px 高亮条 */
+.post-content .highlight:not(table)::before,
+.post-content .highlight table::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #FFD7C2, #FFD7C2);
+  border-radius: 8px 0 0 8px;
+}
+
+/* GitHub 语法高亮样式 */
+/* 关键字 */
+.post-content .highlight .k,
+.post-content .highlight .kc,
+.post-content .highlight .kd,
+.post-content .highlight .kn,
+.post-content .highlight .kp,
+.post-content .highlight .kr,
+.post-content .highlight .kt {
+  color: var(--code-keyword) !important;
+  font-weight: 600;
+}
+
+/* 字符串 */
+.post-content .highlight .s,
+.post-content .highlight .s1,
+.post-content .highlight .s2,
+.post-content .highlight .sa,
+.post-content .highlight .sb,
+.post-content .highlight .sc,
+.post-content .highlight .sd,
+.post-content .highlight .se,
+.post-content .highlight .sh,
+.post-content .highlight .si,
+.post-content .highlight .sx,
+.post-content .highlight .sr {
+  color: var(--code-string) !important;
+}
+
+/* 注释 */
+.post-content .highlight .c,
+.post-content .highlight .c1,
+.post-content .highlight .cs,
+.post-content .highlight .cm {
+  color: var(--code-comment) !important;
+  font-style: italic;
+}
+
+/* 函数名 */
+.post-content .highlight .nf,
+.post-content .highlight .fm {
+  color: var(--code-function) !important;
+  font-weight: 600;
+}
+
+/* 数字 */
+.post-content .highlight .m,
+.post-content .highlight .mf,
+.post-content .highlight .mh,
+.post-content .highlight .mi,
+.post-content .highlight .mo {
+  color: var(--code-number) !important;
+}
+
+/* 操作符 */
+.post-content .highlight .o,
+.post-content .highlight .ow {
+  color: var(--code-operator) !important;
+  font-weight: 600;
+}
+
+/* 变量、标识符 */
+.post-content .highlight .n,
+.post-content .highlight .na,
+.post-content .highlight .nb,
+.post-content .highlight .nc,
+.post-content .highlight .no,
+.post-content .highlight .nd,
+.post-content .highlight .ni,
+.post-content .highlight .ne,
+.post-content .highlight .nl,
+.post-content .highlight .nn,
+.post-content .highlight .nx,
+.post-content .highlight .py,
+.post-content .highlight .nt {
+  color: var(--code-variable) !important;
+}
+
+/* HTML/XML 标签 */
+.post-content .highlight .nt {
+  color: var(--code-tag) !important;
+  font-weight: 600;
+}
+
+/* 属性 */
+.post-content .highlight .na {
+  color: var(--code-attribute) !important;
+}
+
+/* 布尔值、null等 */
+.post-content .highlight .kc {
+  color: var(--code-number) !important;
+  font-weight: 600;
+}
+
+/* ========= 2. 目录紧凑化 ========= */
+/* 去掉列表符号 & 默认缩进 */
+.toc ul,
+.toc li ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 一级条目 */
+.toc > .inner > li > a {
+  display: block;
+  padding: 4px 0 4px 12px;
+  font-size: 0.95rem;
+  border-left: 3px solid transparent;
+  transition: border-color .2s;
+}
+
+/* 子级缩进 */
+.toc li ul li a {
+  padding-left: 28px;
+  font-size: 0.9rem;
+}
+
+/* 当前高亮 */
+.toc a.active {
+  font-weight: 600;
+  color: var(--secondary);
+  border-left-color: var(--secondary);
+}
+
+/* 悬浮轻提示 */
+.toc a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
 }
