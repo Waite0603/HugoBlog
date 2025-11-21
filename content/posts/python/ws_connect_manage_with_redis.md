@@ -27,22 +27,22 @@ draft: false
 class RedisConfig:
     # Redis集群配置
     REDIS_NODES = [
-        {"host": "10.7.104.44", "port": 4031},  # master
-        {"host": "10.7.104.47", "port": 4032},
-        {"host": "10.7.104.48", "port": 4031},  # master
-        {"host": "10.7.104.44", "port": 4032},
-        {"host": "10.7.104.47", "port": 4031},  # master
-        {"host": "10.7.104.48", "port": 4032},
+        {"host": "xx.xx.xx.xx", "port": 4031},  # master
+        {"host": "xx.xx.xx.xx", "port": 4032},
+        {"host": "xx.xx.xx.xx", "port": 4031},  # master
+        {"host": "xx.xx.xx.xx", "port": 4032},
+        {"host": "xx.xx.xx.xx", "port": 4031},  # master
+        {"host": "xx.xx.xx.xx", "port": 4032},
     ]
     
     # 单节点配置（兼容性保留）
-    HOST = os.getenv("REDIS_HOST", "10.7.104.44")
+    HOST = os.getenv("REDIS_HOST", "xx.xx.xx.xx")
     PORT = int(os.getenv("REDIS_PORT", "4031"))
     DB = int(os.getenv("REDIS_DB", "0"))
     
     # 认证信息
-    USERNAME = os.getenv("REDIS_USERNAME", "aigc")
-    PASSWORD = os.getenv("REDIS_PASSWORD", "qvQfwMfYT2A&")
+    USERNAME = os.getenv("REDIS_USERNAME", "xxxxxx")
+    PASSWORD = os.getenv("REDIS_PASSWORD", "xxxxxx")
     
     # 集群配置
     USE_CLUSTER = os.getenv("REDIS_USE_CLUSTER", "True").lower() == "true"
