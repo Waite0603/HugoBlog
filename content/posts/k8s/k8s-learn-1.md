@@ -590,8 +590,6 @@ Hello from Kubernetes storage
 
 下面是 hostPath PersistentVolume 的配置文件：
 
-[`pods/storage/pv-volume.yaml`](https://raw.githubusercontent.com/kubernetes/website/main/content/zh-cn/examples/pods/storage/pv-volume.yaml)![复制 pods/storage/pv-volume.yaml 到剪贴板](https://kubernetes.io/images/copycode.svg)
-
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
@@ -994,7 +992,6 @@ janedoe:xxxxxxxxxxx
 
 下面是一个 Pod 配置清单示例，该示例中 Pod 需要访问你的 Docker 凭据 `regcred`：
 
-[`pods/private-reg-pod.yaml`](https://raw.githubusercontent.com/kubernetes/website/main/content/zh-cn/examples/pods/private-reg-pod.yaml)![复制 pods/private-reg-pod.yaml 到剪贴板](https://kubernetes.io/images/copycode.svg)
 
 ```yaml
 apiVersion: v1
@@ -1160,7 +1157,6 @@ liveness-exec   1/1       Running   1          1m
 
 另外一种类型的存活探测方式是使用 HTTP GET 请求。 下面是一个 Pod 的配置文件，其中运行一个基于 `registry.k8s.io/e2e-test-images/agnhost` 镜像的容器。
 
-[`pods/probe/http-liveness.yaml`](https://raw.githubusercontent.com/kubernetes/website/main/content/zh-cn/examples/pods/probe/http-liveness.yaml)![复制 pods/probe/http-liveness.yaml 到剪贴板](https://kubernetes.io/images/copycode.svg)
 
 ```yaml
 apiVersion: v1
@@ -1223,8 +1219,6 @@ kubectl describe pod liveness-http
 
 第三种类型的存活探测是使用 TCP 套接字。 使用这种配置时，kubelet 会尝试在指定端口和容器建立套接字链接。 如果能建立连接，这个容器就被看作是健康的，如果不能则这个容器就被看作是有问题的。
 
-[`pods/probe/tcp-liveness-readiness.yaml`](https://raw.githubusercontent.com/kubernetes/website/main/content/zh-cn/examples/pods/probe/tcp-liveness-readiness.yaml)![复制 pods/probe/tcp-liveness-readiness.yaml 到剪贴板](https://kubernetes.io/images/copycode.svg)
-
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -1272,7 +1266,6 @@ kubectl describe pod goproxy
 
 下面是一个示例清单：
 
-[`pods/probe/grpc-liveness.yaml`](https://raw.githubusercontent.com/kubernetes/website/main/content/zh-cn/examples/pods/probe/grpc-liveness.yaml)![复制 pods/probe/grpc-liveness.yaml 到剪贴板](https://kubernetes.io/images/copycode.svg)
 
 ```yaml
 apiVersion: v1
