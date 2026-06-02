@@ -1,5 +1,5 @@
 ---
-title: "Hello Agent 1"
+title: "Hello—Agent-1"
 date: 2026-06-02T07:30:38Z
 lastmod: 2026-06-02T07:30:38Z
 categories: ["Ai"]
