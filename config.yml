@@ -1,11 +1,15 @@
 baseURL: https://waite.wang
 title: 隶笔难书
 
-languageCode: zh-cn # en-us
+locale: zh-cn # en-us
 DefaultContentLanguage: zh-cn
 hasCJKLanguage: true
 
 theme: PaperMod
+
+author:
+  name: Waite
+  email: waite@waite.wang
 
 pagination:
   disableAliases: false
@@ -21,6 +25,8 @@ buildExpired: false
 enableEmoji: true
 enableGitInfo: false
 enableInlineShortcodes: true
+ignoreLogs:
+  - warning-goldmark-raw-html
 
 minify:
   minifyOutput: true
@@ -29,6 +35,9 @@ Params:
   env: production
   title: Waite's Blog
   description: 一个记录生活和技术的地方
+  author:
+    name: Waite
+    email: waite@waite.wang
 
   defaultTheme: auto
   disableThemeToggle: false
@@ -126,7 +135,7 @@ privacy:
     disabled: false
     simple: true
 
-  twitter:
+  x:
     disabled: false
     enableDNT: true
     simple: true
@@ -142,5 +151,5 @@ privacy:
 services:
   instagram:
     disableInlineCSS: true
-  twitter:
+  x:
     disableInlineCSS: true
