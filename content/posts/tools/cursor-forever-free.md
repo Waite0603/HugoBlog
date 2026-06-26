@@ -1,5 +1,5 @@
 ---
-title: "Cursor 无限续杯方案"
+title: "Cursor 无限续杯方案-已失效"
 date: 2025-01-12T20:55:23+08:00
 lastmod: 2025-01-25T20:55:23+08:00
 categories: ["Blog"]
@@ -21,6 +21,8 @@ ShowWordCount: true
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 ---
+
+> 截至 25-11 该方法已经失效
 
 > 参考地址：<https://github.com/chengazhen/cursor-auto-free>
 
